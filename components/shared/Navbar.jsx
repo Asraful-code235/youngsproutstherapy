@@ -39,16 +39,16 @@ const Navbar = () => {
           <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0">
             <li className="py-4">
               <Link href="/">
-                <div className="block py-2 pr-4 pl-3 text-gray-700 rounded md:bg-transparent md:p-0 cursor-pointer">
+                <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer">
                   Home
                 </div>
               </Link>
             </li>
             <li className="relative group py-4">
-              <div className="block py-2 pr-4 pl-3 text-gray-700 rounded md:bg-transparent md:p-0 cursor-pointer">
+              <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer">
                 Services
               </div>
-              <ul className="absolute mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block  min-w-max">
+              <ul className="absolute mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block  min-w-max z-50">
                 <li>
                   <Link href="/approach-and-specialties">
                     <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
@@ -73,10 +73,10 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="relative group py-4">
-              <div className="block py-2 pr-4 pl-3 text-gray-700 rounded md:bg-transparent md:p-0 cursor-pointer">
+              <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer">
                 About Us
               </div>
-              <ul className="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block">
+              <ul className="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50">
                 <li>
                   <Link href="/teams">
                     <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
@@ -102,14 +102,14 @@ const Navbar = () => {
             </li>
             <li className="py-4">
               <Link href="/contact">
-                <div className="block py-2 pr-4 pl-3 text-gray-700 rounded md:bg-transparent md:p-0 cursor-pointer">
+                <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer">
                   Contact us
                 </div>
               </Link>
             </li>
             <li className="py-4">
               <Link href="/blog">
-                <div className="block py-2 pr-4 pl-3 text-gray-700 rounded md:bg-transparent md:p-0 cursor-pointer">
+                <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer">
                   Blog
                 </div>
               </Link>
