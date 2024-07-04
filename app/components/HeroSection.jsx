@@ -15,13 +15,9 @@ export default function HeroSection() {
             Psychotherapy & Psychological Counselling for Kids, <br /> Teens and
             Families in Vaughan/Thornhill
           </p>
-          <div className="space-y-2 mt-6">
-            <div className="text-center md:text-left">
-              <Button>Book A Free Consult</Button>
-            </div>
-            <div className="text-center md:text-left">
-              <Button>Call Now - (289) 579-4769</Button>
-            </div>
+          <div className="flex flex-col w-4/12 gap-3 mt-6">
+            <Button variant="brandButton">Book A Free Consult</Button>
+            <Button>Call Now - (289) 579-4769</Button>
           </div>
         </div>
       </div>
