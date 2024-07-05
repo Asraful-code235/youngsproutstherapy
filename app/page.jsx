@@ -1,3 +1,4 @@
+import FamilyTherapySection from "./components/FamilyTherapySection";
 import HomeComponent from "./components/HomeContent";
 
 export const metadata = {
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main className="">
       <HomeComponent />
+      <FamilyTherapySection />
     </main>
   );
 }
