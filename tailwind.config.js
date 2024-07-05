@@ -55,6 +55,7 @@ module.exports = {
         "brand-color-one": "#ab6969",
         "brand-color-two": "#784a4a",
         "brand-color-three": "#78a9b6",
+        "brand-text-color-one": "#1F2A37",
       },
       borderRadius: {
         lg: "var(--radius)",

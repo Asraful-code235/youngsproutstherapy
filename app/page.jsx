@@ -1,5 +1,6 @@
 import FamilyTherapySection from "./components/FamilyTherapySection";
 import HomeComponent from "./components/HomeContent";
+import TeamSection from "./components/TeamSection";
 
 export const metadata = {
   title: "Young Sprouts | Child, Teen &amp; Family Therapy | Vaughan",
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="">
       <HomeComponent />
       <FamilyTherapySection />
+      <TeamSection />
     </main>
   );
 }

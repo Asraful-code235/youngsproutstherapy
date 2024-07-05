@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-[url('/images/youngsproutstherapy-image-01.jpg')] bg-no-repeat bg-cover bg-center py-10 md:py-20 px-6 rounded-xl max-w-screen-2xl mx-auto">
+    <div className="relative bg-[url('/images/youngsproutstherapy-image-01.jpg')] bg-no-repeat bg-cover bg-center py-10 md:py-20 px-6 rounded-xl mb-16">
       <div className="absolute inset-0 bg-black opacity-50 md:opacity-0 rounded-lg"></div>
       <div className="relative grid md:grid-cols-2 grid-cols-1 gap-6">
         <div></div>
