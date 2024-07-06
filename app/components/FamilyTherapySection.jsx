@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function FamilyTherapySection() {
   return (
     <div className="bg-white">
-      <div className="max-w-screen-2xl mx-auto py-16 md:px-0 px-2 ">
+      <div className="max-w-screen-2xl mx-auto py-16 md:px-0 px-2">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10">
           <div className="flex flex-col justify-center bg-[#e8f0fe] p-6 md:p-10 rounded-xl text-lg font-semibold text-gray-700">
             <p className="leading-relaxed">

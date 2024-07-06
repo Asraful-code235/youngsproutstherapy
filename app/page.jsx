@@ -1,5 +1,6 @@
 import FamilyTherapySection from "./components/FamilyTherapySection";
 import HomeComponent from "./components/HomeContent";
+import PsychoTherapyHelp from "./components/PsychoTherapyHelp";
 import TeamSection from "./components/TeamSection";
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function Home() {
       <HomeComponent />
       <FamilyTherapySection />
       <TeamSection />
+      <PsychoTherapyHelp />
     </main>
   );
 }
