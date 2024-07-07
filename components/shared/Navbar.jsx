@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -7,11 +8,16 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-gray-200 md:py-0 py-3">
+    <nav className="bg-[#f0e4e4] border-gray-200 md:py-0 py-3">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/">
-          <div className="text-xl font-semibold text-gray-900 cursor-pointer">
-            SoulSpace
+          <div className="py-2">
+            <Image
+              src="/images/youngsproutstherapy-image-logo.png"
+              width={250}
+              height={100}
+              alt="Youngs Prouts Therapy logo "
+            />
           </div>
         </Link>
         <button

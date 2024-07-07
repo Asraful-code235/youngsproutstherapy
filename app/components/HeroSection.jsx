@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 export default function HeroSection() {
   return (
     <div className="relative bg-[url('/images/youngsproutstherapy-image-08.jpeg')] bg-no-repeat bg-cover bg-center py-10 md:py-56 px-6">
-      <div className="absolute inset-0 bg-black opacity-50 md:opacity-0 rounded-lg"></div>
+      <div className="absolute inset-0 bg-black opacity-50 md:opacity-0"></div>
       <div className="relative grid md:grid-cols-2 grid-cols-1 gap-6">
         <div></div>
         <div>
@@ -15,7 +15,7 @@ export default function HeroSection() {
             Psychotherapy & Psychological Counselling for Kids, <br /> Teens and
             Families in Vaughan/Thornhill
           </p>
-          <div className="flex flex-col w-4/12 gap-3 mt-6">
+          <div className="flex flex-col w-full md:w-4/12 gap-3 mt-6">
             <Button variant="brandButton">Book A Free Consult</Button>
             <Button variant="secondaryBrandButton">
               Call Now - (289) 579-4769
