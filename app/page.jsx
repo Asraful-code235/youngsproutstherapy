@@ -1,7 +1,10 @@
+import ShopLocationMap from "@/components/shared/ShopLocationMap";
+import ConsultationBooking from "./components/ConsultationBooking";
 import FamilyTherapySection from "./components/FamilyTherapySection";
 import HomeComponent from "./components/HomeContent";
 import PsychoTherapyHelp from "./components/PsychoTherapyHelp";
 import TeamSection from "./components/TeamSection";
+import TherapeuticModalities from "./components/TherapeuticModalities";
 
 export const metadata = {
   title: "Young Sprouts | Child, Teen &amp; Family Therapy | Vaughan",
@@ -14,8 +17,11 @@ export default function Home() {
     <main className="">
       <HomeComponent />
       <FamilyTherapySection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <PsychoTherapyHelp />
+      <TherapeuticModalities />
+      <ConsultationBooking />
+      <ShopLocationMap />
     </main>
   );
 }

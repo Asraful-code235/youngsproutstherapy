@@ -6,7 +6,10 @@ export default function FamilyTherapySection() {
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto py-16 md:px-0 px-2">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10">
-          <div className="flex flex-col justify-center bg-[#e8f0fe] p-6 md:p-10 rounded-xl text-lg font-semibold text-gray-700">
+          <div className="flex flex-col justify-center bg-[#e8f0fe] p-6 md:p-10 rounded-xl text-lg">
+            <h2 className="text-xl md:text-4xl md:leading-snug font-bold mb-8 text-[#1F2A37]">
+              Expert Psychotherapy and Counseling for Kids, Teens, and Families
+            </h2>
             <p className="leading-relaxed">
               We are a dedicated team of child and family therapists in Vaughan
               consisting of social workers and registered psychotherapists. With
@@ -34,9 +37,14 @@ export default function FamilyTherapySection() {
             </div>
           </div>
           <div className="flex flex-col justify-between">
-            <h2 className="text-xl md:text-5xl md:leading-snug font-bold mb-8 text-[#1F2A37]">
-              Expert Psychotherapy and Counseling for Kids, Teens, and Families
-            </h2>
+            <div className="mb-8">
+              <h2 className="text-xl md:text-6xl md:leading-snug font-bold text-[#1F2A37]">
+                Expert Counseling
+              </h2>
+              <h2 className="md:text-end text-xl md:text-6xl md:leading-snug font-bold text-[#1F2A37]">
+                for Families
+              </h2>
+            </div>
 
             <div>
               <Image

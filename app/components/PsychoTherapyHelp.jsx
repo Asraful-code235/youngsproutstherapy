@@ -93,20 +93,13 @@ const features = [
   },
 ];
 
-const bgColors = [
-  "#fef7e0",
-  "#edf1fe",
-  "#f0f7fe",
-  "#dceeff",
-  "#eaedfd",
-  "#fef7e0",
-];
+const bgColors = ["#fef7e0", "#edf1fe", "#f0f7fe", "#dceeff", "#eaedfd"];
 
 export default function PsychoTherapyHelp() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-14 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-3xl md:text-5xl font-bold mb-12">
+        <h2 className="text-center text-3xl md:text-5xl font-bold mb-14">
           How Psychotherapy Can Help
         </h2>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">

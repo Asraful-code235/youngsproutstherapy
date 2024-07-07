@@ -20,6 +20,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         brandButton:
           "bg-brand-color-one text-white hover:bg-brand-color-two hover:text-white",
+        secondaryBrandButton:
+          "bg-brand-color-two text-white hover:bg-brand-color-one hover:text-white",
       },
       size: {
         default: "h-10 px-4 py-2",

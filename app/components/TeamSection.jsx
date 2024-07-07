@@ -6,6 +6,8 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { SwiperNavButtons } from "./SwiperButtons";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const teamMember = [
   {
@@ -39,18 +41,30 @@ const teamMember = [
 const TeamSection = () => {
   return (
     <section className="py-16 max-w-screen-2xl mx-auto md:px-0 px-3">
-      <div>
-        <h2 className="text-2xl md:text-5xl md:leading-snug font-bold text-[#1F2A37]">
-          Meet Our Family and <br /> Child Therapists
-        </h2>
-        <p className="mt-3">
-          We offer a variety of services to support your mindfulness journey.{" "}
-          <br />
-          Choose what best suits your needs.
-        </p>
+      <div className="block md:flex items-end justify-between">
+        <div>
+          <h2 className="text-2xl md:text-5xl md:leading-snug font-bold text-[#1F2A37]">
+            Meet Our Family and
+          </h2>
+          <h2 className="text-start md:text-end text-2xl md:text-5xl md:leading-snug font-bold text-[#1F2A37]">
+            Child Therapists
+          </h2>
+        </div>
+        <div>
+          <p className="mt-3">
+            We offer a variety of services to support your mindfulness journey.{" "}
+            <br />
+            Choose what best suits your needs.
+          </p>
+        </div>
       </div>
-      <div>
-        <div></div>
+      <div className="flex items-center gap-10">
+        <div className="md:block hidden">
+          <Link href="/team">
+            <Button variant="link">See more</Button>
+          </Link>
+        </div>
+
         <div>
           <Swiper
             modules={[Navigation, Pagination, Autoplay, A11y]}
@@ -59,14 +73,17 @@ const TeamSection = () => {
             autoplay={{ delay: 2000, disableOnInteraction: false }}
           >
             {teamMember.map((member) => (
-              <SwiperSlide key={member.id} className="min-w-72 max-w-96 mt-14">
+              <SwiperSlide
+                key={member.id}
+                className="w-full md:min-w-72 md:max-w-96 mt-14"
+              >
                 <div>
                   <Image
                     src={member.img}
                     alt={member.name}
                     width={400}
                     height={400}
-                    className="bg-[#ceead6] rounded-lg w-[400px] h-[400px] object-cover"
+                    className="bg-[#ceead6] rounded-lg w-full md:w-[400px] h-[400px] object-cover"
                   />
                   <p className="text-xl font-semibold mt-2">{member.name}</p>
                 </div>

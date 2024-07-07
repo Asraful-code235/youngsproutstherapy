@@ -10,7 +10,7 @@ export const SwiperNavButtons = () => {
   const swiper = useSwiper();
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex items-center justify-between">
       <div className="mt-4 space-x-3">
         <Button variant="outline" onClick={() => swiper.slidePrev()}>
           <HiArrowLongLeft className="text-xl text-brand-text-color-one" />
@@ -19,7 +19,7 @@ export const SwiperNavButtons = () => {
           <HiArrowLongRight className="text-xl text-brand-text-color-one" />
         </Button>
       </div>
-      <div>
+      <div className="block md:hidden">
         <Link href="/team">
           <Button variant="link">See more</Button>
         </Link>
