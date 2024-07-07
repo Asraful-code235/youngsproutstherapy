@@ -14,7 +14,7 @@ const Navbar = () => {
           <div className="py-2">
             <Image
               src="/images/youngsproutstherapy-image-logo.png"
-              width={250}
+              width={220}
               height={100}
               alt="Youngs Prouts Therapy logo "
             />

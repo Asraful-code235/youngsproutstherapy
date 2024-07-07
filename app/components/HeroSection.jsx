@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -16,10 +17,16 @@ export default function HeroSection() {
             Families in Vaughan/Thornhill
           </p>
           <div className="flex flex-col w-full md:w-4/12 gap-3 mt-6">
-            <Button variant="brandButton">Book A Free Consult</Button>
-            <Button variant="secondaryBrandButton">
-              Call Now - (289) 579-4769
-            </Button>
+            <Link className="block w-full" href="#book-consultation">
+              <Button variant="brandButton" className="w-full">
+                Book A Free Consult
+              </Button>
+            </Link>
+            <Link className="block w-full" href="tel:2895794769">
+              <Button variant="secondaryBrandButton" className="w-full">
+                Call Now - (289) 579-4769
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

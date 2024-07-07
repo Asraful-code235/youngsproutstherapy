@@ -75,6 +75,10 @@
   }
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .App {
   width: 90%;
   margin: auto;
