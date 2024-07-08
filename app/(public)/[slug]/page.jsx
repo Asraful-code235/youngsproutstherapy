@@ -1,4 +1,5 @@
 import ApproachAndSpecialties from "@/components/shared/ApproachAndSpecialties";
+import NotFoundPage from "@/components/shared/NotFoundPage";
 import PageContent from "@/components/shared/PageContent";
 import ParentingGroupsTherapy from "@/components/shared/ParentingGroupsTherapy";
 
@@ -108,5 +109,7 @@ export default function Page({ params }) {
     );
   } else if (params.slug === "group-therapy-for-kids-and-families") {
     return <ParentingGroupsTherapy />;
+  } else {
+    return <NotFoundPage />;
   }
 }
