@@ -76,6 +76,20 @@ const Navbar = () => {
                     </div>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/adhd-therapy-for-kids-and-teens">
+                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
+                      ADHD
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/autism-therapy-vaughan">
+                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
+                      Autism Spectrum Disorder
+                    </div>
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="relative group py-4">
