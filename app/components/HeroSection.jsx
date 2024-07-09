@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-[url('/images/youngsproutstherapy-image-08.jpeg')] bg-no-repeat bg-cover bg-center py-10 md:py-56 px-6">
+    <div className="relative bg-[url('/images/youngsproutstherapy-image-08.webp')] bg-no-repeat bg-cover bg-center py-10 md:py-56 px-6">
       <div className="absolute inset-0 bg-black opacity-50 md:opacity-0"></div>
       <div className="relative grid md:grid-cols-2 grid-cols-1 gap-6">
         <div></div>
