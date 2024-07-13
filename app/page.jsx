@@ -30,7 +30,7 @@ export default function Home() {
     <main className="">
       <HomeComponent />
       <FamilyTherapySection />
-      {/* <TeamSection /> */}
+      <TeamSection />
       <PsychoTherapyHelp />
       <TherapeuticModalities />
       <ConsultationBooking />

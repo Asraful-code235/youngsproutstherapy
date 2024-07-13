@@ -96,24 +96,24 @@ const bgColors = ["#fef7e0", "#edf1fe", "#f0f7fe", "#dceeff", "#eaedfd"];
 export default function PsychoTherapyHelp() {
   return (
     <section className="py-14 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-center text-3xl md:text-5xl font-bold mb-14">
+      <div className="container px-4 mx-auto">
+        <h2 className="text-3xl font-bold text-center md:text-5xl mb-14">
           How Psychotherapy Can Help
         </h2>
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="gap-6 space-y-6 columns-1 sm:columns-2 lg:columns-3">
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className="bg-white rounded-lg p-6 mb-6 break-inside-avoid-column group"
+              className="p-6 mb-6 bg-white rounded-lg break-inside-avoid-column group"
               style={{ backgroundColor: bgColors[index % bgColors.length] }}
             >
-              <h3 className="text-3xl font-semibold mb-4 text-center">
+              <h3 className="mb-4 text-3xl font-semibold text-center">
                 {feature.title}
               </h3>
               <p className="mt-6 mb-4 text-center text-gray-600">
                 {feature.description}
               </p>
-              <div className="flex justify-end items-center mt-8 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+              <div className="flex items-center justify-end mt-8 transition-opacity duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100">
                 <Link
                   href={feature.link}
                   className="inline-flex items-center bg-[#1a73e8] text-white p-2 rounded-full"
