@@ -2,6 +2,7 @@ import { Inter, Montserrat, Noto_Sans, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import DefaultProviders from "@/components/providers/DefaultProviders";
+import "@radix-ui/themes/styles.css";
 
 const inter = Montserrat({ subsets: ["latin"] });
 const notoSans = Noto_Sans({ subsets: ["latin"] });
