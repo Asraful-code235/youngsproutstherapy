@@ -65,8 +65,11 @@ export default function page() {
 
   return (
     <div>
-      <div className="h-44 bg-[#ebbcbc] flex items-center justify-center">
-        <h1 className="font-serif text-6xl font-medium text-white">Blog</h1>
+      <div className="h-56 bg-[#ebb1b1] flex items-center text-white font-serif">
+        <div className="mx-auto">
+          <h3 className="text-xl">Young Sprouts Therapy</h3>
+          <h1 className="mt-3 font-medium text-7xl">Blog</h1>
+        </div>
       </div>
       <div className="py-10 mx-auto max-w-7xl">
         <div className="block max-w-sm gap-3 mx-auto sm:max-w-full lg:grid lg:grid-cols-12 dark:bg-gray-50 bg-slate-50">
