@@ -65,13 +65,13 @@ export default function page() {
 
   return (
     <div>
-      <div className="h-56 bg-[#ebb1b1] flex items-center text-white font-serif">
+      <div className="md:h-56 h-48 bg-[#ebb1b1] flex items-center text-white font-serif">
         <div className="mx-auto">
           <h3 className="text-xl">Young Sprouts Therapy</h3>
           <h1 className="mt-3 font-medium text-7xl">Blog</h1>
         </div>
       </div>
-      <div className="py-10 mx-auto max-w-7xl">
+      <div className="px-3 py-10 mx-auto max-w-7xl md:px-0">
         <div className="block max-w-sm gap-3 mx-auto sm:max-w-full lg:grid lg:grid-cols-12 dark:bg-gray-50 bg-slate-50">
           <Image
             src="https://images.unsplash.com/photo-1720790985510-bcab909c7b9a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
