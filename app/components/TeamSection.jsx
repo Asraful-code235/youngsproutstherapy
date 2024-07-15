@@ -1,13 +1,15 @@
 "use client";
 
+import { useRef } from "react";
 import { A11y, Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { SwiperNavButtons } from "./SwiperButtons";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import SwiperNavButtons from "./SwiperButtons";
 
 const teamMember = [
   {
@@ -39,59 +41,76 @@ const teamMember = [
 ];
 
 const TeamSection = () => {
+  const swiperRef = useRef(null);
+
   return (
-    <section className="px-3 py-16 mx-auto max-w-screen-2xl md:px-0">
-      <div className="items-end justify-between block md:flex">
+    <section className="px-4 py-12 mx-auto max-w-screen-2xl md:px-8">
+      <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
         <div>
-          <h2 className="text-2xl md:text-5xl md:leading-snug font-bold text-[#1F2A37]">
-            Meet Our Family and
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1F2A37] leading-tight">
+            Meet Our Family and Child Therapists
           </h2>
-          <h2 className="text-start md:text-end text-2xl md:text-5xl md:leading-snug font-bold text-[#1F2A37]">
-            Child Therapists
-          </h2>
-        </div>
-        <div>
-          <p className="mt-3">
-            We offer a variety of services to support your mindfulness journey.{" "}
-            <br />
+          <p className="mt-3 text-base md:text-lg text-[#1F2A37]">
+            We offer a variety of services to support your mindfulness journey.
+            <br className="hidden md:block" />
             Choose what best suits your needs.
           </p>
+          <div className="mt-5">
+            <Link href="/teams">
+              <Button variant="link">See more</Button>
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="flex items-center gap-10">
-        <div className="hidden md:block">
-          <Link href="/teams">
-            <Button variant="link">See more</Button>
-          </Link>
-        </div>
-
-        <div>
+        <div className="relative mt-10 md:mt-0">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, A11y]}
-            spaceBetween={40}
-            slidesPerView="auto"
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+              340: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            }}
             autoplay={{ delay: 2000, disableOnInteraction: false }}
+            // pagination={{ clickable: true }}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
           >
             {teamMember.map((member) => (
               <SwiperSlide
                 key={member.id}
-                className="w-full md:min-w-72 md:max-w-96 mt-14"
+                className="flex justify-center py-10"
               >
-                <div>
+                <div className="flex flex-col items-center justify-between w-full h-full p-4 text-center bg-white border rounded-lg shadow-lg md:max-w-xs md:h-80">
                   <Image
                     src={member.img}
                     alt={member.name}
-                    width={400}
-                    height={400}
-                    className="bg-[#ceead6] rounded-lg w-full md:w-[400px] h-[400px] object-cover"
+                    width={300}
+                    height={300}
+                    className="object-cover w-full border rounded-lg h-80 md:h-56"
                   />
-                  <p className="mt-2 text-xl font-semibold">{member.name}</p>
+                  <p className="mt-4 text-xl font-semibold text-[#1F2A37]">
+                    {member.name}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}
-
-            <SwiperNavButtons />
           </Swiper>
+          <div className="md:flex md:justify-end">
+            <SwiperNavButtons swiperRef={swiperRef} />
+          </div>
         </div>
       </div>
     </section>

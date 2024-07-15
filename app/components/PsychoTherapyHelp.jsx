@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { HiArrowLongRight } from "react-icons/hi2";
 
@@ -31,7 +30,6 @@ const features = [
       "Helping children and teens overcome depression, using evidence-based therapies to foster resilience, promote positive thinking, and improve overall mental health.",
     link: "/approach-and-specialties",
   },
-
   {
     id: 5,
     title: "Behavioural Challenges",
@@ -81,7 +79,6 @@ const features = [
       "Specializing in Autism Spectrum Disorder counseling, we help children and teens thrive by enhancing their social skills, managing emotions, and fostering independence.",
     link: "/approach-and-specialties",
   },
-
   {
     id: 12,
     title: "Learn More",
@@ -100,19 +97,22 @@ export default function PsychoTherapyHelp() {
         <h2 className="text-3xl font-bold text-center md:text-5xl mb-14">
           How Psychotherapy Can Help
         </h2>
-        <div className="gap-6 space-y-6 columns-1 sm:columns-2 lg:columns-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className="p-6 mb-6 bg-white rounded-lg break-inside-avoid-column group"
+              className="flex flex-col justify-between p-6 bg-white rounded-lg cursor-pointer group"
               style={{ backgroundColor: bgColors[index % bgColors.length] }}
             >
-              <h3 className="mb-4 text-3xl font-semibold text-center">
-                {feature.title}
-              </h3>
-              <p className="mt-6 mb-4 text-center text-gray-600">
-                {feature.description}
-              </p>
+              <div>
+                <h3 className="mb-4 text-3xl font-semibold text-center">
+                  {feature.title}
+                </h3>
+                <p className="mt-6 mb-4 text-center text-gray-600">
+                  {feature.description}
+                </p>
+              </div>
+
               <div className="flex items-center justify-end mt-8 transition-opacity duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100">
                 <Link
                   href={feature.link}
