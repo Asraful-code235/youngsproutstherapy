@@ -40,8 +40,8 @@ const teamMember = [
 
 const TeamSection = () => {
   return (
-    <section className="py-16 max-w-screen-2xl mx-auto md:px-0 px-3">
-      <div className="block md:flex items-end justify-between">
+    <section className="px-3 py-16 mx-auto max-w-screen-2xl md:px-0">
+      <div className="items-end justify-between block md:flex">
         <div>
           <h2 className="text-2xl md:text-5xl md:leading-snug font-bold text-[#1F2A37]">
             Meet Our Family and
@@ -59,8 +59,8 @@ const TeamSection = () => {
         </div>
       </div>
       <div className="flex items-center gap-10">
-        <div className="md:block hidden">
-          <Link href="/team">
+        <div className="hidden md:block">
+          <Link href="/teams">
             <Button variant="link">See more</Button>
           </Link>
         </div>
@@ -85,7 +85,7 @@ const TeamSection = () => {
                     height={400}
                     className="bg-[#ceead6] rounded-lg w-full md:w-[400px] h-[400px] object-cover"
                   />
-                  <p className="text-xl font-semibold mt-2">{member.name}</p>
+                  <p className="mt-2 text-xl font-semibold">{member.name}</p>
                 </div>
               </SwiperSlide>
             ))}
