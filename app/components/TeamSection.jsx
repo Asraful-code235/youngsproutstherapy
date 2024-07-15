@@ -44,24 +44,29 @@ const TeamSection = () => {
   const swiperRef = useRef(null);
 
   return (
-    <section className="px-4 py-12 mx-auto max-w-screen-2xl md:px-8">
-      <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
-        <div>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#1F2A37] leading-tight">
+    <section className="px-4 py-28 mx-auto max-w-screen-2xl md:px-8">
+      <div className="grid items-center grid-cols-1 gap-8 xl:grid-cols-2">
+        <div className="flex flex-col gap-4 col-span-1 -mt-20">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1F2A37] tracking-wide ">
             Meet Our Family and Child Therapists
           </h2>
-          <p className="mt-3 text-base md:text-lg text-[#1F2A37]">
+          <p className=" text-base md:text-lg text-[#1F2A37]">
             We offer a variety of services to support your mindfulness journey.
             <br className="hidden md:block" />
             Choose what best suits your needs.
           </p>
-          <div className="mt-5">
+          <div className="">
             <Link href="/teams">
-              <Button variant="link">See more</Button>
+              <Button
+                variant="outline"
+                className="text-white !bg-[#ab6969] hover:text-white hover:!bg-opacity-75 hover:shadow"
+              >
+                See more
+              </Button>
             </Link>
           </div>
         </div>
-        <div className="relative mt-10 md:mt-0">
+        <div className="relative w-full  mt-10 md:mt-0">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, A11y]}
             spaceBetween={20}
@@ -80,7 +85,7 @@ const TeamSection = () => {
                 spaceBetween: 30,
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 3.5,
                 spaceBetween: 20,
               },
             }}
@@ -91,16 +96,18 @@ const TeamSection = () => {
             {teamMember.map((member) => (
               <SwiperSlide
                 key={member.id}
-                className="flex justify-center py-10"
+                className="flex justify-center py-10 "
               >
                 <div className="flex flex-col items-center justify-between w-full h-full p-4 text-center bg-white border rounded-lg shadow-lg md:max-w-xs md:h-80">
-                  <Image
-                    src={member.img}
-                    alt={member.name}
-                    width={300}
-                    height={300}
-                    className="object-cover w-full border rounded-lg h-80 md:h-56"
-                  />
+                  <div className="h-[400px] overflow-hidden">
+                    <Image
+                      src={member.img}
+                      alt={member.name}
+                      width={300}
+                      height={400}
+                      className="object-cover w-full h-full  border rounded-lg "
+                    />
+                  </div>
                   <p className="mt-4 text-xl font-semibold text-[#1F2A37]">
                     {member.name}
                   </p>

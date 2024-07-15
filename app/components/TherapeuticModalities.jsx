@@ -85,18 +85,26 @@ export default function TherapeuticModalities() {
   return (
     <div className="px-3 py-16 mx-auto max-w-screen-2xl md:px-0">
       <h2 className="text-center text-2xl md:text-5xl md:leading-snug font-bold text-[#1F2A37]">
-        Mississauga therapists supporting individuals, couples & families in
-        Mississauga, Brampton & surrounding areas.
+        Therapeutic Modalities Used in Counselling
       </h2>
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-3 mt-14">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-3 mt-14 ">
         {items.map((item) => (
-          <div key={item.id} className="flex flex-col items-center text-center">
-            <div className="p-4 mb-4 inline-block bg-[#D1E6E2] rounded-full">
-              <div className="text-[#589086] text-3xl">{item.icon}</div>
+          <article
+            key={item.id}
+            className="group transition-all duration-300 ease-in-out"
+          >
+            <div className="flex flex-col gap-4 items-center text-center group-hover:shadow group-hover:scale-[1.02] p-4 ">
+              <div className="p-4 bg-[#D1E6E2] rounded-full">
+                <div className="text-[#589086] text-xl">{item.icon}</div>
+              </div>
+              <h3 className="text-lg font-bold text-[#1F2A37] max-w-[250px] mx-auto">
+                {item.title}
+              </h3>
+              <p className="text-[#1F2A37] text-sm md:text-[15px] tracking-wide max-w-sm mx-auto italic">
+                {item.description}
+              </p>
             </div>
-            <h3 className="text-xl font-bold text-[#1F2A37]">{item.title}</h3>
-            <p className="text-[#1F2A37] mt-2">{item.description}</p>
-          </div>
+          </article>
         ))}
       </div>
     </div>
