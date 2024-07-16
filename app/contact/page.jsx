@@ -9,7 +9,7 @@ export default function page() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form.current);
+
     emailjs
       .sendForm(
         process.env.Email_Service_Id,
