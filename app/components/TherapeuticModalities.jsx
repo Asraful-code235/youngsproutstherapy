@@ -12,31 +12,43 @@ const items = [
   {
     id: 1,
     title: "Cognitive Behavioural Therapy (CBT)",
+    description:
+      "CBT is a type of psychotherapy that helps individuals change negative thought patterns and behaviors.",
     icon: <PiBrainLight />,
   },
   {
     id: 2,
     title: "Narrative Therapy",
+    description:
+      "Narrative Therapy seeks to help patients identify their values and the skills associated with them.",
     icon: <SlBookOpen />,
   },
   {
     id: 3,
     title: "Solution-Focused Therapy",
+    description:
+      "Solution-Focused Therapy is future-focused and goal-directed, focusing on solutions rather than problems.",
     icon: <GoLightBulb />,
   },
   {
     id: 4,
     title: "Dialectical Behaviour Therapy (DBT)",
+    description:
+      "DBT is a type of cognitive-behavioral therapy that helps people manage their emotions and develop healthy coping mechanisms.",
     icon: <TiMessages />,
   },
   {
     id: 5,
     title: "Art Therapy",
+    description:
+      "Art Therapy involves the use of creative techniques such as drawing, painting, and sculpting to help individuals express themselves.",
     icon: <TfiBrushAlt />,
   },
   {
     id: 6,
     title: "Play Therapy",
+    description:
+      "Play Therapy uses play to help children communicate their feelings and deal with emotional issues.",
     icon: <TbGoGame />,
   },
   {
@@ -46,43 +58,53 @@ const items = [
         Acceptance and Commitment <br /> Therapy (ACT)
       </div>
     ),
+    description:
+      "ACT is a type of psychotherapy that uses mindfulness and behavior change strategies to help individuals accept and commit to their values.",
     icon: <SiAdguard />,
   },
   {
-    id: 7,
-    title: "Emotion-Focused Therapy (EFT) ",
+    id: 8,
+    title: "Emotion-Focused Therapy (EFT)",
+    description:
+      "EFT is designed to help individuals understand and regulate their emotions.",
     icon: <BsEmojiSmile />,
   },
   {
-    id: 8,
+    id: 9,
     title: (
       <div>
         Parent-Child Interaction <br /> Therapy (PCIT)
       </div>
     ),
+    description:
+      "PCIT is a form of therapy that focuses on improving the quality of the parent-child relationship and changing parent-child interaction patterns.",
     icon: <MdFamilyRestroom />,
   },
 ];
-
 export default function TherapeuticModalities() {
   return (
-    <div className="py-16 max-w-screen-2xl mx-auto md:px-0 px-3">
+    <div className="px-3 py-16 mx-auto max-w-screen-2xl md:px-0">
       <h2 className="text-center text-2xl md:text-5xl md:leading-snug font-bold text-[#1F2A37]">
-        Therapeutic Modalities Used <br />
-        in Counselling
+        Therapeutic Modalities Used in Counselling
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-14 gap-12">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-3 mt-14 ">
         {items.map((item) => (
-          <div key={item.id} className="flex flex-col items-center">
-            <div className="p-3 mb-4 inline-block bg-[#D1E6E2] rounded-lg text-[#589086] text-2xl">
-              {item.icon}
-            </div>
-            <div>
-              <h3 className="text-xl text-center font-bold text-[#1F2A37]">
+          <article
+            key={item.id}
+            className="group transition-all duration-300 ease-in-out"
+          >
+            <div className="flex flex-col gap-4 items-center text-center group-hover:shadow group-hover:scale-[1.02] p-4 ">
+              <div className="p-4 bg-[#D1E6E2] rounded-full">
+                <div className="text-[#589086] text-xl">{item.icon}</div>
+              </div>
+              <h3 className="text-lg font-bold text-[#1F2A37] max-w-[250px] mx-auto">
                 {item.title}
               </h3>
+              <p className="text-[#1F2A37] text-sm md:text-[15px] tracking-wide max-w-sm mx-auto italic">
+                {item.description}
+              </p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>

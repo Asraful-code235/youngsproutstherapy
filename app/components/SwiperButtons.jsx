@@ -1,21 +1,18 @@
 "use client";
 
 import React from "react";
-import { useSwiper } from "swiper/react";
 import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export const SwiperNavButtons = () => {
-  const swiper = useSwiper();
-
+const SwiperNavButtons = ({ swiperRef }) => {
   return (
-    <div className="flex items-center justify-between">
-      <div className="mt-4 space-x-3">
-        <Button variant="outline" onClick={() => swiper.slidePrev()}>
+    <div className="flex items-center justify-between mt-4">
+      <div className="space-x-3">
+        <Button variant="outline" onClick={() => swiperRef.current.slidePrev()}>
           <HiArrowLongLeft className="text-xl text-brand-text-color-one" />
         </Button>
-        <Button variant="outline" onClick={() => swiper.slideNext()}>
+        <Button variant="outline" onClick={() => swiperRef.current.slideNext()}>
           <HiArrowLongRight className="text-xl text-brand-text-color-one" />
         </Button>
       </div>
@@ -27,3 +24,5 @@ export const SwiperNavButtons = () => {
     </div>
   );
 };
+
+export default SwiperNavButtons;
