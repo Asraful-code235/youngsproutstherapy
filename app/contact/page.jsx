@@ -39,6 +39,32 @@ export default function page() {
           <h1 className="mt-3 font-medium text-7xl">Contact</h1>
         </div>
       </div>
+      <div className="grid max-w-6xl grid-cols-1 gap-4 px-6 py-4 mx-auto my-10 md:grid-cols-3 lg:px-4">
+        <div className="space-y-2 text-xs md:text-base">
+          <h3 className="font-serif text-3xl font-medium">Address</h3>
+          <p>1137 Centre Street Suite #204</p>
+          <p>Thornhill, ON, L4J 3M6</p>
+        </div>
+        <div className="space-y-2 text-xs md:text-base">
+          <h3 className="font-serif text-3xl font-medium">Contact</h3>
+          <p>
+            <a
+              href="mailto:info@youngsproutstherapy.com"
+              className="text-blue-500 underline"
+            >
+              info@youngsproutstherapy.com
+            </a>
+          </p>
+          <p>289-579-4769 (GROW)</p>
+        </div>
+        <div className="space-y-2 text-xs md:text-base">
+          <h3 className="font-serif text-3xl font-medium">Opening Hours</h3>
+          <p>Mon-Thurs: 9:00 am - 9:00 pm</p>
+          <p>Friday: 9:00 am - 3:00 pm</p>
+          <p>Saturday: Closed</p>
+          <p>Sunday: 9:00 am - 9:00 pm</p>
+        </div>
+      </div>
       <section className="py-10 dark:bg-gray-100 dark:text-gray-900">
         <div className="grid max-w-6xl grid-cols-1 gap-3 px-4 mx-auto lg:px-2 md:grid-cols-2 ">
           <form
@@ -84,7 +110,7 @@ export default function page() {
             <input
               type="submit"
               value="Send"
-              className="bg-[#ebb1b1] rounded-md py-2 font-medium text-white cursor-pointer"
+              className="bg-[#ebb1b1] rounded-md py-2 font-medium text-white cursor-pointer hover:bg-transparent hover:text-[#ebb1b1] border hover:border-[#ebb1b1] transition duration-100 ease-in"
             />
           </form>
           <div className="md:p-3">
