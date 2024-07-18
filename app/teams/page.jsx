@@ -6,7 +6,6 @@ const teamMembers = [
     id: 1,
     name: "Daniela, MSW",
     img: "/images/youngsproutstherapy-image-03.webp",
-    bg: "bg-[#F8F8F8]",
     role: "Child Psychologist",
   },
   {
@@ -28,6 +27,7 @@ const teamMembers = [
     role: "Psychologist",
   },
 ];
+
 export default function Teams() {
   return (
     <section className="py-16">
@@ -50,7 +50,7 @@ export default function Teams() {
                   src={member.img}
                   alt={member.name}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                   className="rounded-t-lg"
                 />
               </div>
