@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PhotoIcon } from "@heroicons/react/24/outline";
-import CategoryLabel from "./CategoryLabel";
+
 import { parseISO, format } from "date-fns";
 import { cn } from "../../../lib/utils";
 import { urlForImage } from "../../../lib/sanity/image";
+import CategoryLabel from "./CategoryLabel";
 
 export default function BlogCard({
   post,
