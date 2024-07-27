@@ -1,5 +1,6 @@
+import React from "react";
 import Link from "next/link";
-import Label from "../../../components/shared/label";
+import Label from "@/components/shared/Label";
 
 export default function CategoryLabel({ categories, nomargin = false }) {
   return (
