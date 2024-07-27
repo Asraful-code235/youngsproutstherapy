@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Label from "../../../components/shared/label";
 
 export default function CategoryLabel({ categories, nomargin = false }) {
   return (
