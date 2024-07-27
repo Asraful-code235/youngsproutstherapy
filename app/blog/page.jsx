@@ -51,7 +51,7 @@ export default async function BlogPage({ searchParams }) {
               "relative block w-full overflow-hidden lg:col-span-7 rounded"
             )}
             href={`/blog/${post?.pathPrefix ? `${post?.pathPrefix}/` : ""}${
-              post.slug.current
+              post?.slug?.current
             }`}
           >
             {imageProps ? (
@@ -116,7 +116,7 @@ export default async function BlogPage({ searchParams }) {
             <Link
               href={`/blog/${
                 post?.pathPrefix ? `${post?.pathPrefix}/` : ""
-              }${post.slug.current}`}
+              }${post?.slug?.current}`}
               className="text-blue-400"
             >
               Read More {`>>`}
