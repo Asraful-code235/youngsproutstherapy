@@ -2,7 +2,7 @@
 
 import React from "react";
 import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import Link from "next/link";
 
 const SwiperNavButtons = ({ swiperRef }) => {

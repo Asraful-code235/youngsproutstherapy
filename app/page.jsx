@@ -1,22 +1,22 @@
 import dynamic from "next/dynamic";
 
-const ShopLocationMap = dynamic(() =>
-  import("@/components/shared/ShopLocationMap")
+const ShopLocationMap = dynamic(
+  () => import("../components/shared/ShopLocationMap")
 );
 
-const ConsultationBooking = dynamic(() =>
-  import("./components/ConsultationBooking")
+const ConsultationBooking = dynamic(
+  () => import("./components/ConsultationBooking")
 );
-const FamilyTherapySection = dynamic(() =>
-  import("./components/FamilyTherapySection")
+const FamilyTherapySection = dynamic(
+  () => import("./components/FamilyTherapySection")
 );
 const HomeComponent = dynamic(() => import("./components/HomeContent"));
-const PsychoTherapyHelp = dynamic(() =>
-  import("./components/PsychoTherapyHelp")
+const PsychoTherapyHelp = dynamic(
+  () => import("./components/PsychoTherapyHelp")
 );
 const TeamSection = dynamic(() => import("./components/TeamSection"));
-const TherapeuticModalities = dynamic(() =>
-  import("./components/TherapeuticModalities")
+const TherapeuticModalities = dynamic(
+  () => import("./components/TherapeuticModalities")
 );
 
 export const metadata = {
