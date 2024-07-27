@@ -27,7 +27,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="pt-4">
       <HomeComponent />
       <FamilyTherapySection />
       <TeamSection />
