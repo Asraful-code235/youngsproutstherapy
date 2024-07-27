@@ -1,6 +1,6 @@
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import DefaultProviders from "@/components/providers/DefaultProviders";
+import { cn } from "../lib/utils";
+import DefaultProviders from "../components/providers/DefaultProviders";
 import "@radix-ui/themes/styles.css";
 
 export const metadata = {
@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={"bg-[#F8F8F8]"}>
         <DefaultProviders>
           <div className={cn("min-h-screen")}>{children}</div>
