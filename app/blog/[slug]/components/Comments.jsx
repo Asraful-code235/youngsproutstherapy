@@ -1,41 +1,51 @@
+import { getCommentsByPost } from "@/lib/sanity/client";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { format, parseISO } from "date-fns";
 import Image from "next/image";
 import React from "react";
 
-export default function Comments() {
+export default async function Comments({ post }) {
+  const comments = await getCommentsByPost(post?._id);
+
+  if (!comments || comments.length === 0) {
+    return (
+      <p className="max-w-screen-2xl mx-auto px-4 ">
+        <h1 className="text-xl">Comments ({comments?.length})</h1>
+      </p>
+    );
+  }
+
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-4">
-        <h1 className="text-xl">Comments</h1>
-        <div className="flex flex-col w-full max-w-lg p-3 mt-3 divide-y divide-gray-300 rounded-md bg-gray-50 dark:text-gray-800">
-          <div className="flex justify-between p-4">
-            <div className="flex space-x-4">
-              <div>
-                <Image
-                  width={100}
-                  height={100}
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppkoKsaYMuIoNLDH7O8ePOacLPG1mKXtEng&s"
-                  alt=""
-                  className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
-                />
+        <h1 className="text-xl">Comments ({comments?.length})</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-3 ">
+          {comments.map((comment) => {
+            return (
+              <div
+                key={comment._id}
+                className="flex hover:scale-[1.02] hover:bg-gray-50 transition-all duration-300 ease-in-out flex-col gap-4 border border-gray-300 rounded-md p-4 dark:text-gray-800"
+              >
+                <div className="flex items-start space-x-4">
+                  <div>
+                    <UserCircleIcon className="w-6 h-6" />
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <h4 className="font-bold">{comment.name}</h4>
+                    <time
+                      className="truncate text-xs text-gray-500"
+                      dateTime={comment?._createdAt}
+                    >
+                      {format(parseISO(comment?._createdAt), "MMMM dd, yyyy")}
+                    </time>
+                  </div>
+                </div>
+                <div className="text-sm space-y-2 text-gray-600 pb-4 line-clamp-5 whitespace-pre-wrap">
+                  <p>{comment.comment}</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-bold">Leroy Jenkins</h4>
-                <span className="text-xs dark:text-gray-600">2 days ago</span>
-              </div>
-            </div>
-          </div>
-          <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-            <p>
-              Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu
-              dictum lectus consequat vitae. Etiam ut dolor id justo fringilla
-              finibus.
-            </p>
-            <p>
-              Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu
-              mauris cursus venenatis. Maecenas gravida urna vitae accumsan
-              feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.
-            </p>
-          </div>
+            );
+          })}
         </div>
       </div>
     </>

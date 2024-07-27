@@ -30,7 +30,7 @@ export default function BlogCard({
     >
       <div
         className={cn(
-          " overflow-hidden rounded-md bg-gray-100 transition-all  dark:bg-gray-800"
+          " overflow-hidden rounded-md bg-gray-100 transition-all duration-500  dark:bg-gray-800"
         )}
       >
         <Link
@@ -48,7 +48,7 @@ export default function BlogCard({
               })}
               alt={post.mainImage.alt || "Thumbnail"}
               priority={preloadImage ? true : false}
-              className="object-cover transition-all group-hover:scale-[1.2] group-hover:rotate-[6deg] group-hover:transition-all group-hover:duration-500"
+              className="object-cover transition-all group-hover:scale-[1.2] group-hover:rotate-[6deg] group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
               fill
               sizes="(max-width: 768px) 30vw, 33vw"
             />

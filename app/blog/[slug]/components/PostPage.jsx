@@ -102,8 +102,8 @@ export default function PostPage(props) {
         </article>
       </div>
 
-      <PostComment />
-      <Comments />
+      <PostComment post={post} />
+      <Comments post={post} />
     </>
   );
 }

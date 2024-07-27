@@ -1,4 +1,10 @@
-import { apiVersion, dataset, projectId, useCdn } from "./config";
+import {
+  apiVersion,
+  dataset,
+  projectId,
+  useCdn,
+  previewSecretId,
+} from "./config";
 import {
   postquery,
   limitquery,
@@ -15,6 +21,7 @@ import {
   getAll,
   searchquery,
   latestPostQuery,
+  commentsQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -25,7 +32,22 @@ if (!projectId) {
 }
 
 const client = projectId
-  ? createClient({ projectId, dataset, apiVersion, useCdn })
+  ? createClient({
+      projectId,
+      dataset,
+      apiVersion,
+      useCdn,
+    })
+  : null;
+
+export const previewClient = projectId
+  ? createClient({
+      projectId,
+      dataset,
+      apiVersion,
+      useCdn,
+      token: previewSecretId,
+    })
   : null;
 
 export const fetcher = async ([query, params]) => {
@@ -68,6 +90,13 @@ export async function getPostBySlug(slug) {
     return (await client.fetch(singlequery, { slug })) || {};
   }
   return {};
+}
+
+export async function getCommentsByPost(postId) {
+  if (client) {
+    return (await client.fetch(commentsQuery, { postId })) || [];
+  }
+  return [];
 }
 
 export async function getAllPostsSlugs() {

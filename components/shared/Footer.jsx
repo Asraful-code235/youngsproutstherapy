@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <div className="py-8 max-w-screen-2xl mx-auto md:px-0 px-3 mt-16">
-      <div className="p-6 md:p-14 block md:flex md:space-y-0 space-y-8 justify-between bg-[#f0f0f0] rounded-2xl bg-[url('/images/youngsproutstherapy-footer.png')] bg-no-repeat bg-right-bottom md:bg-right-top">
+      <div className="p-6 md:p-14 block md:flex md:space-y-0 space-y-8 justify-between bg-[#ade1d4] rounded-2xl ">
         <div>
           <div className="flex md:justify-start justify-center">
             <Image
@@ -42,11 +42,14 @@ export default function Footer() {
           <ul className="mt-4 space-y-3 text-gray-600">
             <li className="flex gap-2 items-center">
               <MdOutlineEmail className="text-2xl" />
-              info@youngsproutstherapy.com
+              <a href="mailto:info@youngsproutstherapy.com">
+                info@youngsproutstherapy.com
+              </a>
             </li>
             <li className="flex gap-2 items-center">
               <FaPhoneAlt className="text-xl" />
-              (289) 579-4769 (GROW)
+
+              <a href="tel:(289) 579-4769">(+289) 579-4769 (GROW)</a>
             </li>
             <li className="flex gap-2 items-center">
               <FaMapMarkerAlt className="text-xl" />
