@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -88,27 +90,54 @@ const features = [
   },
 ];
 
-const bgColors = ["#fef7e0", "#edf1fe", "#f0f7fe", "#dceeff", "#eaedfd"];
+const bgColors = ["#ffffff"];
+
+const containerVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      // delayChildren: 0.2,
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 export default function PsychoTherapyHelp() {
   return (
-    <section className="py-14 bg-gray-50">
+    <motion.section className="py-14 bg-[#cca4a4]">
       <div className="container px-4 mx-auto">
-        <h2 className="text-3xl font-bold text-center md:text-5xl mb-14">
+        <h2 className="text-3xl font-bold text-center md:text-5xl mb-14 text-white">
           How Psychotherapy Can Help
         </h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={feature.id}
-              className="flex flex-col justify-between p-6 bg-white rounded-lg cursor-pointer group"
-              style={{ backgroundColor: bgColors[index % bgColors.length] }}
+              className="flex flex-col justify-between p-4 lg:p-6 bg-white rounded-lg cursor-pointer group"
+              animate={{ backgroundColor: bgColors[index % bgColors.length] }}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
             >
               <div>
-                <h3 className="mb-4 text-3xl font-semibold text-center">
+                <h3 className="mb-3 lg:mb-4 text-3xl font-semibold text-center">
                   {feature.title}
                 </h3>
-                <p className="mt-6 mb-4 text-center text-gray-600">
+                <p className="mt-4 lg:mt-6 mb-2 lg:mb-4 text-center text-gray-600">
                   {feature.description}
                 </p>
               </div>
@@ -116,15 +145,15 @@ export default function PsychoTherapyHelp() {
               <div className="flex items-center justify-end mt-8 transition-opacity duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100">
                 <Link
                   href={feature.link}
-                  className="inline-flex items-center bg-[#1a73e8] text-white p-2 rounded-full"
+                  className="inline-flex items-center bg-[#cca4a4] text-white p-2 rounded-full"
                 >
                   <HiArrowLongRight className="text-2xl text-white" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

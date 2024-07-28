@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -168,5 +169,10 @@ body {
 }
 
 * > * {
-  font-family: "Noto Sans Georgian", sans-serif;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+}
+
+.header {
+  color: #cca4a4;
 }

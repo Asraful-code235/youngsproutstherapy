@@ -5,29 +5,30 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useScroll } from "framer-motion";
+import { FaChevronDown } from "react-icons/fa";
 
 const menuVariants = {
-  hidden: { y: "-20%", opacity: 0 },
+  hidden: { opacity: 0 },
   visible: {
-    y: 0,
     opacity: 1,
-    transition: { duration: 0.5, staggerChildren: 0.3 },
+    transition: { duration: 0.2, staggerChildren: 0 },
   },
   exit: {
-    y: "-20%",
     opacity: 0,
-    transition: { duration: 0.5, staggerChildren: 0.3 },
+    transition: { duration: 0.2, staggerChildren: 0 },
   },
 };
 
 const menuItemVariants = {
   hidden: { opacity: 0, y: -20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-  exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.2 } },
 };
 
-const Navbar = () => {
+const Navbar = ({ services }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isShrunk, setIsShrunk] = useState(false);
   const controls = useAnimation();
   const { scrollY } = useScroll();
@@ -39,16 +40,30 @@ const Navbar = () => {
         controls.start({ height: "80px" });
       } else if (latest <= 50 && isShrunk) {
         setIsShrunk(false);
-        controls.start({ height: "120px" });
+        controls.start({ height: "115px" });
       }
     });
   }, [scrollY, isShrunk, controls]);
+
+  const handleServicesClick = () => {
+    setIsServicesOpen(!isServicesOpen);
+  };
+
+  const handleAboutUsClick = () => {
+    setIsAboutUsOpen(!isAboutUsOpen);
+  };
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsServicesOpen(false);
+    setIsAboutUsOpen(false);
+  };
 
   return (
     <motion.nav
       className="bg-[#f0e4e4] border-gray-200 w-full fixed top-0 z-50"
       animate={controls}
-      initial={{ height: "120px" }}
+      initial={{ height: "115px" }}
     >
       <div className="container flex flex-wrap items-center justify-between mx-auto h-full">
         <Link href="/">
@@ -64,7 +79,7 @@ const Navbar = () => {
         </Link>
         <button
           className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={handleMenuClick}
         >
           <svg
             className="w-6 h-6"
@@ -84,53 +99,124 @@ const Navbar = () => {
             <motion.div
               initial="hidden"
               animate="visible"
-              exit="hidden"
+              exit="exit"
               variants={menuVariants}
-              className="fixed inset-0 z-50 flex flex-col gap-4 items-center justify-center bg-[#f0e4e4] "
+              className="fixed inset-0 overflow-y-scroll z-50 flex flex-col gap-4 items-center justify-center bg-[#f0e4e4]"
             >
               <div className="absolute top-4 right-4">
-                <motion.button
-                  initial={{
-                    opacity: [0, 0, 0],
-                  }}
-                  animate={{
-                    opacity: [0, 0, 1],
-                  }}
-                  exit={{
-                    opacity: 0,
-                  }}
-                  transition={{
-                    duration: 1,
-                    ease: "easeInOut",
-                  }}
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className=" text-3xl"
-                >
+                <motion.button onClick={handleMenuClick} className="text-3xl">
                   &times;
                 </motion.button>
               </div>
               <motion.div variants={menuItemVariants}>
-                <Link href="/about" className=" text-xl p-2">
+                <Link
+                  href="/"
+                  className="text-xl p-2"
+                  onClick={handleMenuClick}
+                >
                   Home
                 </Link>
               </motion.div>
-              <motion.div variants={menuItemVariants}>
-                <Link href="/buy" className=" text-xl p-2">
-                  Services
-                </Link>
+              <motion.div
+                variants={menuItemVariants}
+                className="flex flex-col items-center justify-center "
+              >
+                <div
+                  className="text-xl px-2 cursor-pointer flex items-center "
+                  onClick={handleServicesClick}
+                >
+                  Services{" "}
+                  <FaChevronDown
+                    className={`ml-2 transform transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
+                  />
+                </div>
+                <div className="">
+                  {isServicesOpen && (
+                    <div className="flex flex-col items-center gap-3 mt-4">
+                      {services.map((service) => (
+                        <div key={service.slug}>
+                          <Link
+                            href={`/${service.slug}`}
+                            className="text-lg p-2 text-black"
+                            onClick={handleMenuClick}
+                          >
+                            {service.pageTitle}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+              <motion.div
+                variants={menuItemVariants}
+                className="flex flex-col items-center justify-center"
+              >
+                <div
+                  className="text-xl px-2 cursor-pointer flex items-center"
+                  onClick={handleAboutUsClick}
+                >
+                  About Us{" "}
+                  <FaChevronDown
+                    className={`ml-2 transform transition-transform ${isAboutUsOpen ? "rotate-180" : ""}`}
+                  />
+                </div>
+                <AnimatePresence>
+                  {isAboutUsOpen && (
+                    <motion.div
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      variants={menuVariants}
+                      className="flex flex-col items-center gap-3 mt-4"
+                    >
+                      <motion.div variants={menuItemVariants}>
+                        <Link
+                          href="/teams"
+                          className="text-lg p-2"
+                          onClick={handleMenuClick}
+                        >
+                          Teams
+                        </Link>
+                      </motion.div>
+                      <motion.div variants={menuItemVariants}>
+                        <Link
+                          href="/fees"
+                          className="text-lg p-2"
+                          onClick={handleMenuClick}
+                        >
+                          Fees
+                        </Link>
+                      </motion.div>
+                      <motion.div variants={menuItemVariants}>
+                        <Link
+                          href="/faq"
+                          className="text-lg p-2"
+                          onClick={handleMenuClick}
+                        >
+                          FAQ
+                        </Link>
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
               <motion.div variants={menuItemVariants}>
-                <Link href="/contact" className=" text-xl p-2">
-                  About Us
-                </Link>
-              </motion.div>
-              <motion.div variants={menuItemVariants}>
-                <Link href="tel:6124009000" className=" text-xl p-2">
+                <Link
+                  href="/contact"
+                  className="text-xl p-2"
+                  onClick={handleMenuClick}
+                >
                   Contact us
                 </Link>
               </motion.div>
+
               <motion.div variants={menuItemVariants}>
-                <Link href="/blog" className=" text-xl p-2">
+                <Link
+                  href="/blog"
+                  className="text-xl p-2"
+                  onClick={handleMenuClick}
+                >
                   Blog
                 </Link>
               </motion.div>
@@ -138,9 +224,7 @@ const Navbar = () => {
           )}
         </AnimatePresence>
         <div
-          className={`w-full md:block md:w-auto ${
-            isMenuOpen ? "block" : "hidden"
-          }`}
+          className={`w-full md:block md:w-auto ${isMenuOpen ? "block" : "hidden"}`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0">
             <li className="py-4">
@@ -151,50 +235,24 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="relative group py-4">
-              <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer">
-                Services
+              <div className=" py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer flex items-center">
+                Services <FaChevronDown className="ml-2" />
               </div>
-              <ul className="absolute mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block  min-w-max z-50">
-                <li>
-                  <Link href="/approach-and-specialties">
-                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
-                      Approach & Specialties
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/anxiety-therapy-for-kids-and-teens">
-                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
-                      Anxiety
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/behaviour-therapy-for-kids-and-teens">
-                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
-                      Behaviour Challenges
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/adhd-therapy-for-kids-and-teens">
-                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
-                      ADHD
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/autism-therapy-vaughan">
-                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
-                      Autism Spectrum Disorder
-                    </div>
-                  </Link>
-                </li>
+              <ul className="absolute mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block min-w-max z-50">
+                {services?.map((service) => (
+                  <div key={service.slug}>
+                    <Link href={`/${service.slug}`}>
+                      <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
+                        {service.pageTitle}
+                      </div>
+                    </Link>
+                  </div>
+                ))}
               </ul>
             </li>
             <li className="relative group py-4">
-              <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer">
-                About Us
+              <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer flex items-center">
+                About Us <FaChevronDown className="ml-2" />
               </div>
               <ul className="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50">
                 <li>

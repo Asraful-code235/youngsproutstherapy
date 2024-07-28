@@ -8,14 +8,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import SearchTermContext from "../hooks/useSearchTerm";
 
-export default function DefaultProviders({ children }) {
+export default function DefaultProviders({ children, services }) {
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <AnimatePresence mode="wait">
       <SearchTermContext.Provider value={{ searchTerm, setSearchTerm }}>
         <Theme>
-          <Navbar />
-          <main className="py-20"> {children}</main>
+          <Navbar services={services} />
+          <main className="pt-[100px]"> {children}</main>
           <ProgressBar
             height="3px"
             color="#ebb1b1"

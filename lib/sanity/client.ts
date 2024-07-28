@@ -22,6 +22,9 @@ import {
   searchquery,
   latestPostQuery,
   commentsQuery,
+  // services
+  getServicesList,
+  serviceBySlug,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -71,6 +74,12 @@ export async function getAllPosts() {
   }
   return [];
 }
+export async function getAllServices() {
+  if (client) {
+    return (await client.fetch(getServicesList)) || [];
+  }
+  return [];
+}
 export async function getLatestPost() {
   if (client) {
     return (await client.fetch(latestPostQuery)) || [];
@@ -88,6 +97,14 @@ export async function getSettings() {
 export async function getPostBySlug(slug) {
   if (client) {
     return (await client.fetch(singlequery, { slug })) || {};
+  }
+  return {};
+}
+
+// get services by slug
+export async function getServiceBySlug(slug) {
+  if (client) {
+    return (await client.fetch(serviceBySlug, { slug })) || {};
   }
   return {};
 }

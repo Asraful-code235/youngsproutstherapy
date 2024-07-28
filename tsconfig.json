@@ -26,7 +26,11 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "lib/sanity/client.js"
+    "lib/sanity/client.js",
+    "lib/sanity/schemas/service.js",
+    "lib/sanity/schemas/service.js",
+    "lib/sanity/modules/emailSubscription.js",
+    "components/Modules/public/List.jsx"
   ],
   "exclude": ["node_modules"]
 }

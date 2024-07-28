@@ -47,7 +47,7 @@ const TeamSection = () => {
     <section className="px-4 py-28 mx-auto max-w-screen-2xl md:px-8">
       <div className="grid items-center grid-cols-1 gap-8 xl:grid-cols-2">
         <div className="flex flex-col gap-4 col-span-1 -mt-20">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#1F2A37] tracking-wide ">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#cca4a4] tracking-wide ">
             Meet Our Family and Child Therapists
           </h2>
           <p className=" text-base md:text-lg text-[#1F2A37]">
