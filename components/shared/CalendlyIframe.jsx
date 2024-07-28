@@ -2,7 +2,7 @@ const CalendlyIframe = () => {
   return (
     <section className="py-16 bg-[#FBFCFD]">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-3xl md:text-5xl font-bold mb-8">
+        <h2 className="text-center text-3xl md:text-5xl font-bold mb-8 text-[#cca4a4]">
           Book Your Free 15-Minute Consultation
         </h2>
         <p className="text-center text-gray-600">

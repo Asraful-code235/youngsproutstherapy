@@ -25,6 +25,9 @@ import {
   // services
   getServicesList,
   serviceBySlug,
+  teamListShort,
+  teamListAll,
+  teamListBySlug,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -186,6 +189,25 @@ export async function searchPosts(title: any) {
   if (client) {
     // @ts-ignore
     return (await client.fetch(searchquery, { query: title })) || [];
+  }
+  return [];
+}
+
+export async function getShortTeamList() {
+  if (client) {
+    return (await client.fetch(teamListShort)) || [];
+  }
+  return [];
+}
+export async function getAllTeamList() {
+  if (client) {
+    return (await client.fetch(teamListAll)) || [];
+  }
+  return [];
+}
+export async function getTeamBySlug(slug) {
+  if (client) {
+    return (await client.fetch(teamListBySlug, { slug })) || {};
   }
   return [];
 }

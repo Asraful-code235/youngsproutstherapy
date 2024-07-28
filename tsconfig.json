@@ -30,7 +30,8 @@
     "lib/sanity/schemas/service.js",
     "lib/sanity/schemas/service.js",
     "lib/sanity/modules/emailSubscription.js",
-    "components/Modules/public/List.jsx"
+    "components/Modules/public/List.jsx",
+    "app/teams/[slug]/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,3 +1,4 @@
+import { getShortTeamList } from "@/lib/sanity/client";
 import dynamic from "next/dynamic";
 
 const ShopLocationMap = dynamic(
@@ -25,12 +26,13 @@ export const metadata = {
     "Psychotherapy and counseling for kids &amp; teens in Vaughan. Find support for kids &amp; teens struggling with anxiety, behavioral issues, ADHD, grief, trauma, and more.",
 };
 
-export default function Home() {
+export default async function Home() {
+  const teams = await getShortTeamList();
   return (
     <main className="pt-4">
       <HomeComponent />
       <FamilyTherapySection />
-      <TeamSection />
+      <TeamSection teams={teams} />
       <PsychoTherapyHelp />
       <TherapeuticModalities />
       <ConsultationBooking />

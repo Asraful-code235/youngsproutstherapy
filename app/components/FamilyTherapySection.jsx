@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function FamilyTherapySection() {
   return (
@@ -46,7 +49,17 @@ export default function FamilyTherapySection() {
               </h2>
             </div>
 
-            <div>
+            <motion.div
+              whileInView={{
+                opacity: [0, 1],
+                x: [100, 0],
+              }}
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              viewport={{ once: true }}
+            >
               <Image
                 className="ml-auto w-full rounded-xl"
                 src="/images/team.webp"
@@ -57,7 +70,7 @@ export default function FamilyTherapySection() {
                 loading="lazy"
                 alt="Family Therapy Vaughan | Young Sprouts Therapy | Vaughan, ON"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
