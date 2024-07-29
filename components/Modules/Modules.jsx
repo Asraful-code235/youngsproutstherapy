@@ -1,5 +1,7 @@
 import HeroPlain from "./public/HeroPlain";
 import HeroCover from "./public/HeroCover";
+import TherapyInfo from "./public/TherapyInfo";
+import TherapySupport from "./public/TherapySupport";
 import GroupBox from "./public/GroupBox";
 import AccordionList from "./public/AccordionList";
 import List from "./public/List";
@@ -21,6 +23,15 @@ export default function Modules({ modules, page }) {
             return <HeroPlain module={module} key={module._key} />;
           case "hero.cover":
             return <HeroCover module={module} key={module._key} />;
+
+            {
+              /* case "hero.cover":
+            return <TherapyInfo />; */
+            }
+            {
+              /* case "hero.cover":
+            return <TherapySupport />; */
+            }
           case "group.box":
             return <GroupBox module={module} key={module._key} />;
           case "accordion":
