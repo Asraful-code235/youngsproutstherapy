@@ -26,8 +26,8 @@ export default function Modules({ modules, page }) {
 
             {
               /* case "hero.cover":
-            return <TherapyInfo />; */
-            }
+            return <TherapyInfo />;
+         
             {
               /* case "hero.cover":
             return <TherapySupport />; */

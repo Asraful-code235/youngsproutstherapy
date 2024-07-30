@@ -78,7 +78,7 @@ const Navbar = ({ services }) => {
           </div>
         </Link>
         <button
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           onClick={handleMenuClick}
         >
           <svg
@@ -224,7 +224,7 @@ const Navbar = ({ services }) => {
           )}
         </AnimatePresence>
         <div
-          className={`w-full md:block md:w-auto ${isMenuOpen ? "block" : "hidden"}`}
+          className={`w-full lg:block md:w-auto ${isMenuOpen ? "block" : "hidden"}`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0">
             <li className="py-4">

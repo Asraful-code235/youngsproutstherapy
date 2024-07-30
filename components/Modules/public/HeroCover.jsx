@@ -9,21 +9,21 @@ export default function HeroCover({ module }) {
   return (
     <>
       <section className="flex flex-col-reverse items-center gap-4 md:flex-row">
-        <div className="flex flex-col justify-center w-full px-6 md:w-1/2 md:px-12">
-          <h2 className="text-3xl font-bold text-gray-900 md:mb-6 md:text-5xl md:leading-snug">
-            {module.title}
+        <div className="flex flex-col justify-center w-full px-6 lg:w-1/2 lg:px-12">
+          <h2 className="text-3xl font-bold text-gray-900 lg:mb-6 lg:text-4xl xl:text-5xl lg:leading-snug">
+            {module?.title}
           </h2>
-          <p className="mb-6 text-lg text-gray-600">{module.description}</p>
-          <div className="flex flex-col gap-2 mt-3 md:mt-6 lg:flex-row md:flex-row md:gap-6">
+          <p className="mb-4 text-lg text-gray-600">{module?.description}</p>
+          <div className="flex flex-col gap-2 mt-3 lg:flex-row md:flex-row md:gap-6">
             <Link href={`/${module.cta1}`}>
-              <Button variant="brandButton" className="w-full md:w-auto">
+              <Button variant="brandButton" className="w-full lg:w-auto">
                 Book A Free Consult
               </Button>
             </Link>
             <Link href={`tel:${module.cta2}`}>
               <Button
                 variant="secondaryBrandButton"
-                className="w-full md:w-auto"
+                className="w-full lg:w-auto"
               >
                 Call Now - {module.cta2}
               </Button>
@@ -31,7 +31,7 @@ export default function HeroCover({ module }) {
           </div>
         </div>
 
-        <div className="relative w-full h-auto md:w-1/2">
+        <div className="relative w-full h-auto lg:w-1/2">
           <Image
             src={imageProps.src}
             {...(module.coverImage.blurDataURL && {
@@ -40,7 +40,7 @@ export default function HeroCover({ module }) {
             })}
             alt={module.coverImage.alt || "Thumbnail"}
             priority={false}
-            className="object-cover object-center"
+            className="object-cover object-center aspect-[4/3]"
             width={1000}
             height={820}
           />

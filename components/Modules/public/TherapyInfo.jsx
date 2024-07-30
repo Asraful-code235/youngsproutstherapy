@@ -20,7 +20,7 @@ const infos = [
 
 export default function TherapyInfo() {
   return (
-    <section className="flex flex-col items-center justify-center py-12 mb-14 bg-[#f1eee9]">
+    <section className="flex flex-col items-center justify-center py-12 mb-14 bg-[#f0e4e4]">
       <h1 className="mb-4 text-xl font-semibold md:mb-6">
         Therapy can help you:
       </h1>
@@ -35,7 +35,7 @@ export default function TherapyInfo() {
               alt="leaf"
               width={48}
               height={48}
-              className="w-12 h-12"
+              className="w-12 h-12 rounded-full"
             />
             <p>{item.content || "not Set"}</p>
           </div>
