@@ -26,7 +26,7 @@ export default function PostPage(props) {
 
   return (
     <>
-      <article className="!pt-0 container mx-auto max-w-screen-xl xl:px-5 py-5 lg:py-8">
+      <article className="!pt-4 container mx-auto max-w-screen-xl xl:px-5 py-5 lg:py-8">
         <div className="mx-auto max-w-screen-md lg:py-8 ">
           <div className="flex justify-center">
             {/* <CategoryLabel categories={post.categories} /> */}
@@ -87,8 +87,8 @@ export default function PostPage(props) {
       </div>
 
       <div className="container mx-auto ">
-        <article className="mx-auto max-w-screen-md ">
-          <div className="prose prose-sm lg:prose-lg prose-p:my-0 prose-table:table-fixed prose-thead:text-left prose-thead:!align-top prose-thead:my-0 prose-h1:mb-0 prose-h2:mb-0 prose-h3:mb-0 prose-h4:mb-0 prose-h5:mb-0 prose-h6:mb-0  mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
+        <article className="mx-auto max-w-5xl ">
+          <div className="prose prose-sm lg:prose-lg prose-p:my-0 prose-table:table-fixed prose-thead:text-left prose-thead:!align-top prose-thead:my-0 prose-h1:mb-0 prose-h2:mb-0 prose-h3:mb-0 prose-h4:mb-0 prose-h5:mb-0 prose-h6:mb-0  my-3 dark:prose-invert prose-a:text-blue-600 !w-full max-w-5xl mx-auto">
             {post.body && <PortableText value={post.body} />}
           </div>
           <div className="mb-7 mt-7 flex justify-center">
