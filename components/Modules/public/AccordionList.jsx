@@ -14,7 +14,16 @@ const AccordionItem = ({ item }) => {
   };
 
   return (
-    <div className="border-b border-gray-300 text-left">
+    <motion.div
+      animate={{
+        backgroundColor: isOpen ? "#FAFAFA" : "",
+      }}
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+      className="border-b px-2 rounded-md border-gray-300 text-left hover:bg-gray-100 transition-colors duration-300"
+    >
       <button
         className="flex justify-between items-center w-full py-4 gap-4 focus:outline-none "
         onClick={toggleOpen}
@@ -34,7 +43,7 @@ const AccordionItem = ({ item }) => {
       >
         <p className="pb-4 text-sm lg:text-lg">{item.description}</p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-[url('/images/youngsproutstherapy-image-08.webp')] bg-no-repeat bg-cover bg-center py-10 md:py-56 px-6">
-      <div className="absolute inset-0 bg-black opacity-50 md:opacity-0"></div>
+    <div className="relative bg-[url('/images/youngsproutstherapy-image-08.webp')] bg-no-repeat bg-cover bg-center py-10 md:py-40 md:pb-56 px-6">
+      <div className="absolute inset-0 bg-black opacity-30 md:opacity-0"></div>
       <div className="relative grid grid-cols-1 gap-6 md:grid-cols-2">
         <div></div>
         <motion.div
@@ -19,7 +19,7 @@ export default function HeroSection() {
           }}
           viewport={{ once: true }}
         >
-          <h1 className="text-3xl font-bold leading-snug text-center text-white md:text-left md:text-5xl md:leading-tight md:text-black">
+          <h1 className="text-4xl font-bold leading-snug max-w-md md:-mt-14 text-center text-white md:text-left md:text-5xl md:leading-tight md:text-black">
             <span className="text-brand-color-one">Young Sprouts:</span> <br />
             Guiding Growth in Child, Teen, and Family Therapy in Vaughan
           </h1>

@@ -39,13 +39,13 @@ export default function page() {
           <h1 className="mt-3 font-medium text-7xl">Contact</h1>
         </div>
       </div>
-      <div className="grid max-w-6xl grid-cols-1 gap-4 px-6 py-4 mx-auto my-10 md:grid-cols-3 lg:px-4">
-        <div className="space-y-2 text-xs md:text-base">
-          <h3 className="font-serif text-3xl font-medium">Address</h3>
+      <div className="grid max-w-6xl grid-cols-1 max-sm:divide-y max-sm:divide-gray-100 gap-4 px-6 py-4 mx-auto my-10 md:grid-cols-3 lg:px-4">
+        <div className="space-y-2 :text-base">
+          <h3 className="font-serif text-3xl font-medium ">Address</h3>
           <p>1137 Centre Street Suite #204</p>
           <p>Thornhill, ON, L4J 3M6</p>
         </div>
-        <div className="space-y-2 text-xs md:text-base">
+        <div className="space-y-2 text-base">
           <h3 className="font-serif text-3xl font-medium">Contact</h3>
           <p>
             <a
@@ -57,7 +57,7 @@ export default function page() {
           </p>
           <p>289-579-4769 (GROW)</p>
         </div>
-        <div className="space-y-2 text-xs md:text-base">
+        <div className="space-y-2 text-base">
           <h3 className="font-serif text-3xl font-medium">Opening Hours</h3>
           <p>Mon-Thurs: 9:00 am - 9:00 pm</p>
           <p>Friday: 9:00 am - 3:00 pm</p>
@@ -68,7 +68,7 @@ export default function page() {
       <section className="py-10 dark:bg-gray-100 dark:text-gray-900">
         <div className="grid max-w-6xl grid-cols-1 gap-3 px-4 mx-auto lg:px-2 md:grid-cols-2 ">
           <form
-            className="flex flex-col py-6 md:py-0 md:px-6"
+            className="flex flex-col py-6 md:py-0 md:px-6 text-base"
             onSubmit={handleSubmit}
             ref={form}
           >
@@ -78,6 +78,7 @@ export default function page() {
               className="p-1 px-2 mt-1 mb-3 border border-t-0 border-l-0 border-r-0 rounded-md outline-none border-slate-300"
               type="text"
               name="first_name"
+              required
             />
             <label>Last name</label>
             <input
@@ -93,6 +94,7 @@ export default function page() {
               className="p-1 px-2 mt-1 mb-3 border border-t-0 border-l-0 border-r-0 rounded-md outline-none border-slate-300"
               type="email"
               name="email"
+              required
             />
             <label>Phone</label>
             <input
@@ -100,6 +102,7 @@ export default function page() {
               className="p-1 px-2 mt-1 mb-3 border border-t-0 border-l-0 border-r-0 rounded-md outline-none border-slate-300"
               type="tel"
               name="phone"
+              required
             />
             <label>Message</label>
             <textarea

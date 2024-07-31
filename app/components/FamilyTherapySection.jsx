@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 
 export default function FamilyTherapySection() {
   return (
-    <div className="bg-white">
+    <div className="bg-white px-4">
       <div className="max-w-screen-2xl mx-auto py-16 md:px-0 px-2">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-14 xl:gap-20 gap-10">
           <div className="flex flex-col justify-center bg-[#e8f0fe] p-6 md:p-10 rounded-xl text-lg">
-            <h2 className="text-[#cca4a4] text-xl md:text-4xl md:leading-snug font-bold mb-8 ">
+            <h2 className="text-[#cca4a4] text-3xl md:text-4xl md:leading-snug font-bold mb-8 ">
               Expert Psychotherapy and Counseling for Kids, Teens, and Families
             </h2>
             <p className="leading-relaxed">
@@ -39,12 +39,12 @@ export default function FamilyTherapySection() {
               your child and family today!
             </div>
           </div>
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between w-full h-full">
             <div className="mb-8">
-              <h2 className="text-xl md:text-6xl md:leading-snug font-bold text-[#cca4a4]">
-                Expert Counseling
+              <h2 className="text-3xl text-center md:text-6xl md:leading-snug font-bold text-[#cca4a4]">
+                Expert Counseling{" "}
               </h2>
-              <h2 className="md:text-end text-xl md:text-6xl md:leading-snug font-bold text-[#cca4a4]">
+              <h2 className="text-3xl text-center md:text-end  md:text-6xl md:leading-snug font-bold text-[#cca4a4]">
                 for Families
               </h2>
             </div>
@@ -59,9 +59,10 @@ export default function FamilyTherapySection() {
                 ease: "easeInOut",
               }}
               viewport={{ once: true }}
+              className="w-full h-full"
             >
               <Image
-                className="ml-auto w-full rounded-xl"
+                className="ml-auto w-full rounded-xl h-full object-cover object-center"
                 src="/images/team.webp"
                 width={900}
                 height={500}

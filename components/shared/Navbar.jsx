@@ -37,10 +37,10 @@ const Navbar = ({ services }) => {
     return scrollY.onChange((latest) => {
       if (latest > 50 && !isShrunk) {
         setIsShrunk(true);
-        controls.start({ height: "80px" });
+        controls.start({ height: "100px" });
       } else if (latest <= 50 && isShrunk) {
         setIsShrunk(false);
-        controls.start({ height: "115px" });
+        controls.start({ height: "120px" });
       }
     });
   }, [scrollY, isShrunk, controls]);
@@ -63,15 +63,17 @@ const Navbar = ({ services }) => {
     <motion.nav
       className="bg-[#f0e4e4] border-gray-200 w-full fixed top-0 z-50"
       animate={controls}
-      initial={{ height: "115px" }}
+      initial={{ height: "120px" }}
     >
       <div className="container flex flex-wrap items-center justify-between mx-auto h-full">
         <Link href="/">
           <div className="py-2">
             <Image
               src="/images/youngsproutstherapy-image-logo.png"
-              width={220}
-              height={100}
+              width={400}
+              height={400}
+              loading="lazy"
+              decoding="async"
               alt="Youngs Prouts Therapy logo"
               className="md:w-[264px] w-[200px] h-auto"
             />

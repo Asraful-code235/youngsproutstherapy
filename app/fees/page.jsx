@@ -3,6 +3,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import CalendlyIframe from "@/components/shared/CalendlyIframe";
+import Link from "next/link";
 
 const pricingPlans = [
   {
@@ -60,7 +62,7 @@ const PricingSection = () => {
         {pricingPlans.map((plan) => (
           <div
             key={plan.id}
-            className="relative flex flex-col justify-between gap-4 p-4 transition-transform duration-300 transform bg-white border rounded-lg shadow-lg md:p-6 md:gap-6 hover:scale-105"
+            className="relative flex flex-col justify-between gap-4 p-4  transform bg-white border rounded-lg shadow-lg md:p-6 md:gap-6 hover:scale-[1.02] transition-all duration-500 ease-in-out"
           >
             <div>
               <div className="">
@@ -86,12 +88,15 @@ const PricingSection = () => {
 
             <Button
               variant="outline"
-              className="w-full py-2 border rounded-md bg-[#649CAC] text-white"
+              className="w-full py-2 border rounded-md bg-[#649CAC] hover:!bg-opacity-70 text-white"
             >
-              Book A Free Consult
+              <Link href={"#book"}>Book A Free Consult</Link>
             </Button>
           </div>
         ))}
+      </div>
+      <div id="book" className="pt-14">
+        <CalendlyIframe text={"Schedule a Free Consult"} />
       </div>
     </section>
   );
