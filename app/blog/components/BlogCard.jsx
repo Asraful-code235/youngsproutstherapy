@@ -34,7 +34,7 @@ export default function BlogCard({
         )}
       >
         <Link
-          className={cn("relative block aspect-[4/3]")}
+          className={cn("relative block ")}
           href={`/blog/${pathPrefix ? `${pathPrefix}/` : ""}${
             post.slug.current
           }`}
@@ -48,8 +48,9 @@ export default function BlogCard({
               })}
               alt={post.mainImage.alt || "Thumbnail"}
               priority={preloadImage ? true : false}
-              className="object-cover transition-all group-hover:scale-[1.2] group-hover:rotate-[6deg] group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
-              fill
+              className="object-cover transition-all w-full h-full aspect-auto group-hover:scale-[1.02]  group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
+              width={600}
+              height={600}
               sizes="(max-width: 768px) 30vw, 33vw"
             />
           ) : (
