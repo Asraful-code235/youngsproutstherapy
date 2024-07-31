@@ -13,17 +13,18 @@ import list from "../modules/list";
 import richlist from "../modules/richlist";
 import emailSubscriptionModule from "../modules/emailSubscription";
 import team from "./team";
+import serviceCategory from "./serviceCategory";
 
 export const schemaTypes = [
   post,
   author,
   category,
+  serviceCategory,
   service,
   settings,
   blockContent,
   team,
   comment,
-
   // modules
   accordion,
   group,
