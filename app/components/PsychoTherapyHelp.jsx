@@ -131,7 +131,7 @@ export default function PsychoTherapyHelp() {
           How Psychotherapy Can Help
         </h2>
         <motion.div
-          className="grid grid-cols-1 gap-6 lg:gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-6 lg:gap-y-20 sm:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -139,9 +139,13 @@ export default function PsychoTherapyHelp() {
           viewport={{ once: true }}
         >
           {features.map((feature, index) => (
-            <Link key={feature.id} href={feature.link}>
+            <Link
+              key={feature.id}
+              href={feature.link}
+              className=" transition-all duration-500 ease-out"
+            >
               <motion.div
-                className={` cursor-pointer group rounded-lg ${index % 3 === 1 ? "lg:-mt-4" : ""}`}
+                className={` cursor-pointer group rounded-lg ${index % 3 === 1 ? "lg:-mt-6" : ""}`}
                 animate={{ backgroundColor: bgColors[index % bgColors.length] }}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
@@ -149,11 +153,11 @@ export default function PsychoTherapyHelp() {
                 <img
                   src={feature.src}
                   alt="therapy_image"
-                  className="object-cover object-center rounded-lg"
+                  className="object-cover object-center rounded-lg aspect-square"
                 />
               </motion.div>
-              <div className="flex items-center justify-center">
-                <div className="z-20 flex flex-col justify-between w-3/4 p-2 -mt-8 bg-white rounded-lg hover:bg-rose-100">
+              <div className="flex items-center justify-center max-w-xs mx-auto">
+                <div className="z-20 flex flex-col justify-between w-3/4 p-4 py-3 -mt-8 bg-[#fafafa] rounded-lg hover:bg-rose-100 ">
                   <div>
                     <h3 className="mb-2 font-semibold text-center md:text-lg">
                       {feature.title}
