@@ -7,7 +7,7 @@ export { viewport } from "next-sanity/studio/viewport";
 
 export default function StudioPage() {
   return (
-    <div className="inset-0 fixed z-[999999]">
+    <div className="bg-white z-50">
       <Studio />
     </div>
   );

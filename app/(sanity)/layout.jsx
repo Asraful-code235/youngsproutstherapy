@@ -1,6 +1,6 @@
-export default function RootLayout({ children }) {
+export default function SanityLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

@@ -67,7 +67,7 @@ const Navbar = ({ serviceCategories }) => {
 
   return (
     <motion.nav
-      className="bg-[#f0e4e4] border-gray-200 w-full fixed top-0 z-50"
+      className="bg-[#fafafa] border-gray-200 w-full fixed top-0 z-50"
       animate={controls}
       initial={{ height: "120px" }}
     >
