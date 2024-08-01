@@ -23,13 +23,13 @@ export async function processMetadata(params) {
       title: "Young Sprouts Therapy | Child, Teen & Family Therapy | Vaughan",
       description:
         "Psychotherapy and counseling for kids & teens in Vaughan. Find support for kids & teens struggling with anxiety, behavioral issues, ADHD, grief, trauma, and more.",
-      images: "/logo.png",
+      images: "/images/logo.png",
     },
 
     alternates: {
       canonical: url,
       types: {
-        "application/rss+xml": "/https://www.youngsproutstherapy.com/rss.xml",
+        "application/rss+xml": "https://www.youngsproutstherapy.com/rss.xml",
       },
     },
   };

@@ -7,7 +7,7 @@ export async function processMetadata(post) {
   const url = `https://www.youngsproutstherapy.com/blog/${post?.slug?.current}`;
   const { title, slug, excerpt, mainImage } = post;
 
-  const ogImage = mainImage ? urlForImage(mainImage) : "/logo.png";
+  const ogImage = mainImage ? urlForImage(mainImage) : "/images/logo.png";
   return {
     metadataBase: new URL(
       process.env.BASE_URL || "https://www.youngsproutstherapy.com/"

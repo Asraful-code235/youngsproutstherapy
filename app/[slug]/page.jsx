@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
   const url = `https://www.youngsproutstherapy.com/${service?.slug?.current}`;
   const ogImage = service?.mainImage
     ? urlForImage(service?.mainImage)
-    : "/logo.png";
+    : "/images/logo.png";
   return {
     metadataBase: new URL(
       process.env.BASE_URL || "https://www.youngsproutstherapy.com/"
