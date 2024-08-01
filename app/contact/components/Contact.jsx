@@ -130,7 +130,7 @@ export default function Contact() {
             <input
               type="submit"
               value={isSubmitting ? "Sending..." : "Send"}
-              className="bg-[#ebb1b1] rounded-md py-2 font-medium text-white cursor-pointer hover:bg-transparent hover:text-[#ebb1b1] border hover:border-[#ebb1b1] transition duration-100 ease-in"
+              className="bg-[#ebb1b1] rounded-full py-2 font-medium text-white cursor-pointer hover:bg-transparent hover:text-[#ebb1b1] border hover:border-[#ebb1b1] transition duration-100 ease-in"
               disabled={isSubmitting}
             />
             {errorMessage && (

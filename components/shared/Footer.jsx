@@ -2,6 +2,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -27,13 +28,13 @@ export default function Footer() {
           <h3 className="text-xl font-bold text-center md:text-start text-brand-text-color-one">
             Quick Links
           </h3>
-          <ul className="mt-4 text-center md:text-start text-gray-600">
-            <li>Home</li>
-            <li>Teams</li>
-            <li>Fees</li>
-            <li>Faq</li>
-            <li>Blog</li>
-            <li>Contact</li>
+          <ul className="mt-4 text-center md:text-start text-gray-600 flex flex-col gap-2">
+            <Link href={"/"}>Home</Link>
+            <Link href={"/teams"}>Teams</Link>
+            <Link href={"/fees"}>Fees</Link>
+            <Link href={"/faq"}>Faq</Link>
+            <Link href={"/blog"}>Blog</Link>
+            <Link href={"/contact"}>Contact</Link>
           </ul>
         </div>
         <div>
