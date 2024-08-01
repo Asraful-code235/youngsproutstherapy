@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const features = [
   {
@@ -10,6 +11,7 @@ const features = [
     description:
       "Empowering children and teens to manage anxiety through personalized strategies and resilience-building techniques.",
     link: "/approach-and-specialties",
+    src: "/images/therapy-anxiety.jpg",
   },
   {
     id: 2,
@@ -17,6 +19,7 @@ const features = [
     description:
       "Helping children and teens harness their ADHD as a strength, improving focus and self-regulation through tailored strategies.",
     link: "/approach-and-specialties",
+    src: "/images/knee.webp",
   },
   {
     id: 3,
@@ -24,13 +27,15 @@ const features = [
     description:
       "Guiding parents to foster strong, healthy relationships with their children, while navigating the challenges and joys of parenthood.",
     link: "/adhd-therapy-for-kids-and-teens",
+    src: "/images/hand.webp",
   },
   {
-    id: 10,
+    id: 4,
     title: "Depression",
     description:
       "Helping children and teens overcome depression, using evidence-based therapies to foster resilience, promote positive thinking, and improve overall mental health.",
     link: "/approach-and-specialties",
+    src: "/images/physical.jpg",
   },
   {
     id: 5,
@@ -38,6 +43,7 @@ const features = [
     description:
       "​Addressing behavioral challenges in children and teens, using evidence-based approaches to promote positive change and improve home and school life.",
     link: "/approach-and-specialties",
+    src: "/images/psychiatrist-vs-therapist-500x334.jpg",
   },
   {
     id: 6,
@@ -45,6 +51,7 @@ const features = [
     description:
       "Enhancing emotional regulation in children and teens, using proven techniques to help them understand and manage their feelings for better mental health and relationships.",
     link: "/approach-and-specialties",
+    src: "/images/physical-therapy-dpt-scaled.jpg",
   },
   {
     id: 7,
@@ -52,6 +59,7 @@ const features = [
     description:
       "Providing compassionate support for children and teens dealing with trauma, using therapeutic techniques to foster resilience and promote healing",
     link: "/approach-and-specialties",
+    src: "/images/pt-homepage.jpg",
   },
   {
     id: 8,
@@ -59,6 +67,7 @@ const features = [
     description:
       "Supporting children and teens with learning disabilities, using tailored strategies to enhance their academic skills, confidence, and overall school experience.",
     link: "/approach-and-specialties",
+    src: "/images/medication-therapist-tapering-off_1200W-800x500.jpg",
   },
   {
     id: 9,
@@ -66,6 +75,7 @@ const features = [
     description:
       "Offering supportive therapy for children and teens navigating grief, helping them process their feelings and move forward with strength and resilience.",
     link: "/approach-and-specialties",
+    src: "/images/psychiatrist-vs-therapist.jpeg",
   },
   {
     id: 4,
@@ -73,6 +83,7 @@ const features = [
     description:
       "Boosting children's and teens' confidence and self-worth through strategies that promote positive self-perception and resilience.",
     link: "/approach-and-specialties",
+    src: "/images/blog_photo.webp",
   },
   {
     id: 11,
@@ -80,6 +91,7 @@ const features = [
     description:
       "Specializing in Autism Spectrum Disorder counseling, we help children and teens thrive by enhancing their social skills, managing emotions, and fostering independence.",
     link: "/approach-and-specialties",
+    src: "/images/t-6.jpg",
   },
   {
     id: 12,
@@ -87,6 +99,7 @@ const features = [
     description:
       "Dive deeper into our comprehensive range of services and discover how we tailor our therapeutic approaches to meet the unique needs of every child and family.",
     link: "/approach-and-specialties",
+    src: "/images/Young physical therapist standing in an office.webp",
   },
 ];
 
@@ -114,11 +127,11 @@ export default function PsychoTherapyHelp() {
   return (
     <motion.section className="py-14 bg-[#cca4a4]">
       <div className="container px-4 mx-auto">
-        <h2 className="text-3xl font-bold text-center md:text-5xl mb-14 text-white">
+        <h2 className="text-3xl font-bold text-center text-white md:text-5xl mb-14">
           How Psychotherapy Can Help
         </h2>
         <motion.div
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-6 lg:gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -126,31 +139,39 @@ export default function PsychoTherapyHelp() {
           viewport={{ once: true }}
         >
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.id}
-              className="flex flex-col justify-between p-4 lg:p-6 bg-white rounded-lg cursor-pointer group"
-              animate={{ backgroundColor: bgColors[index % bgColors.length] }}
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-            >
-              <div>
-                <h3 className="mb-3 lg:mb-4 text-3xl font-semibold text-center">
-                  {feature.title}
-                </h3>
-                <p className="mt-4 lg:mt-6 mb-2 lg:mb-4 text-center text-gray-600">
+            <Link key={feature.id} href={feature.link}>
+              <motion.div
+                className={` cursor-pointer group rounded-lg ${index % 3 === 1 ? "lg:-mt-4" : ""}`}
+                animate={{ backgroundColor: bgColors[index % bgColors.length] }}
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+              >
+                <img
+                  src={feature.src}
+                  alt="therapy_image"
+                  className="object-cover object-center rounded-lg"
+                />
+              </motion.div>
+              <div className="flex items-center justify-center">
+                <div className="z-20 flex flex-col justify-between w-3/4 p-2 -mt-8 bg-white rounded-lg hover:bg-rose-100">
+                  <div>
+                    <h3 className="mb-2 font-semibold text-center md:text-lg">
+                      {feature.title}
+                    </h3>
+                    {/* <p className="mt-4 mb-2 text-center text-gray-600 lg:mt-6 lg:mb-4">
                   {feature.description}
-                </p>
-              </div>
+                </p> */}
+                  </div>
 
-              <div className="flex items-center justify-end mt-8 transition-opacity duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100">
-                <Link
-                  href={feature.link}
-                  className="inline-flex items-center bg-[#cca4a4] text-white p-2 rounded-full"
-                >
-                  <HiArrowLongRight className="text-2xl text-white" />
-                </Link>
+                  <div className="flex items-center justify-center">
+                    <span className="inline-flex items-center justify-center gap-1">
+                      <p className="text-sm">Learn more</p>
+                      <HiArrowLongRight className="text-[#cca4a4] mt-0.5" />
+                    </span>
+                  </div>
+                </div>
               </div>
-            </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>

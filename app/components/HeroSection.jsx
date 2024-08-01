@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   return (
     <div className="relative bg-[url('/images/youngsproutstherapy-image-08.webp')] bg-no-repeat bg-cover bg-center py-10 md:py-40 md:pb-56 px-6">
-      <div className="absolute inset-0 bg-black opacity-30 md:opacity-0"></div>
-      <div className="relative grid grid-cols-1 gap-6 md:grid-cols-2">
-        <div></div>
+      {/* <div className="absolute inset-0 bg-black opacity-30 md:opacity-0"></div> */}
+      <div className="relative grid grid-cols-2 gap-6">
+        <div />
         <motion.div
           whileInView={{
             opacity: [0, 0.5, 1],
@@ -18,16 +18,17 @@ export default function HeroSection() {
             ease: "easeInOut",
           }}
           viewport={{ once: true }}
+          className="flex flex-col items-center md:items-start"
         >
-          <h1 className="text-4xl font-bold leading-snug max-w-md md:-mt-14 text-center text-white md:text-left md:text-5xl md:leading-tight md:text-black">
+          <h1 className="max-w-md text-4xl font-bold leading-snug text-center md:text-left md:text-5xl md:leading-tight md:text-black">
             <span className="text-brand-color-one">Young Sprouts:</span> <br />
             Guiding Growth in Child, Teen, and Family Therapy in Vaughan
           </h1>
-          <p className="mt-6 text-lg text-center text-white md:text-left md:text-xl md:text-black">
-            Psychotherapy & Psychological Counselling for Kids, <br /> Teens and
+          <p className="mt-6 text-xl text-center md:text-left md:text-black md:w-80">
+            Psychotherapy & Psychological Counselling for Kids, Teens and
             Families in Vaughan/Thornhill
           </p>
-          <div className="flex flex-col w-full gap-3 mt-6 md:w-4/12">
+          <div className="flex flex-col items-center w-full gap-3 mt-6 md:w-4/12 md:items-start">
             <Link className="block w-full" href="/#book-consultation">
               <Button variant="brandButton" className="w-full">
                 Book A Free Consult
