@@ -1,39 +1,32 @@
 import Modules from "@/components/Modules/Modules";
 import { getServiceBySlug } from "@/lib/sanity/client";
-import { Metadata, ResolvingMetadata } from "next";
+import { urlForImage } from "@/lib/sanity/image";
 
-type Props = {
-  params: { slug: string };
-};
-
-export async function processMetadata(service: any) {
+export async function generateMetadata({ params }) {
+  const service = await getServiceBySlug(params.slug);
+  console.log("service", service);
   const url = `https://www.youngsproutstherapy.com/${service?.slug?.current}`;
-
+  const ogImage = service?.mainImage
+    ? urlForImage(service?.mainImage)
+    : "/logo.png";
   return {
     metadataBase: new URL(
       process.env.BASE_URL || "https://www.youngsproutstherapy.com/"
     ),
-    title: service.seoTitle,
-    description: service.seoDescription,
+    title: service?.seoTitle,
+    description: service?.seoDescription,
     openGraph: {
       type: "website",
       url,
-      title: service.seoTitle,
-      description: service.seoDescription,
-      images: service.mainImage,
+      title: service?.seoTitle,
+      description: service?.seoDescription,
+      images: ogImage?.src,
     },
 
     alternates: {
       canonical: url,
     },
   };
-}
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const service = await getServiceBySlug(params.slug);
-  return processMetadata(service);
 }
 
 export default async function ServiceDetailsPage({ params }) {

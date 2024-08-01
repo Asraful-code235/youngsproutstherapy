@@ -20,7 +20,7 @@ export async function processMetadata(post) {
       url,
       title: `Young Sprouts Therapy | ${title}`,
       description: excerpt,
-      images: ogImage,
+      images: ogImage.src,
     },
 
     alternates: {

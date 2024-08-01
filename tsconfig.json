@@ -23,17 +23,17 @@
   },
   "include": [
     "next-env.d.ts",
-    ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
     "lib/sanity/client.js",
-    "lib/sanity/schemas/service.js",
     "lib/sanity/schemas/service.js",
     "lib/sanity/modules/emailSubscription.js",
     "components/Modules/public/List.jsx",
     "app/teams/[slug]/page.jsx",
     "lib/processMetadata.js",
-    "lib/processUrl.js"
+    "lib/processUrl.js",
+    "app/[slug]/page.jsx",
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
