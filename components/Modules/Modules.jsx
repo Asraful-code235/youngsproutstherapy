@@ -8,7 +8,7 @@ import List from "./public/List";
 import RichList from "./public/RichList";
 import Subscription from "./public/Subscription";
 
-export default function Modules({ modules, page }) {
+export default function Modules({ modules }) {
   let lastAccordionIndex = -1;
   modules.forEach((module, index) => {
     if (module._type === "accordion") {

@@ -4,11 +4,36 @@ import DefaultProviders from "../components/providers/DefaultProviders";
 import "@radix-ui/themes/styles.css";
 import { getAllServices } from "@/lib/sanity/client";
 
-export const metadata = {
-  title: "Young Sprouts | Behavioral Therapy for Kids & Teens | Vaughan",
-  description:
-    "Specialized behavior therapy for children & teens in Vaughan, York Region. Young Sprouts offers effective solutions for behavioral challenges & growth.",
-};
+export async function generateMetadata({ params }) {
+  return processMetadata(params);
+}
+
+export async function processMetadata(params) {
+  const url = "https://www.youngsproutstherapy.com/";
+  return {
+    metadataBase: new URL(
+      process.env.BASE_URL || "https://www.youngsproutstherapy.com/"
+    ),
+    title: "Young Sprouts Therapy | Child, Teen & Family Therapy | Vaughan",
+    description:
+      "Psychotherapy and counseling for kids & teens in Vaughan. Find support for kids & teens struggling with anxiety, behavioral issues, ADHD, grief, trauma, and more.",
+    openGraph: {
+      type: "website",
+      url,
+      title: "Young Sprouts Therapy | Child, Teen & Family Therapy | Vaughan",
+      description:
+        "Psychotherapy and counseling for kids & teens in Vaughan. Find support for kids & teens struggling with anxiety, behavioral issues, ADHD, grief, trauma, and more.",
+      images: "/logo.png",
+    },
+
+    alternates: {
+      canonical: url,
+      types: {
+        "application/rss+xml": "/https://www.youngsproutstherapy.com/rss.xml",
+      },
+    },
+  };
+}
 
 export default async function RootLayout({ children }) {
   const services = await getAllServices();

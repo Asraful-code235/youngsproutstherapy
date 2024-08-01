@@ -3,6 +3,12 @@ import { urlForImage } from "@/lib/sanity/image";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Our Team | Expert Child & Teen Therapists in Vaughan",
+  description:
+    "Meet our dedicated team of child & teen therapists at Young Sprouts Therapy in Vaughan. Specializing in CBT, play therapy, art therapy, and more.",
+};
+
 export default async function Teams() {
   const teams = await getAllTeamList();
   return (

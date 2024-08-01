@@ -15,7 +15,6 @@ export const Badge = ({ text, className = "" }) => {
   );
 };
 export default function TeamDefault({ team }) {
-  console.log("team", team);
   const imageProps =
     team && team?.mainImage ? urlForImage(team.mainImage) : null;
 

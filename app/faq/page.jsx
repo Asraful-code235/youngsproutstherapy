@@ -28,6 +28,12 @@ const faqData = [
   },
 ];
 
+export const metadata = {
+  title: "FAQs About Our Child and Family Therapy Services",
+  description:
+    "Find answers to questions about Young Sprouts Therapy in Vaughan. Explore our FAQ page for insights into the therapy process and what to expect in sessions.",
+};
+
 export default function Faq() {
   return <FaqList faqData={faqData} />;
 }

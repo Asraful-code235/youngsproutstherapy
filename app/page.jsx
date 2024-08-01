@@ -1,4 +1,5 @@
-import { getShortTeamList } from "@/lib/sanity/client";
+import { getAllServices, getShortTeamList } from "@/lib/sanity/client";
+
 import dynamic from "next/dynamic";
 
 const ShopLocationMap = dynamic(
@@ -28,6 +29,7 @@ export const metadata = {
 
 export default async function Home() {
   const teams = await getShortTeamList();
+
   return (
     <main className="pt-4">
       <HomeComponent />
