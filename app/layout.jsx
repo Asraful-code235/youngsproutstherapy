@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
 }
 
 export async function processMetadata(params) {
-  const url = "https://www.youngsproutstherapy.com/";
+  const url = "https://www.youngsproutstherapy.com";
   return {
     metadataBase: new URL(
       process.env.BASE_URL || "https://www.youngsproutstherapy.com/"
@@ -23,14 +23,27 @@ export async function processMetadata(params) {
       title: "Young Sprouts Therapy | Child, Teen & Family Therapy | Vaughan",
       description:
         "Psychotherapy and counseling for kids & teens in Vaughan. Find support for kids & teens struggling with anxiety, behavioral issues, ADHD, grief, trauma, and more.",
-      images: "/images/logo.png",
+      images: [
+        {
+          url: "/images/logo.png",
+          width: 2500,
+          height: 1041,
+        },
+      ],
     },
 
     alternates: {
       canonical: url,
-      types: {
-        "application/rss+xml": "https://www.youngsproutstherapy.com/rss.xml",
-      },
+    },
+    twitter: {
+      title: "Young Sprouts Therapy | Child, Teen & Family Therapy | Vaughan",
+      description:
+        "Psychotherapy and counseling for kids & teens in Vaughan. Find support for kids & teens struggling with anxiety, behavioral issues, ADHD, grief, trauma, and more.",
+      card: "summary_large_image",
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
