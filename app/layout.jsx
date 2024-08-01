@@ -2,7 +2,7 @@ import "./globals.css";
 import { cn } from "../lib/utils";
 import DefaultProviders from "../components/providers/DefaultProviders";
 import "@radix-ui/themes/styles.css";
-import { getAllServices } from "@/lib/sanity/client";
+import { getServiceCategoryList } from "@/lib/sanity/client";
 
 export async function generateMetadata({ params }) {
   return processMetadata(params);
@@ -49,14 +49,16 @@ export async function processMetadata(params) {
 }
 
 export default async function RootLayout({ children }) {
-  const services = await getAllServices();
+  const serviceCategories = await getServiceCategoryList();
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={"bg-[#F8F8F8]"}>
-        <DefaultProviders services={services}>
+        <DefaultProviders serviceCategories={serviceCategories}>
           <div className={cn("min-h-screen")}>{children}</div>
         </DefaultProviders>
       </body>
     </html>
   );
 }
+
+export const revalidate = 3600;

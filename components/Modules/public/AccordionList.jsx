@@ -48,7 +48,6 @@ const AccordionItem = ({ item }) => {
 };
 
 export default function AccordionList({ module, isLast }) {
-  console.log("module", module);
   if (!module) return null;
 
   return (

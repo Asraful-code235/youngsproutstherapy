@@ -54,16 +54,13 @@ const TeamSection = ({ teams }) => {
             pagination={{ clickable: true }}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
           >
-            {teams.map((member) => {
+            {teams.map((member, key) => {
               const imageProps =
                 member && member?.mainImage
                   ? urlForImage(member.mainImage)
                   : null;
               return (
-                <SwiperSlide
-                  key={member.id}
-                  className="flex justify-center py-10 "
-                >
+                <SwiperSlide key={key} className="flex justify-center py-10 ">
                   <div className="flex flex-col items-center justify-between w-full h-full p-4 text-center bg-white border rounded-lg shadow-lg md:max-w-xs md:h-80">
                     <div className="h-[400px] overflow-hidden">
                       <Image

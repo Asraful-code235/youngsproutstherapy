@@ -9,7 +9,7 @@ import Lenis from "@studio-freight/lenis";
 import SearchTermContext from "../hooks/useSearchTerm";
 import { usePathname } from "next/navigation";
 
-export default function DefaultProviders({ children, services }) {
+export default function DefaultProviders({ children, serviceCategories }) {
   const [searchTerm, setSearchTerm] = useState("");
   const pathname = usePathname();
 
@@ -27,7 +27,7 @@ export default function DefaultProviders({ children, services }) {
     <AnimatePresence mode="wait">
       <SearchTermContext.Provider value={{ searchTerm, setSearchTerm }}>
         <Theme>
-          <Navbar services={services} />
+          <Navbar serviceCategories={serviceCategories} />
           <main className="pt-[100px]"> {children}</main>
           <ProgressBar
             height="3px"

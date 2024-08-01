@@ -140,7 +140,7 @@ export default function PsychoTherapyHelp() {
         >
           {features.map((feature, index) => (
             <Link
-              key={feature.id}
+              key={index}
               href={feature.link}
               className=" transition-all duration-500 ease-out"
             >
@@ -159,12 +159,11 @@ export default function PsychoTherapyHelp() {
               <div className="flex items-center justify-center max-w-xs mx-auto">
                 <div className="z-20 flex flex-col justify-between w-3/4 p-4 py-3 -mt-8 bg-[#fafafa] rounded-lg hover:bg-rose-100 ">
                   <div>
-                    <h3 className="mb-2 font-semibold text-center md:text-lg">
-                      {feature.title}
-                    </h3>
-                    {/* <p className="mt-4 mb-2 text-center text-gray-600 lg:mt-6 lg:mb-4">
-                  {feature.description}
-                </p> */}
+                    {index !== features.length - 1 && (
+                      <h3 className="mb-2 font-semibold text-center md:text-lg">
+                        {feature.title}
+                      </h3>
+                    )}
                   </div>
 
                   <div className="flex items-center justify-center">

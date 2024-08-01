@@ -1,15 +1,45 @@
 "use client";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 
 export default function Subscription({ module }) {
   const [email, setEmail] = useState("");
+  const [isPending, startTransition] = useTransition();
+  const [message, setMessage] = useState("");
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    // Handle the subscription logic here
-    console.log("Subscribed with email:", email);
-    // Clear the input field after subscription
-    setEmail("");
+
+    if (!email) {
+      setMessage("Email is required");
+      return;
+    }
+
+    setMessage("");
+    startTransition(async () => {
+      try {
+        const response = await fetch("/api/createSubscription", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          setMessage("Subscription successful!");
+        } else {
+          console.error(result.message);
+          setMessage(result.message);
+        }
+      } catch (error) {
+        console.error("Subscription request failed", error);
+        setMessage("An error occurred while subscribing");
+      }
+
+      setEmail("");
+    });
   };
 
   if (!module) return null;
@@ -22,21 +52,41 @@ export default function Subscription({ module }) {
       <p className="text-sm lg:text-lg font-light text-center">
         {module.description}
       </p>
-      <form onSubmit={handleSubscribe} className="mt-6 flex justify-center">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          required
-          className="px-4 py-2 border max-w-xl w-full border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#649cac]"
-        />
-        <button
-          type="submit"
-          className="px-4 py-2 bg-[#649cac] text-white rounded-r-md hover:bg-[#7abcce] focus:outline-none focus:ring-2 focus:ring-[#649cac]"
-        >
-          Subscribe
-        </button>
+      <form
+        onSubmit={handleSubscribe}
+        className="mt-6 flex flex-col items-center"
+      >
+        <div className="flex">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            required
+            disabled={isPending}
+            className="px-4 py-2 border max-w-xl w-full border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#649cac]"
+          />
+          <button
+            type="submit"
+            disabled={isPending}
+            className={`px-4 py-2 ${isPending ? "bg-gray-400" : "bg-[#649cac]"} text-white rounded-r-md hover:bg-[#7abcce] focus:outline-none focus:ring-2 focus:ring-[#649cac]`}
+          >
+            {isPending ? (
+              <span className="animate animate-spin  w-5 h-5 rounded-full border-2 border-transparent border-t-2 border-white">
+                Loading...
+              </span>
+            ) : (
+              "Subscribe"
+            )}
+          </button>
+        </div>
+        {message && (
+          <p
+            className={`mt-4 text-center ${message.startsWith("An error") ? "text-red-500" : "text-green-500"}`}
+          >
+            {message}
+          </p>
+        )}
       </form>
     </section>
   );

@@ -28,6 +28,7 @@ import {
   teamListShort,
   teamListAll,
   teamListBySlug,
+  serviceCategoryList,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -208,6 +209,12 @@ export async function getAllTeamList() {
 export async function getTeamBySlug(slug) {
   if (client) {
     return (await client.fetch(teamListBySlug, { slug })) || {};
+  }
+  return [];
+}
+export async function getServiceCategoryList() {
+  if (client) {
+    return (await client.fetch(serviceCategoryList)) || [];
   }
   return [];
 }

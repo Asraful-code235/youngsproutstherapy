@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useScroll } from "framer-motion";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 
 const menuVariants = {
   hidden: { opacity: 0 },
@@ -25,9 +25,10 @@ const menuItemVariants = {
   exit: { opacity: 0, y: -20, transition: { duration: 0.2 } },
 };
 
-const Navbar = ({ services }) => {
+const Navbar = ({ serviceCategories }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [openCategories, setOpenCategories] = useState({});
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isShrunk, setIsShrunk] = useState(false);
   const controls = useAnimation();
@@ -48,15 +49,20 @@ const Navbar = ({ services }) => {
   const handleServicesClick = () => {
     setIsServicesOpen(!isServicesOpen);
   };
-
   const handleAboutUsClick = () => {
     setIsAboutUsOpen(!isAboutUsOpen);
   };
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
-    setIsServicesOpen(false);
-    setIsAboutUsOpen(false);
+    setOpenCategories({});
+  };
+
+  const handleCategoryClick = (id) => {
+    setOpenCategories((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
 
   return (
@@ -132,23 +138,69 @@ const Navbar = ({ services }) => {
                     className={`ml-2 transform transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
                   />
                 </div>
-                <div className="">
-                  {isServicesOpen && (
-                    <div className="flex flex-col items-center gap-3 mt-4">
-                      {services.map((service) => (
-                        <div key={service.slug}>
-                          <Link
-                            href={`/${service.slug}`}
-                            className="text-lg p-2 text-black"
-                            onClick={handleMenuClick}
-                          >
-                            {service.pageTitle}
-                          </Link>
+                {isServicesOpen && (
+                  <div className="my-4 flex flex-col gap-3">
+                    {serviceCategories?.map((category) => (
+                      <motion.div
+                        key={category._id}
+                        variants={menuItemVariants}
+                        className="flex flex-col items-center justify-center "
+                      >
+                        <div
+                          className="text-xl px-2 cursor-pointer flex items-center"
+                          onClick={() => handleCategoryClick(category._id)}
+                        >
+                          {category.services && category.services.length > 0 ? (
+                            <>{category.title}</>
+                          ) : (
+                            <>
+                              <Link href={`/${category?.linkUrl}`}>
+                                {category.title}
+                              </Link>
+                            </>
+                          )}
+                          {category.services &&
+                            category.services.length > 0 && (
+                              <FaChevronDown
+                                className={`ml-2 transform transition-transform ${
+                                  openCategories[category._id]
+                                    ? "rotate-180"
+                                    : ""
+                                }`}
+                              />
+                            )}
                         </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                        <AnimatePresence>
+                          {openCategories[category._id] &&
+                            category.services && (
+                              <motion.div
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                                variants={menuItemVariants}
+                                className="flex flex-col items-center gap-3 mt-4"
+                              >
+                                {category.services.map((service) => (
+                                  <motion.div
+                                    key={service._id}
+                                    variants={menuItemVariants}
+                                  >
+                                    <Link
+                                      href={`/${service.slug.current}`}
+                                      className="text-lg p-2 text-black"
+                                      onClick={handleMenuClick}
+                                    >
+                                      {service.pageTitle}
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </motion.div>
+                            )}
+                        </AnimatePresence>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
               </motion.div>
               <motion.div
                 variants={menuItemVariants}
@@ -241,14 +293,8 @@ const Navbar = ({ services }) => {
                 Services <FaChevronDown className="ml-2" />
               </div>
               <ul className="absolute mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block min-w-max z-50">
-                {services?.map((service) => (
-                  <div key={service.slug}>
-                    <Link href={`/${service.slug}`}>
-                      <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
-                        {service.pageTitle}
-                      </div>
-                    </Link>
-                  </div>
+                {serviceCategories?.map((category) => (
+                  <CategoryItem key={category._id} category={category} />
                 ))}
               </ul>
             </li>
@@ -259,21 +305,21 @@ const Navbar = ({ services }) => {
               <ul className="absolute left-0 mt-2 bg-white border rounded-lg shadow-lg hidden group-hover:block z-50">
                 <li>
                   <Link href="/teams">
-                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
+                    <div className="block py-2 px-4 text-gray-700 hover:bg-[#f0e4e4]">
                       Teams
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link href="/fees">
-                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
+                    <div className="block py-2 px-4 text-gray-700 hover:bg-[#f0e4e4]">
                       Fees
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link href="/faq">
-                    <div className="block py-2 px-4 text-gray-700 hover:bg-gray-100">
+                    <div className="block py-2 px-4 text-gray-700 hover:bg-[#f0e4e4]">
                       FAQ
                     </div>
                   </Link>
@@ -298,6 +344,60 @@ const Navbar = ({ services }) => {
         </div>
       </div>
     </motion.nav>
+  );
+};
+
+const CategoryItem = ({ category }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMouseEnter = () => setIsOpen(true);
+  const handleMouseLeave = () => setIsOpen(false);
+
+  return (
+    <motion.li
+      className="relative group"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <motion.div
+        animate={{
+          backgroundColor: isOpen ? "#f0e4e4" : "",
+        }}
+        className="py-2 px-4 cursor-pointer text-gray-700 font-semibold hover:bg-[#f0e4e4] flex items-center"
+      >
+        {category.services && category.services.length > 0 ? (
+          <>{category.title}</>
+        ) : (
+          <>
+            <Link href={`/${category?.linkUrl}`}>{category.title}</Link>
+          </>
+        )}
+        {category.services && category.services.length > 0 && (
+          <FaChevronRight className="ml-2" />
+        )}
+      </motion.div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.ul
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            className="absolute left-full top-0 mt-2 bg-white border rounded-lg shadow-lg z-50 w-full min-w-sm"
+          >
+            {category?.services &&
+              category?.services?.map((service) => (
+                <li key={service._id}>
+                  <Link href={`/${service.slug.current}`}>
+                    <div className="block py-2 px-4 text-gray-700 hover:bg-[#f0e4e4]">
+                      {service.pageTitle}
+                    </div>
+                  </Link>
+                </li>
+              ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </motion.li>
   );
 };
 

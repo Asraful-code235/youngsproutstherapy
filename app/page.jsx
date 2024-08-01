@@ -1,4 +1,4 @@
-import { getAllServices, getShortTeamList } from "@/lib/sanity/client";
+import { getShortTeamList, getServiceCategoryList } from "@/lib/sanity/client";
 
 import dynamic from "next/dynamic";
 
