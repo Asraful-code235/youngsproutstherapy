@@ -15,9 +15,9 @@ const TeamSection = ({ teams }) => {
   const swiperRef = useRef(null);
 
   return (
-    <section className="px-4 py-28 mx-auto max-w-screen-2xl md:px-8">
+    <section className="px-4 mx-auto py-28 max-w-screen-2xl md:px-8">
       <div className="grid items-center grid-cols-1 gap-8">
-        <div className="flex flex-col gap-4 col-span-1 -mt-20">
+        <div className="flex flex-col col-span-1 gap-4 -mt-20">
           <h2 className="text-3xl md:text-5xl font-bold text-[#cca4a4] tracking-wide text-center">
             Meet Our Family and Child Therapists
           </h2>
@@ -27,7 +27,7 @@ const TeamSection = ({ teams }) => {
             Choose what best suits your needs.
           </p>
         </div>
-        <div className="relative w-full max-w-5xl mx-auto  md:mt-0">
+        <div className="relative w-full max-w-5xl mx-auto md:mt-0">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, A11y]}
             spaceBetween={20}
@@ -60,8 +60,8 @@ const TeamSection = ({ teams }) => {
                   ? urlForImage(member.mainImage)
                   : null;
               return (
-                <SwiperSlide key={key} className="flex justify-center py-10 ">
-                  <div className="flex flex-col items-center justify-between w-full h-full p-4 text-center bg-white border rounded-lg shadow-lg md:max-w-xs md:h-80">
+                <SwiperSlide key={key} className="flex justify-center py-10">
+                  <div className="flex flex-col items-center justify-between w-full h-full p-4 text-center bg-white border rounded-lg shadow-lg md:max-w-xs md:h-[400px]">
                     <div className="h-[400px] overflow-hidden">
                       <Image
                         src={imageProps.src}
@@ -74,7 +74,7 @@ const TeamSection = ({ teams }) => {
                         height={400}
                         loading="lazy"
                         decoding="async"
-                        className="object-cover w-full h-full  border rounded-lg "
+                        className="object-cover w-full h-full border rounded-lg "
                       />
                     </div>
                     <p className="mt-4 text-xl font-semibold text-[#1F2A37]">
@@ -90,7 +90,7 @@ const TeamSection = ({ teams }) => {
           <Link href="/teams">
             <Button
               variant="outline"
-              className="text-white !bg-[#ab6969] hover:text-white hover:!bg-opacity-75 hover:shadow"
+              className="text-white !bg-[#ab6969] hover:text-white hover:!bg-opacity-75 hover:shadow rounded-full md:text-base"
             >
               Meet Our Entire Therapy Team
             </Button>
