@@ -31,7 +31,7 @@ export default function TeamDefault({ team }) {
               })}
               alt={team.mainImage.alt || "Thumbnail"}
               priority={false}
-              className="object-cover rounded-full object-center transition-all w-[300px] h-[300px] group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
+              className="object-cover rounded-full object-top transition-all w-[400px] h-[400px] group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
               width={300}
               height={300}
             />
@@ -40,7 +40,7 @@ export default function TeamDefault({ team }) {
             <h1 className="text-3xl md:text-5xl font-semibold">{team.name}</h1>
             <h4 className="text-xl md:text-2xl font-medium">{team.position}</h4>
             {team?.appointmentLink && (
-              <Button className="bg-[#cca4a4] hover:bg-[#e2b6b6] w-fit text-xl p-6">
+              <Button className="bg-[#cca4a4] hover:bg-[#e2b6b6] w-fit text-base">
                 <Link href={`${team?.appointmentLink}`} target="_blank">
                   Book A Free Consultation
                 </Link>

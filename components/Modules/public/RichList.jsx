@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function RichList({ module }) {
+  if (!module) return null;
+
   return (
     <section
       style={{
@@ -13,7 +15,9 @@ export default function RichList({ module }) {
       className={`w-screen pt-4 lg:pt-6`}
     >
       <section className="max-w-4xl mx-auto p-4 flex flex-col gap-4 lg:gap-5 tracking-wide">
-        <h2 className="text-2xl lg:text-3xl font-semibold ">{module?.title}</h2>
+        <h2 className="text-2xl lg:text-[48px] leading-[36px] lg:leading-[56px] font-medium ">
+          {module?.title}
+        </h2>
         <h2 className="text-lg lg:text-xl font-light ">
           {module?.description}
         </h2>

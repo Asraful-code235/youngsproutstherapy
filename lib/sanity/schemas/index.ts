@@ -15,6 +15,7 @@ import emailSubscriptionModule from "../modules/emailSubscription";
 import team from "./team";
 import serviceCategory from "./serviceCategory";
 import subscription from "./subscription";
+import features from "../modules/features";
 
 export const schemaTypes = [
   post,
@@ -34,5 +35,6 @@ export const schemaTypes = [
   heroPlain,
   list,
   richlist,
+  features,
   emailSubscriptionModule,
 ];

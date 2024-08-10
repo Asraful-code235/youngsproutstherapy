@@ -1,35 +1,17 @@
+"use client";
+
 import Image from "next/image";
 
-const infos = [
-  {
-    id: "1",
-    src: "/images/leaf.png",
-    content: "Find Balance",
-  },
-  {
-    id: "2",
-    src: "/images/leaf.png",
-    content: "Manage Stress",
-  },
-  {
-    id: "3",
-    src: "/images/leaf.png",
-    content: "Feel Empowered",
-  },
-];
-
-export default function TherapyInfo() {
+export default function TherapyInfo({ module }) {
+  if (!module) return null;
   return (
-    <section className="flex flex-col items-center justify-center py-12 mb-14 bg-[#f0e4e4]">
-      <h1 className="mb-4 text-xl font-semibold md:mb-6">
-        Therapy can help you:
+    <section className="flex flex-col items-center justify-center py-24 lg:-mt-[42px] gap-8 bg-[#cbdee3]">
+      <h1 className="text-2xl lg:text-[48px] leading-[36px] lg:leading-[56px] font-medium md:mb-6">
+        {module?.title}
       </h1>
-      <div className="grid grid-cols-1 gap-10 md:gap-40 md:grid-cols-3">
-        {infos.map((item) => (
-          <div
-            key={item.id}
-            className="flex flex-col items-center justify-center gap-1"
-          >
+      <div className="grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-3 px-8 lg:px-[94px]">
+        {module?.features?.map((item) => (
+          <div key={item.id} className="flex flex-col items-center gap-4 ">
             <Image
               src={"/images/leaf.png"}
               alt="leaf"
@@ -37,7 +19,9 @@ export default function TherapyInfo() {
               height={48}
               className="w-12 h-12 rounded-full"
             />
-            <p>{item.content || "not Set"}</p>
+            <p className="max-w-[220px] mx-auto text-center font-medium">
+              {item?.text || "not Set"}
+            </p>
           </div>
         ))}
       </div>

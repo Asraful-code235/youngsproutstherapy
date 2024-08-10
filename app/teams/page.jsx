@@ -110,7 +110,7 @@ export default async function Teams() {
                     })}
                     alt={member.mainImage.alt || "Thumbnail"}
                     priority={false}
-                    className="object-cover transition-all object-center rounded group-hover:scale-[1.02] group-hover:opacity-80 group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
+                    className="object-cover transition-all object-top rounded group-hover:scale-[1.02] group-hover:opacity-80 group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
                     fill
                     sizes="(max-width: 768px) 60vw, 40vw"
                   />

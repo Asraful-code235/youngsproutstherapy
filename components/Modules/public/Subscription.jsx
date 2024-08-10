@@ -46,7 +46,7 @@ export default function Subscription({ module }) {
 
   return (
     <section className="max-w-5xl mx-auto p-4 lg:p-6 tracking-wide leading-4 flex flex-col gap-4">
-      <h3 className="text-center text-3xl lg:text-5xl font-semibold">
+      <h3 className="text-center text-2xl lg:text-[48px] leading-[36px] lg:leading-[56px] font-medium">
         {module.title}
       </h3>
       <p className="text-sm lg:text-lg font-light text-center">

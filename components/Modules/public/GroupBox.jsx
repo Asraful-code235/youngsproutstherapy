@@ -2,7 +2,7 @@ export default function GroupBox({ module }) {
   if (!module) return null;
   return (
     <section className="max-w-5xl px-4 py-10 mx-auto tracking-wide">
-      <h1 className="text-3xl lg:text-5xl text-center max-w-lg mx-auto font-semibold leading-[63px]">
+      <h1 className="text-2xl lg:text-[48px] leading-[36px] lg:leading-[56px] text-center max-w-lg mx-auto font-medium ">
         {module.title}
       </h1>
       <div className="flex flex-col max-w-4xl gap-4 mx-auto mt-8 lg:mt-14">

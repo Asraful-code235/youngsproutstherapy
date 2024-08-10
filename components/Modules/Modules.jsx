@@ -15,8 +15,9 @@ export default function Modules({ modules }) {
       lastAccordionIndex = index;
     }
   });
+
   return (
-    <>
+    <section className="flex flex-col gap-8 lg:gap-[42px]">
       {modules?.map((module, index) => {
         switch (module._type) {
           case "hero.plain":
@@ -24,10 +25,9 @@ export default function Modules({ modules }) {
           case "hero.cover":
             return <HeroCover module={module} key={module._key} />;
 
-            {
-              /* case "hero.cover":
-            return <TherapyInfo />;
-         
+          case "therapy.features":
+            return <TherapyInfo module={module} key={module._key} />;
+
             {
               /* case "hero.cover":
             return <TherapySupport />; */
@@ -53,6 +53,6 @@ export default function Modules({ modules }) {
             return <div data-type={module._type} key={module._key} />;
         }
       })}
-    </>
+    </section>
   );
 }

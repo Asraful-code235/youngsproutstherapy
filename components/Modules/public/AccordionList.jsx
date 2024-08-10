@@ -53,7 +53,7 @@ export default function AccordionList({ module, isLast }) {
   return (
     <section className="w-full my-6 px-4">
       <section className="max-w-5xl mx-auto tracking-wide">
-        <h3 className="text-3xl lg:text-[36px] font-bold mb-4">
+        <h3 className="text-2xl lg:text-[48px] font-medium leading-[36px] lg:leading-[56px] mb-4">
           {module.title}
         </h3>
         {module.items.map((item) => (
