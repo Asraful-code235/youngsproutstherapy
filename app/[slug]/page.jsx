@@ -137,7 +137,7 @@ export default async function ServiceDetailsPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Modules modules={service?.contentModules} />
+      <Modules modules={service?.contentModules} utils={service} />
     </article>
   );
 }

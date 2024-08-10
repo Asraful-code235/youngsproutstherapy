@@ -156,7 +156,7 @@ export default function PsychoTherapyHelp() {
                     alt="therapy_image"
                     className="object-cover object-center rounded-lg aspect-square"
                   />
-                  <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></div>
+                  <div className="absolute inset-0 bg-[#d6b6b6] opacity-10 group-hover:opacity-20 transition-opacity duration-300 rounded-lg"></div>
                 </div>
               </motion.div>
               <div className="flex items-center justify-center max-w-xs mx-auto">

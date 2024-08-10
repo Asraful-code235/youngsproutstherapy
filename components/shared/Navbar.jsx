@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useScroll } from "framer-motion";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { Button } from "../ui/button";
 
 const menuVariants = {
   hidden: { opacity: 0 },
@@ -190,7 +191,7 @@ const Navbar = ({ serviceCategories }) => {
                                       className="text-lg p-2 text-black"
                                       onClick={handleMenuClick}
                                     >
-                                      {service.pageTitle}
+                                      {service.title}
                                     </Link>
                                   </motion.div>
                                 ))}
@@ -278,9 +279,9 @@ const Navbar = ({ serviceCategories }) => {
           )}
         </AnimatePresence>
         <div
-          className={`w-full lg:block md:w-auto ${isMenuOpen ? "block" : "hidden"}`}
+          className={`w-full hidden lg:block md:w-auto ${isMenuOpen ? "block" : "hidden"}`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0">
+          <ul className="flex flex-col md:items-center md:flex-row md:space-x-8  ">
             <li className="py-4">
               <Link href="/">
                 <div className="block py-2 pr-4 pl-3 text-gray-700 font-semibold rounded md:bg-transparent md:p-0 cursor-pointer">
@@ -340,6 +341,15 @@ const Navbar = ({ serviceCategories }) => {
                 </div>
               </Link>
             </li>
+
+            <Link href="/#book-consultation">
+              <Button
+                variant="brandButton"
+                className="rounded-full lg:w-auto md:text-base py-3"
+              >
+                Book A Free Consult
+              </Button>
+            </Link>
           </ul>
         </div>
       </div>
@@ -389,7 +399,7 @@ const CategoryItem = ({ category }) => {
                 <li key={service._id}>
                   <Link href={`/${service.slug.current}`}>
                     <div className="block py-2 px-4 text-gray-700 hover:bg-[#f0e4e4]">
-                      {service.pageTitle}
+                      {service.title}
                     </div>
                   </Link>
                 </li>

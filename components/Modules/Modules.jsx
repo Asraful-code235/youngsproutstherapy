@@ -1,3 +1,5 @@
+"use client";
+
 import HeroPlain from "./public/HeroPlain";
 import HeroCover from "./public/HeroCover";
 import TherapyInfo from "./public/TherapyInfo";
@@ -8,13 +10,15 @@ import List from "./public/List";
 import RichList from "./public/RichList";
 import Subscription from "./public/Subscription";
 
-export default function Modules({ modules }) {
+export default function Modules({ modules, utils }) {
   let lastAccordionIndex = -1;
   modules.forEach((module, index) => {
     if (module._type === "accordion") {
       lastAccordionIndex = index;
     }
   });
+
+  console.log("utils", utils);
 
   return (
     <section className="flex flex-col gap-8 lg:gap-[42px]">
@@ -23,7 +27,9 @@ export default function Modules({ modules }) {
           case "hero.plain":
             return <HeroPlain module={module} key={module._key} />;
           case "hero.cover":
-            return <HeroCover module={module} key={module._key} />;
+            return (
+              <HeroCover module={module} key={module._key} utils={utils} />
+            );
 
           case "therapy.features":
             return <TherapyInfo module={module} key={module._key} />;

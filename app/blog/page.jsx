@@ -52,7 +52,7 @@ export default async function BlogPage({ searchParams }) {
 
   return (
     <div>
-      <div className="md:h-56 min-h-48 bg-[#ebb1b1] flex items-center text-white font-serif">
+      <div className="md:h-72 min-h-48 bg-[#ebb1b1] flex items-center text-white font-serif">
         <div className="mx-auto max-w-7xl text-center py-8">
           <h1 className=" text-5xl max-lg:text-4xl">Blog</h1>
           <h3 className="mt-3 font-medium text-base lg:text-lg">
