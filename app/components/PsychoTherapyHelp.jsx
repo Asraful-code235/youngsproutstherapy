@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const features = [
   {
@@ -78,7 +77,7 @@ const features = [
     src: "/images/psychiatrist-vs-therapist.jpeg",
   },
   {
-    id: 4,
+    id: 10,
     title: "Self-Esteem",
     description:
       "Boosting children's and teens' confidence and self-worth through strategies that promote positive self-perception and resilience.",
@@ -112,7 +111,6 @@ const containerVariants = {
     x: 0,
     transition: {
       duration: 0.5,
-      // delayChildren: 0.2,
       staggerChildren: 0.15,
     },
   },
@@ -125,7 +123,7 @@ const itemVariants = {
 
 export default function PsychoTherapyHelp() {
   return (
-    <motion.section className="py-14 bg-[#cca4a4]">
+    <motion.section className="py-14 bg-[rgba(204,164,164,0.8)]">
       <div className="container px-4 mx-auto">
         <h2 className="text-3xl font-bold text-center text-white md:text-5xl mb-14">
           How Psychotherapy Can Help
@@ -145,22 +143,27 @@ export default function PsychoTherapyHelp() {
               className=" transition-all duration-500 ease-out"
             >
               <motion.div
-                className={` cursor-pointer group rounded-lg ${index % 3 === 1 ? "lg:-mt-6" : ""}`}
+                className={`cursor-pointer group rounded-lg ${
+                  index % 3 === 1 ? "lg:-mt-6" : ""
+                }`}
                 animate={{ backgroundColor: bgColors[index % bgColors.length] }}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
               >
-                <img
-                  src={feature.src}
-                  alt="therapy_image"
-                  className="object-cover object-center rounded-lg aspect-square"
-                />
+                <div className="relative">
+                  <img
+                    src={feature.src}
+                    alt="therapy_image"
+                    className="object-cover object-center rounded-lg aspect-square"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></div>
+                </div>
               </motion.div>
               <div className="flex items-center justify-center max-w-xs mx-auto">
-                <div className="z-20 flex flex-col justify-between w-3/4 p-4 py-3 -mt-8 bg-[#fafafa] rounded-lg hover:bg-rose-100 ">
+                <div className="z-20 flex flex-col justify-between w-full p-4 py-3 -mt-8 bg-[#fafafa] rounded-lg hover:bg-rose-100 ">
                   <div>
                     {index !== features.length - 1 && (
-                      <h3 className="mb-2 font-semibold text-center md:text-lg">
+                      <h3 className="mb-2 font-semibold text-center text-xl md:text-2xl">
                         {feature.title}
                       </h3>
                     )}
@@ -168,7 +171,7 @@ export default function PsychoTherapyHelp() {
 
                   <div className="flex items-center justify-center">
                     <span className="inline-flex items-center justify-center gap-1">
-                      <p className="text-sm">Learn more</p>
+                      <p className="">Learn more</p>
                       <HiArrowLongRight className="text-[#cca4a4] mt-0.5" />
                     </span>
                   </div>
