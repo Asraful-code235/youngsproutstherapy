@@ -24,7 +24,7 @@ export default function BuildQueryAndFetch({ posts }) {
 
   return (
     <>
-      <div className="grid justify-center grid-cols-1 gap-6 py-5 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+      <div className="grid justify-center grid-cols-1 gap-6 py-5 sm:grid-cols-2 lg:grid-cols-3 justify-items-center w-full h-full">
         {searchedPosts.length > 0
           ? searchedPosts.map((post, index) => (
               <BlogCard key={index} post={post} aspect="square" />

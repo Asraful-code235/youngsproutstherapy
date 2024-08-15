@@ -54,7 +54,7 @@ export default async function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={"bg-[#F8F8F8]"}>
         <DefaultProviders serviceCategories={serviceCategories}>
-          <div className={cn("min-h-screen")}>{children}</div>
+          <div className={cn("min-h-[40vh]")}>{children}</div>
         </DefaultProviders>
       </body>
     </html>

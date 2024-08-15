@@ -48,8 +48,8 @@ export default function BlogCard({
               })}
               alt={post.mainImage.alt || "Thumbnail"}
               priority={preloadImage ? true : false}
-              className="object-cover transition-all w-full h-full aspect-auto group-hover:scale-[1.02]  group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
-              width={600}
+              className="object-cover max-h-[250px] transition-all w-full h-full aspect-auto group-hover:scale-[1.02]  group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"
+              width={800}
               height={600}
               sizes="(max-width: 768px) 30vw, 33vw"
             />

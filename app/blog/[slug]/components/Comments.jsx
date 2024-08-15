@@ -17,7 +17,7 @@ export default async function Comments({ post }) {
 
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto px-4">
+      <div className="max-w-screen-2xl mx-auto px-6">
         <h1 className="text-xl">Comments ({comments?.length})</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-3 ">
           {comments.map((comment) => {

@@ -11,13 +11,13 @@ export default function HeroCover({ module, utils }) {
   return (
     <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 h-auto lg:h-[70vh]">
       <div className="flex flex-col gap-4 justify-center w-full px-6 lg:px-12 order-2 lg:order-2">
-        <p className="text-sm max-lg:text-center font-medium text-left lg:text-lg text-[#85a7b1]">
+        <p className="text-lg max-lg:text-center font-medium text-left lg:text-xl text-[#85a7b1]">
           Young Sprouts
         </p>
-        <h2 className="text-2xl lg:text-[48px] font-medium text-center text-gray-900 lg:mb-6 leading-[36px] lg:leading-[56px] lg:text-left">
+        <h2 className="text-4xl lg:text-[48px] font-medium text-center text-gray-900 lg:mb-6 leading-[36px] lg:leading-[56px] lg:text-left">
           {utils?.title}
         </h2>
-        <p className="text-sm max-lg:text-center font-normal text-left lg:text-lg lg:max-w-[495px]">
+        <p className="text-lg max-lg:text-center font-normal tracking-tight text-left lg:text-xl lg:max-w-[495px]">
           {utils?.pageTitle}
         </p>
 
@@ -41,7 +41,7 @@ export default function HeroCover({ module, utils }) {
         </div>
       </div>
 
-      <div className="relative order-1 h-[40vh] lg:h-full lg:order-2">
+      <div className="relative order-1 h-[35vh] lg:h-full lg:order-2">
         <Image
           src={imageProps.src}
           {...(module.coverImage.blurDataURL && {
@@ -51,7 +51,7 @@ export default function HeroCover({ module, utils }) {
           alt={module.coverImage.alt || "Thumbnail"}
           priority={false}
           layout="fill"
-          className=" w-full h-full object-center object-cover"
+          className=" w-full h-full object-center object-cover aspect-auto"
         />
       </div>
     </section>

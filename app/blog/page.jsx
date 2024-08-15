@@ -53,7 +53,7 @@ export default async function BlogPage({ searchParams }) {
   return (
     <div>
       <div className="md:h-72 min-h-48 bg-[#ebb1b1] flex items-center text-white font-serif">
-        <div className="mx-auto max-w-7xl text-center py-8">
+        <div className="mx-auto max-w-7xl text-center py-8 px-8">
           <h1 className=" text-5xl max-lg:text-4xl">Blog</h1>
           <h3 className="mt-3 font-medium text-base lg:text-lg">
             Welcome to our blog: your gateway to insightful content on child,
@@ -66,7 +66,7 @@ export default async function BlogPage({ searchParams }) {
           </h3>
         </div>
       </div>
-      <div className="px-3 py-10 mx-auto max-w-7xl md:px-0 ">
+      <div className="!px-6 py-10 mx-auto max-w-7xl md:px-8 ">
         <div className="block group max-w-sm gap-3 w-full mx-auto sm:max-w-full lg:grid lg:grid-cols-12 dark:bg-gray-50 bg-slate-50">
           <Link
             className={cn(
@@ -77,18 +77,20 @@ export default async function BlogPage({ searchParams }) {
             }`}
           >
             {imageProps ? (
-              <Image
-                src={imageProps.src}
-                {...(post.mainImage.blurDataURL && {
-                  placeholder: "blur",
-                  blurDataURL: post.mainImage.blurDataURL,
-                })}
-                alt={post.mainImage.alt || "Thumbnail"}
-                priority={post?.preloadImage ? true : false}
-                className=" transition-all group-hover:scale-[1.2] group-hover:rotate-[6deg] group-hover:transition-all group-hover:duration-500 object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"
-                width={800}
-                height={600}
-              />
+              <div className="w-full h-full relative">
+                <Image
+                  src={imageProps.src}
+                  {...(post.mainImage.blurDataURL && {
+                    placeholder: "blur",
+                    blurDataURL: post.mainImage.blurDataURL,
+                  })}
+                  alt={post.mainImage.alt || "Thumbnail"}
+                  priority={post?.preloadImage ? true : false}
+                  className=" transition-all group-hover:scale-[1.2] group-hover:rotate-[6deg] group-hover:transition-all group-hover:duration-500 object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"
+                  width={800}
+                  height={600}
+                />
+              </div>
             ) : (
               <span className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-gray-200">
                 <PhotoIcon />

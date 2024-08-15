@@ -117,6 +117,8 @@ const Navbar = ({ serviceCategories }) => {
                   &times;
                 </motion.button>
               </div>
+
+              {/* Home Link */}
               <motion.div variants={menuItemVariants}>
                 <Link
                   href="/"
@@ -126,29 +128,39 @@ const Navbar = ({ serviceCategories }) => {
                   Home
                 </Link>
               </motion.div>
+
+              {/* Services Section */}
               <motion.div
                 variants={menuItemVariants}
-                className="flex flex-col items-center justify-center "
+                className={`flex flex-col items-center justify-center ${
+                  isServicesOpen ? "bg-white p-4" : ""
+                } rounded-lg`}
               >
                 <div
-                  className="text-xl px-2 cursor-pointer flex items-center "
+                  className="text-xl px-2 cursor-pointer flex items-center"
                   onClick={handleServicesClick}
                 >
                   Services{" "}
                   <FaChevronDown
-                    className={`ml-2 transform transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
+                    className={`ml-2 transform transition-transform ${
+                      isServicesOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </div>
                 {isServicesOpen && (
-                  <div className="my-4 flex flex-col gap-3">
+                  <div className="my-4 flex flex-col gap-4 ml-4">
                     {serviceCategories?.map((category) => (
                       <motion.div
                         key={category._id}
                         variants={menuItemVariants}
-                        className="flex flex-col items-center justify-center "
+                        className="flex flex-col items-center justify-center"
                       >
                         <div
-                          className="text-xl px-2 cursor-pointer flex items-center"
+                          className={`text-xl px-2 cursor-pointer flex items-center ${
+                            openCategories[category._id]
+                              ? "text-brand-color-one"
+                              : ""
+                          }`}
                           onClick={() => handleCategoryClick(category._id)}
                         >
                           {category.services && category.services.length > 0 ? (
@@ -179,7 +191,7 @@ const Navbar = ({ serviceCategories }) => {
                                 animate="visible"
                                 exit="exit"
                                 variants={menuItemVariants}
-                                className="flex flex-col items-center gap-3 mt-4"
+                                className="flex flex-col items-start gap-3 mt-4 ml-4"
                               >
                                 {category.services.map((service) => (
                                   <motion.div
@@ -203,9 +215,13 @@ const Navbar = ({ serviceCategories }) => {
                   </div>
                 )}
               </motion.div>
+
+              {/* About Us Section */}
               <motion.div
                 variants={menuItemVariants}
-                className="flex flex-col items-center justify-center"
+                className={`flex flex-col items-center justify-center ${
+                  isAboutUsOpen ? "bg-white  p-4 " : ""
+                } rounded-lg`}
               >
                 <div
                   className="text-xl px-2 cursor-pointer flex items-center"
@@ -213,7 +229,9 @@ const Navbar = ({ serviceCategories }) => {
                 >
                   About Us{" "}
                   <FaChevronDown
-                    className={`ml-2 transform transition-transform ${isAboutUsOpen ? "rotate-180" : ""}`}
+                    className={`ml-2 transform transition-transform ${
+                      isAboutUsOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </div>
                 <AnimatePresence>
@@ -223,7 +241,7 @@ const Navbar = ({ serviceCategories }) => {
                       animate="visible"
                       exit="exit"
                       variants={menuVariants}
-                      className="flex flex-col items-center gap-3 mt-4"
+                      className="flex flex-col items-start gap-4 mt-4"
                     >
                       <motion.div variants={menuItemVariants}>
                         <Link
@@ -256,6 +274,8 @@ const Navbar = ({ serviceCategories }) => {
                   )}
                 </AnimatePresence>
               </motion.div>
+
+              {/* Other Links */}
               <motion.div variants={menuItemVariants}>
                 <Link
                   href="/contact"
@@ -265,7 +285,6 @@ const Navbar = ({ serviceCategories }) => {
                   Contact us
                 </Link>
               </motion.div>
-
               <motion.div variants={menuItemVariants}>
                 <Link
                   href="/blog"

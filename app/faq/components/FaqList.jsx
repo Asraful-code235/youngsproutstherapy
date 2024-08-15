@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function FaqList({ faqData }) {
   return (
-    <section className="max-w-4xl px-4 py-12 mx-auto">
+    <section className="max-w-4xl px-4 pt-12 mx-auto">
       <h2 className="mb-8 text-3xl font-bold text-center md:text-4xl">
         Frequently Asked Questions
       </h2>

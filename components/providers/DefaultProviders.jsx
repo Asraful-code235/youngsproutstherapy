@@ -13,16 +13,16 @@ export default function DefaultProviders({ children, serviceCategories }) {
   const [searchTerm, setSearchTerm] = useState("");
   const pathname = usePathname();
 
-  useEffect(() => {
-    if (!pathname.includes("studio")) {
-      const lenis = new Lenis();
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   if (!pathname.includes("studio")) {
+  //     const lenis = new Lenis();
+  //     function raf(time) {
+  //       lenis.raf(time);
+  //       requestAnimationFrame(raf);
+  //     }
+  //     requestAnimationFrame(raf);
+  //   }
+  // }, [pathname]);
   return (
     <AnimatePresence mode="wait">
       <SearchTermContext.Provider value={{ searchTerm, setSearchTerm }}>

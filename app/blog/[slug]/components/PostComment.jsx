@@ -59,7 +59,7 @@ export default function PostComment({ post }) {
       <h2 className="text-xl text-center font-medium mt-6">
         Let us know your thoughts.
       </h2>
-      <div className="py-10 max-w-2xl mx-auto px-4 grid">
+      <div className="py-10 max-w-2xl mx-auto px-6 grid">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <input
             type="text"

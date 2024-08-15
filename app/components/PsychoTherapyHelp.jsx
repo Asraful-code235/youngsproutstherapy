@@ -123,9 +123,9 @@ const itemVariants = {
 
 export default function PsychoTherapyHelp() {
   return (
-    <motion.section className="py-14 bg-[rgba(204,164,164,0.8)]">
+    <motion.section className="py-14 bg-[rgba(204,164,164,0.6)]">
       <div className="container px-4 mx-auto">
-        <h2 className="text-3xl font-bold text-center text-white md:text-5xl mb-14">
+        <h2 className="text-4xl font-bold text-center text-white md:text-5xl mb-14">
           How Psychotherapy Can Help
         </h2>
         <motion.div
@@ -140,7 +140,7 @@ export default function PsychoTherapyHelp() {
             <Link
               key={index}
               href={feature.link}
-              className=" transition-all duration-500 ease-out"
+              className="transition-all duration-500 ease-out"
             >
               <motion.div
                 className={`cursor-pointer group rounded-lg ${
@@ -154,16 +154,16 @@ export default function PsychoTherapyHelp() {
                   <img
                     src={feature.src}
                     alt="therapy_image"
-                    className="object-cover object-center rounded-lg aspect-square"
+                    className="object-cover object-center rounded-lg aspect-square opacity-90"
                   />
-                  <div className="absolute inset-0 bg-[#d6b6b6] opacity-10 group-hover:opacity-20 transition-opacity duration-300 rounded-lg"></div>
+                  <div className="absolute inset-0 bg-[#d7d1d1] opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-lg"></div>
                 </div>
               </motion.div>
-              <div className="flex items-center justify-center max-w-xs mx-auto">
-                <div className="z-20 flex flex-col justify-between w-full p-4 py-3 -mt-8 bg-[#fafafa] rounded-lg hover:bg-rose-100 ">
+              <div className="flex items-center justify-center max-w-sm mx-auto">
+                <div className="z-20 flex flex-col justify-between w-full p-5 py-4 -mt-8 bg-[#fafafa] rounded-lg hover:bg-rose-100 ">
                   <div>
                     {index !== features.length - 1 && (
-                      <h3 className="mb-2 font-semibold text-center text-xl md:text-2xl">
+                      <h3 className="mb-3 font-semibold text-center text-2xl md:text-3xl">
                         {feature.title}
                       </h3>
                     )}
@@ -171,7 +171,7 @@ export default function PsychoTherapyHelp() {
 
                   <div className="flex items-center justify-center">
                     <span className="inline-flex items-center justify-center gap-1">
-                      <p className="">Learn more</p>
+                      <p className="text-lg">Learn more</p>
                       <HiArrowLongRight className="text-[#cca4a4] mt-0.5" />
                     </span>
                   </div>

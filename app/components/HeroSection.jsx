@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   return (
     <div className="relative bg-[url('/images/youngsproutstherapy-image-08.webp')] bg-no-repeat bg-cover bg-center py-10 md:py-24 md:pb-56 px-4 ">
+      {/* Overlay for fade effect */}
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent md:bg-gradient-to-t md:from-transparent md:via-transparent md:to-transparent" />
+
       <div className="relative grid grid-cols-2 gap-6">
         <div />
         <motion.div
@@ -17,7 +20,7 @@ export default function HeroSection() {
             ease: "easeInOut",
           }}
           viewport={{ once: true }}
-          className="flex flex-col items-center md:items-start"
+          className="flex flex-col items-center md:items-start max-sm:-mt-4"
         >
           <h1 className="max-w-md text-3xl font-bold leading-snug text-center md:text-left md:text-5xl md:leading-tight md:text-black">
             <span className="text-brand-color-one">Young Sprouts:</span> <br />
@@ -48,6 +51,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
+      {/* Footer gradient for smooth fade */}
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/70 to-transparent" />
     </div>
   );

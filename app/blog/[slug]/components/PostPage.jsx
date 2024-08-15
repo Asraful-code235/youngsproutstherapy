@@ -73,7 +73,7 @@ export default function PostPage(props) {
         </div>
       </article>
 
-      <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
+      <div className="relative z-0 mx-auto aspect-video max-w-screen-lg px-8 overflow-hidden lg:rounded-lg">
         {imageProps && (
           <Image
             src={imageProps.src}
@@ -86,7 +86,7 @@ export default function PostPage(props) {
         )}
       </div>
 
-      <div className="container mx-auto ">
+      <div className="container mx-auto  ">
         <article className="mx-auto max-w-5xl ">
           <div className="prose prose-sm lg:prose-lg prose-p:my-0 prose-table:table-fixed prose-thead:text-left prose-thead:!align-top prose-thead:my-0 prose-h1:mb-0 prose-h2:mb-0 prose-h3:mb-0 prose-h4:mb-0 prose-h5:mb-0 prose-h6:mb-0  my-3 dark:prose-invert prose-a:text-blue-600 !w-full max-w-5xl mx-auto">
             {post.body && <PortableText value={post.body} />}

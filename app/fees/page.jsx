@@ -12,8 +12,11 @@ const pricingPlans = [
     title: "Individual Child and Teen Therapy",
     price: "$185 / 50",
     period: "Min",
-    features:
-      "Our Individual Child and Teen Therapy service focuses on providing personalized support to children and teenagers facing emotional, behavioral, or developmental issues. Our therapists create a nurturing environment where young individuals can express themselves, develop coping skills, and work towards positive growth and well-being.",
+    features: [
+      "Personalized support for emotional, behavioral, or developmental issues.",
+      "Nurturing environment for expression and growth.",
+      "Therapists focused on positive growth and well-being.",
+    ],
     img: "/images/child_counseling.webp",
   },
   {
@@ -21,8 +24,11 @@ const pricingPlans = [
     title: "Parent Coaching",
     price: "$185 / 50",
     period: "Min",
-    features:
-      "Parent Coaching is designed to empower parents with effective strategies and tools to navigate the challenges of parenting. Our experienced coaches provide guidance, support, and practical advice to help parents build strong relationships with their children and promote positive behavior.",
+    features: [
+      "Empower parents with effective strategies and tools.",
+      "Guidance to build strong relationships with children.",
+      "Support for promoting positive behavior.",
+    ],
     img: "/images/mother_son.webp",
   },
   {
@@ -30,8 +36,11 @@ const pricingPlans = [
     title: "Family Therapy and Couples Counselling",
     price: "$200 / 50",
     period: "Min",
-    features:
-      "Our Family Therapy service offers a warm and nurturing environment for families to address conflicts, improve communication, and build stronger, healthier relationships. Our Couples Counselling service provides a safe and supportive space for couples to address relationship challenges, enhance communication, and strengthen their bond.",
+    features: [
+      "Warm and nurturing environment for families.",
+      "Improves communication and addresses conflicts.",
+      "Supportive space for couples to strengthen their bond.",
+    ],
     img: "/images/couple.webp",
   },
 ];

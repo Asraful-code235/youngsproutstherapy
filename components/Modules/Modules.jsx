@@ -18,8 +18,6 @@ export default function Modules({ modules, utils }) {
     }
   });
 
-  console.log("utils", utils);
-
   return (
     <section className="flex flex-col gap-8 lg:gap-[42px]">
       {modules?.map((module, index) => {
