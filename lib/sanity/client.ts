@@ -193,7 +193,7 @@ export async function getPaginatedPosts({ limit, pageIndex = 0 }) {
   return [];
 }
 
-export async function searchPosts(title: any) {
+export async function searchPosts(title) {
   if (client) {
     // @ts-ignore
     return (await client.fetch(searchquery, { query: title })) || [];

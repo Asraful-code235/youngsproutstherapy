@@ -1,5 +1,5 @@
-import { previewClient } from "@/lib/sanity/client";
 import { NextResponse } from "next/server";
+import { previewClient } from "../../../lib/sanity/client";
 
 export async function POST(req: Request) {
   const { email } = await req.json();

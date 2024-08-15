@@ -3,7 +3,8 @@ import PostPage from "./components/PostPage";
 import { getPostBySlug } from "../../../lib/sanity/client";
 import { urlForImage } from "@/lib/sanity/image";
 
-export async function processMetadata(post) {
+export async function generateMetadata({ params }) {
+  const post = await getPostBySlug(params.slug);
   const url = `https://www.youngsproutstherapy.com/blog/${post?.slug?.current}`;
   const { title, slug, excerpt, mainImage } = post;
 
@@ -30,11 +31,6 @@ export async function processMetadata(post) {
       },
     },
   };
-}
-
-export async function generateMetadata({ params }) {
-  const post = await getPostBySlug(params.slug);
-  return processMetadata(post);
 }
 
 export default async function PostDefault({ params }) {

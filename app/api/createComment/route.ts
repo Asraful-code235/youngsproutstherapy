@@ -1,7 +1,7 @@
-import { previewClient } from "@/lib/sanity/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { NextResponse } from "next/server";
+import { previewClient } from "../../../lib/sanity/client";
 
 export async function POST(req: Request) {
   const { _id, name, email = "Not provided", comment, slug } = await req.json();
