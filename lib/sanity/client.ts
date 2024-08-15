@@ -29,6 +29,7 @@ import {
   teamListAll,
   teamListBySlug,
   serviceCategoryList,
+  latestThreePostsQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -170,6 +171,12 @@ export async function getPostsByCategory(slug) {
 export async function getTopCategories() {
   if (client) {
     return (await client.fetch(catquery)) || [];
+  }
+  return [];
+}
+export async function getLatestThreePosts() {
+  if (client) {
+    return (await client.fetch(latestThreePostsQuery)) || [];
   }
   return [];
 }

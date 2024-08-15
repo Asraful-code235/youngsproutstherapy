@@ -2,6 +2,8 @@ import { getShortTeamList, getServiceCategoryList } from "@/lib/sanity/client";
 
 import dynamic from "next/dynamic";
 import Script from "next/script";
+import { getLatestThreePosts } from "../lib/sanity/client";
+import FeedSection from "./components/FeedSection";
 
 const ShopLocationMap = dynamic(
   () => import("../components/shared/ShopLocationMap")
@@ -30,7 +32,7 @@ export const metadata = {
 
 export default async function Home() {
   const teams = await getShortTeamList();
-
+  const posts = await getLatestThreePosts();
   return (
     <section className="pt-4">
       <script
@@ -43,6 +45,7 @@ export default async function Home() {
       <PsychoTherapyHelp />
       <TherapeuticModalities />
       <ConsultationBooking />
+      <FeedSection data={posts} />
       <ShopLocationMap />
     </section>
   );
