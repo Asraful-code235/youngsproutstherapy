@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef } from 'react';
 import ShopLocationMap from '@/components/shared/ShopLocationMap';
-import emailjs from '@emailjs/browser'; // Import EmailJS
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const form = useRef();
