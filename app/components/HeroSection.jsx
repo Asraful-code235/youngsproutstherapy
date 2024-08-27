@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import GoogleAdsButton from "@/components/providers/GoogleAdsButton";
 
 export default function HeroSection() {
   return (
@@ -39,14 +40,18 @@ export default function HeroSection() {
                 Book A Free Consult
               </Button>
             </Link>
-            <Link className="block w-full" href="tel:2895794769">
-              <Button
-                variant="outline"
-                className="w-full rounded-full md:text-base"
-              >
-                Call Now - (289) 579-4769
-              </Button>
-            </Link>
+            <GoogleAdsButton>
+              {" "}
+              {/* Replace with your conversion label */}
+              <Link className="block w-full" href="tel:2895794769">
+                <Button
+                  variant="outline"
+                  className="w-full rounded-full md:text-base"
+                >
+                  Call Now - (289) 579-4769
+                </Button>
+              </Link>
+            </GoogleAdsButton>
           </div>
         </motion.div>
       </div>

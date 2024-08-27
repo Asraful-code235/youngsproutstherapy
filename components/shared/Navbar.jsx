@@ -167,7 +167,10 @@ const Navbar = ({ serviceCategories }) => {
                             <>{category.title}</>
                           ) : (
                             <>
-                              <Link href={`/${category?.linkUrl}`}>
+                              <Link
+                                href={`/${category?.linkUrl}`}
+                                onClick={handleMenuClick}
+                              >
                                 {category.title}
                               </Link>
                             </>
@@ -191,7 +194,7 @@ const Navbar = ({ serviceCategories }) => {
                                 animate="visible"
                                 exit="exit"
                                 variants={menuItemVariants}
-                                className="flex flex-col items-start gap-3 mt-4 ml-4"
+                                className="flex flex-col items-start gap-3 mt-4 ml-4 bg-[#f0e4e4] p-4 px-6 rounded-md"
                               >
                                 {category.services.map((service) => (
                                   <motion.div

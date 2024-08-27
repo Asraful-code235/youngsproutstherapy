@@ -12,13 +12,7 @@ export default function TherapyInfo({ module }) {
       <div className="grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-3 px-8 lg:px-[94px]">
         {module?.features?.map((item) => (
           <div key={item.id} className="flex flex-col items-center gap-4 ">
-            <Image
-              src={"/images/leaf.png"}
-              alt="leaf"
-              width={48}
-              height={48}
-              className="w-12 h-12 rounded-full"
-            />
+            <Svg />
             <p className="max-w-[220px] mx-auto text-center font-medium">
               {item?.text || "not Set"}
             </p>
@@ -26,5 +20,35 @@ export default function TherapyInfo({ module }) {
         ))}
       </div>
     </section>
+  );
+}
+
+function Svg() {
+  return (
+    <div className="flex items-center justify-center">
+      <div className="relative h-12 w-12 rounded-full bg-white p-2 text-white">
+        <LeafIcon className="h-full w-full" />
+      </div>
+    </div>
+  );
+}
+
+function LeafIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="#ab6969"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+    </svg>
   );
 }

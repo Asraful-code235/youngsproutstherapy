@@ -17,12 +17,15 @@ const AccordionItem = ({ item }) => {
     <motion.div
       animate={{
         backgroundColor: isOpen ? "#FAFAFA" : "",
+        boxShadow: isOpen
+          ? "0px 10px 20px rgba(0, 0, 0, 0.15)"
+          : "0px 0px 0px rgba(0, 0, 0, 0)",
       }}
       transition={{
-        duration: 0.5,
+        duration: 0.3,
         ease: "easeInOut",
       }}
-      className="border-b px-2 py-3 rounded-md border-gray-300 text-left hover:bg-gray-100 transition-colors duration-300"
+      className="border-b px-2 py-3 border-gray-300 text-left hover:bg-gray-100 transition-colors duration-300"
     >
       <button
         className="flex justify-between items-center w-full py-4 gap-4 focus:outline-none "
@@ -38,7 +41,7 @@ const AccordionItem = ({ item }) => {
       <motion.div
         initial={{ height: 0 }}
         animate={{ height: isOpen ? "auto" : 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
         <p className="pb-4 text-sm lg:text-lg">{item.description}</p>
