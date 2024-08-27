@@ -1,10 +1,10 @@
 import React from "react";
 
-const GoogleAdsButton = ({ onClick, children }) => {
+const GoogleAdsButton = ({ CONVERSION_LABEL, onClick, children }) => {
   const handleClick = () => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "conversion", {
-        send_to: `AW-10834730946/${process.env.CONVERSION_LABEL}`,
+        send_to: `AW-10834730946/${CONVERSION_LABEL}`,
       });
     }
 

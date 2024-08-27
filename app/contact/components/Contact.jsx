@@ -41,7 +41,7 @@ export default function Contact() {
   const triggerGoogleAdsConversion = () => {
     window.dataLayer = window.dataLayer || [];
     window.gtag("event", "conversion", {
-      send_to: "AW-10834730946/TAG_IDENTIFIER",
+      send_to: "AW-10834730946/4Je8CMG_maUDEMK_s64o",
     });
   };
 

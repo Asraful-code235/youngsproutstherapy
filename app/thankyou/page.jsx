@@ -1,6 +1,29 @@
+"use client";
+import { useEffect } from "react";
+
 export default function ThankYouPage() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-10834730946/pABUCKDe774YEMK_s64o",
+      });
+    }
+  }, []);
+
   return (
     <div className="max-w-3xl mx-auto p-8 text-gray-800 pt-14">
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-10834730946"
+      />
+      <script id="google-gtag">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-10834730946');
+        `}
+      </script>
       <h1 className="text-5xl font-bold text-center mb-8">Thank you!</h1>
       <p className="mb-4">
         Thank you for scheduling a free consultation with Young Sprouts Therapy!
