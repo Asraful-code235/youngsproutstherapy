@@ -9,9 +9,12 @@ export default function TherapyInfo({ module }) {
       <h1 className="text-2xl lg:text-[48px] leading-[36px] lg:leading-[56px] text-center font-medium md:mb-6">
         {module?.title}
       </h1>
-      <div className="grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-3 px-8 lg:px-[94px]">
+      <div className="grid grid-cols-1 gap-8 md:gap-20 sm:grid-cols-2 md:grid-cols-3 px-8 lg:px-[94px]">
         {module?.features?.map((item) => (
-          <div key={item.id} className="flex flex-col items-center gap-4 ">
+          <div
+            key={item.id}
+            className="flex flex-col items-center gap-4 bg-white p-4 rounded-md "
+          >
             <Svg />
             <p className="max-w-[220px] mx-auto text-center font-medium">
               {item?.text || "not Set"}
@@ -26,7 +29,7 @@ export default function TherapyInfo({ module }) {
 function Svg() {
   return (
     <div className="flex items-center justify-center">
-      <div className="relative h-12 w-12 rounded-full bg-white p-2 text-white">
+      <div className="relative h-12 w-12  bg-white p-2 text-white border border-[#ab6969] rounded-full">
         <LeafIcon className="h-full w-full" />
       </div>
     </div>

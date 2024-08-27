@@ -1,3 +1,4 @@
+import GoogleAdsButton from "@/components/providers/GoogleAdsButton";
 import { Button } from "@/components/ui/button";
 import { urlForImage } from "@/lib/sanity/image";
 import Image from "next/image";
@@ -30,13 +31,16 @@ export default function HeroCover({ module, utils }) {
               Book A Free Consult
             </Button>
           </Link>
+
           <Link href={`tel:${module.cta2}`}>
-            <Button
-              variant="outline"
-              className="rounded-full lg:w-auto md:text-base max-lg:min-w-[270px]"
-            >
-              Call Now - {module.cta2}
-            </Button>
+            <GoogleAdsButton CONVERSION_LABEL={"BnbgCPymmaUDEMK_s64o"}>
+              <Button
+                variant="outline"
+                className="rounded-full lg:w-auto md:text-base max-lg:min-w-[270px]"
+              >
+                Call Now - {module.cta2}
+              </Button>
+            </GoogleAdsButton>
           </Link>
         </div>
       </div>
