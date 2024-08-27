@@ -15,6 +15,7 @@ const items = [
     description:
       "CBT is a type of psychotherapy that helps individuals change negative thought patterns and behaviors.",
     icon: <PiBrainLight />,
+    link: "cognitive-behavioural-therapy-cbt",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const items = [
     description:
       "Narrative Therapy seeks to help patients identify their values and the skills associated with them.",
     icon: <SlBookOpen />,
+    link: "narrative-therapy",
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const items = [
     description:
       "Solution-Focused Therapy is future-focused and goal-directed, focusing on solutions rather than problems.",
     icon: <GoLightBulb />,
+    link: "solution-focused-therapy",
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const items = [
     description:
       "DBT is a type of cognitive-behavioral therapy that helps people manage their emotions and develop healthy coping mechanisms.",
     icon: <TiMessages />,
+    link: "dialectical-behaviour-therapy-dbt",
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ const items = [
     description:
       "Art Therapy involves the use of creative techniques such as drawing, painting, and sculpting to help individuals express themselves.",
     icon: <TfiBrushAlt />,
+    link: "art-therapy",
   },
   {
     id: 6,
@@ -50,6 +55,7 @@ const items = [
     description:
       "Play Therapy uses play to help children communicate their feelings and deal with emotional issues.",
     icon: <TbGoGame />,
+    link: "play-therapy",
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ const items = [
     description:
       "ACT is a type of psychotherapy that uses mindfulness and behavior change strategies to help individuals accept and commit to their values.",
     icon: <SiAdguard />,
+    link: "acceptance-and-commitment-therapy-act",
   },
   {
     id: 8,
@@ -68,6 +75,7 @@ const items = [
     description:
       "EFT is designed to help individuals understand and regulate their emotions.",
     icon: <BsEmojiSmile />,
+    link: "emotion-focused-therapy-eft",
   },
   {
     id: 9,
@@ -79,6 +87,7 @@ const items = [
     description:
       "PCIT is a form of therapy that focuses on improving the quality of the parent-child relationship and changing parent-child interaction patterns.",
     icon: <MdFamilyRestroom />,
+    link: "parent-child-interaction-therapy-pcit",
   },
 ];
 export default function TherapeuticModalities() {
@@ -89,7 +98,8 @@ export default function TherapeuticModalities() {
       </h2>
       <div className="grid grid-cols-1 gap-12 md:grid-cols-3 mt-14 ">
         {items.map((item) => (
-          <article
+          <a
+            href={`/${item?.link || "#"}`}
             key={item.id}
             className="group transition-all duration-300 ease-in-out"
           >
@@ -104,7 +114,7 @@ export default function TherapeuticModalities() {
                 {item.description}
               </p>
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </div>
