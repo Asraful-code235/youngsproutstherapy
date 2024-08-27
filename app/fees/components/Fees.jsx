@@ -53,12 +53,14 @@ export default function Fees({ pricingPlans }) {
                 ))}
               </ul>
 
-              <Button
-                variant="default"
-                className="w-full py-2 rounded-full bg-[#649CAC] hover:bg-[#4f7f8b] hover:!bg-opacity-100 text-white mt-6 md:text-base"
-              >
-                <Link href={"#book"}>Book A Free Consult</Link>
-              </Button>
+              <Link href={"#book"}>
+                <Button
+                  variant="default"
+                  className="w-full py-2 rounded-full bg-[#649CAC] hover:bg-[#4f7f8b] hover:!bg-opacity-100 text-white mt-6 md:text-base"
+                >
+                  Book A Free Consult
+                </Button>
+              </Link>
             </div>
           ))}
         </div>
