@@ -7,6 +7,7 @@ import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { useScroll } from 'framer-motion';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import { Button } from '../ui/button';
+import { cn } from '@/lib/utils';
 
 const menuVariants = {
   hidden: { opacity: 0 },
@@ -49,7 +50,6 @@ const Navbar = ({ serviceCategories }) => {
 
   const handleServicesClick = () => {
     setIsServicesOpen((prev) => {
-      // Close all open categories when services menu is toggled
       if (prev) {
         setOpenCategories({});
       }
@@ -80,7 +80,10 @@ const Navbar = ({ serviceCategories }) => {
 
   return (
     <motion.nav
-      className='bg-[#fafafa] border-gray-200 w-full fixed top-0 z-50'
+      className={cn(
+        isShrunk ? 'top-0' : 'top-[35px]',
+        'bg-[#fafafa] border-gray-200 w-full fixed  z-50'
+      )}
       animate={controls}
       initial={{ height: '120px' }}
     >
