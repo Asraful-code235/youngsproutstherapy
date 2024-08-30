@@ -20,8 +20,8 @@ export default function TeamDefault({ team }) {
 
   return (
     <section className='pt-16 px-6'>
-      <section className='max-w-7xl mx-auto flex flex-col gap-14 md:gap-20'>
-        <div className='flex flex-col md:flex-row gap-8 md:gap-12 items-center mt-8 md:mt-14'>
+      <section className='max-w-7xl mx-auto flex flex-col gap-8'>
+        <div className='w-full flex flex-col items-center gap-4 mt-8 md:mt-14'>
           <div className='w-[300px] h-[300px] rounded-md overflow-hidden border-2 border-[#ab6969]'>
             <Image
               src={imageProps.src}
@@ -36,7 +36,7 @@ export default function TeamDefault({ team }) {
               height={300}
             />
           </div>
-          <div className='flex flex-col gap-4'>
+          <div className='flex flex-col gap-4 items-center'>
             <h1 className='text-3xl md:text-5xl font-semibold'>{team.name}</h1>
             <h4 className='text-xl md:text-2xl font-medium'>{team.position}</h4>
             {team?.appointmentLink && (
@@ -49,72 +49,53 @@ export default function TeamDefault({ team }) {
           </div>
         </div>
 
-        <section className='flex flex-col-reverse md:flex-row gap-8 px-4'>
-          <div className='flex flex-col gap-8 w-full md:flex-1'>
-            {team?.specialities && (
-              <div className='flex flex-col gap-4'>
-                <p className='text-xl md:text-2xl'>Specialities:</p>
-                <ul className='flex flex-wrap gap-2'>
-                  {team?.specialities.map((item) => (
-                    <li key={item}>
-                      <Badge text={item} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {team?.languages && (
-              <div className='flex flex-col gap-6'>
-                <p className='text-2xl md:text-3xl'>Languages:</p>
-                <ul className='flex flex-wrap gap-2'>
-                  {team?.languages.map((item) => (
-                    <li key={item}>
-                      <Badge text={item} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {team?.clientFocus && (
-              <div className='flex flex-col gap-6'>
-                <p className='text-2xl md:text-3xl'>Client Focus:</p>
-                <ul className='flex flex-wrap gap-2'>
-                  {team?.clientFocus.map((item) => (
-                    <li key={item}>
-                      <Badge text={item} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {team?.therapyFormats && (
-              <div className='flex flex-col gap-6'>
-                <p className='text-2xl md:text-3xl'>Therapy Formats:</p>
-                <ul className='flex flex-wrap gap-2'>
-                  {team?.therapyFormats.map((item) => (
-                    <li key={item}>
-                      <Badge text={item} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-
+        <section className='px-4'>
           <article className='flex flex-col gap-8 md:gap-10 w-full md:flex-[2.95]'>
             <div className='md:text-xl'>{team?.description}</div>
-            {team?.therapyAreasOfSupport && (
-              <div className='flex flex-col gap-6'>
-                <p className='text-2xl md:text-3xl'>Types of therapy:</p>
-                <ul className='flex flex-wrap gap-2'>
-                  {team?.therapyAreasOfSupport.map((item) => (
-                    <li key={item}>
-                      <Badge text={item} />
-                    </li>
-                  ))}
-                </ul>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:space-y-0 space-y-6'>
+              <div>
+                {team?.specialities && (
+                  <div className='flex flex-col gap-4'>
+                    <p className='text-xl md:text-2xl'>Specialities:</p>
+                    <ul className='flex flex-wrap gap-2'>
+                      {team?.specialities.map((item) => (
+                        <li key={item}>
+                          <Badge text={item} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-            )}
+              <div>
+                {team?.clientFocus && (
+                  <div className='flex flex-col gap-6'>
+                    <p className='text-2xl md:text-3xl'>Client Focus:</p>
+                    <ul className='flex flex-wrap gap-2'>
+                      {team?.clientFocus.map((item) => (
+                        <li key={item}>
+                          <Badge text={item} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              <div>
+                {team?.therapyFormats && (
+                  <div className='flex flex-col gap-6'>
+                    <p className='text-2xl md:text-3xl'>Therapy Formats:</p>
+                    <ul className='flex flex-wrap gap-2'>
+                      {team?.therapyFormats.map((item) => (
+                        <li key={item}>
+                          <Badge text={item} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
           </article>
         </section>
       </section>
