@@ -18,15 +18,15 @@ const features = [
     description:
       "Helping children and teens harness their ADHD as a strength, improving focus and self-regulation through tailored strategies.",
     link: "/approach-and-specialties",
-    src: "/images/knee.webp",
+    src: "/images/knee.jpg",
   },
   {
     id: 3,
     title: "Parenting",
     description:
       "Guiding parents to foster strong, healthy relationships with their children, while navigating the challenges and joys of parenthood.",
-    link: "/adhd-therapy-for-kids-and-teens",
-    src: "/images/hand.webp",
+    link: "/approach-and-specialties",
+    src: "/images/hand.jpg",
   },
   {
     id: 4,
@@ -74,7 +74,7 @@ const features = [
     description:
       "Offering supportive therapy for children and teens navigating grief, helping them process their feelings and move forward with strength and resilience.",
     link: "/approach-and-specialties",
-    src: "/images/psychiatrist-vs-therapist.jpeg",
+    src: "/images/psychiatrist-vs-therapist.jpg",
   },
   {
     id: 10,
@@ -82,7 +82,7 @@ const features = [
     description:
       "Boosting children's and teens' confidence and self-worth through strategies that promote positive self-perception and resilience.",
     link: "/approach-and-specialties",
-    src: "/images/blog_photo.webp",
+    src: "/images/Self-Esteem.jpg",
   },
   {
     id: 11,
@@ -90,7 +90,7 @@ const features = [
     description:
       "Specializing in Autism Spectrum Disorder counseling, we help children and teens thrive by enhancing their social skills, managing emotions, and fostering independence.",
     link: "/approach-and-specialties",
-    src: "/images/t-6.jpg",
+    src: "/images/Autism.jpg",
   },
   {
     id: 12,

@@ -18,10 +18,10 @@ export default function Contact() {
     if (form.current) {
       await emailjs
         .sendForm(
-          "service_mhes258",
-          "template_9do5abh",
+          "service_cwiihbb",
+          "template_0s2nneh",
           form.current,
-          "NBm1Am8HA6NeOIEUY"
+          "_O-IBWyLZwt2kHPs5"
         )
         .then(
           (result) => {
@@ -33,24 +33,24 @@ export default function Contact() {
           }
         );
     }
-
+    triggerGoogleAdsConversion();
     setIsSubmitting(false);
     e.target.reset();
   };
 
   const triggerGoogleAdsConversion = () => {
     window.dataLayer = window.dataLayer || [];
-    window.gtag("event", "conversion", {
-      send_to: "AW-10834730946/4Je8CMG_maUDEMK_s64o",
-    });
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-10834730946/4Je8CMG_maUDEMK_s64o",
+      });
+    } else {
+      console.error("Google Analytics gtag function is not defined.");
+    }
   };
 
   return (
     <div>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=AW-10834730946"
-      />
       <script id="google-gtag">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -98,7 +98,7 @@ export default function Contact() {
             onSubmit={handleSubmit}
             ref={form}
           >
-            <label>First name</label>
+            <label>First name*</label>
             <input
               placeholder="Enter first name"
               className="p-1 px-2 mt-1 mb-3 border border-t-0 border-l-0 border-r-0 outline-none border-slate-300"
@@ -106,14 +106,15 @@ export default function Contact() {
               name="first_name"
               required
             />
-            <label>Last name</label>
+            <label>Last name*</label>
             <input
               placeholder="Enter last name"
               className="p-1 px-2 mt-1 mb-3 border border-t-0 border-l-0 border-r-0 outline-none border-slate-300"
               type="text"
               name="last_name"
+              required
             />
-            <label>Email address</label>
+            <label>Email address*</label>
             <input
               placeholder="Enter email"
               className="p-1 px-2 mt-1 mb-3 border border-t-0 border-l-0 border-r-0 outline-none border-slate-300"
@@ -121,7 +122,7 @@ export default function Contact() {
               name="email"
               required
             />
-            <label>Phone</label>
+            <label>Phone*</label>
             <input
               placeholder="Enter phone"
               className="p-1 px-2 mt-1 mb-3 border border-t-0 border-l-0 border-r-0 outline-none border-slate-300"
