@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import GoogleAdsButton from "@/components/providers/GoogleAdsButton";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function HeroSection() {
   return (
@@ -37,7 +38,7 @@ export default function HeroSection() {
             Psychotherapy & Psychological Counselling for Kids, Teens and
             Families in Vaughan/Thornhill
           </p>
-          <div className="z-10 flex flex-col items-center w-full gap-3 mt-6 md:w-4/12 md:items-start">
+          <div className="z-10 flex flex-col items-center lg:w-full gap-3 mt-6 w-fit max-w-xs  md:items-start">
             <Link className="block w-full" href="/#book-consultation">
               <Button
                 variant="brandButton"
@@ -51,6 +52,9 @@ export default function HeroSection() {
               {/* Replace with your conversion label */}
               <Link className="block w-full" href="tel:2895794769">
                 <Button
+                  onClick={() =>
+                    sendGTMEvent("event", "buttonClicked", { value: "xyz" })
+                  }
                   variant="outline"
                   className="w-full rounded-full md:text-base"
                 >

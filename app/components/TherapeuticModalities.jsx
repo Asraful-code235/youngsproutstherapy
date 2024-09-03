@@ -101,16 +101,18 @@ export default function TherapeuticModalities() {
           <a
             href={`/${item?.link || "#"}`}
             key={item.id}
-            className="group transition-all duration-300 ease-in-out"
+            className="group transition-all duration-300 ease-in-out w-full h-full"
           >
-            <div className="flex flex-col gap-4 items-center text-center group-hover:shadow group-hover:scale-[1.02] p-4 ">
-              <div className="p-4 bg-[#D1E6E2] rounded-full">
-                <div className="text-[#589086] text-xl">{item.icon}</div>
+            <div className="flex flex-col gap-4 w-full h-full items-center text-center group-hover:shadow group-hover:scale-[1.02] px-4 py-6 border border-[#e0c8c8] group-hover:bg-[#e0c8c8] rounded-md ">
+              <div className="p-4 bg-[#D1E6E2] group-hover:bg-white rounded-full">
+                <div className="text-[#589086] group-hover:text-[#cca4a4] text-xl">
+                  {item.icon}
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-[#1F2A37] max-w-[250px] mx-auto">
+              <h3 className="text-lg font-bold text-[#1F2A37] max-w-[250px] mx-auto group-hover:text-white">
                 {item.title}
               </h3>
-              <p className="text-[#1F2A37] text-sm md:text-[15px] tracking-wide max-w-sm mx-auto italic">
+              <p className="text-[#1F2A37] text-sm md:text-base tracking-wide max-w-sm mx-auto italic group-hover:text-white">
                 {item.description}
               </p>
             </div>

@@ -7,7 +7,7 @@ export default function TopBar() {
       href="https://youngsproutstherapy.janeapp.com/"
       target="_blank"
     >
-      <div className="text-black text-center mx-auto py-1.5 font-semibold bg-brand-color-three">
+      <div className="text-black text-sm lg:text-base text-center mx-auto py-1.5 font-semibold bg-brand-color-three">
         Ready to schedule an appointment? <span> Click Here</span>
       </div>
     </Link>
