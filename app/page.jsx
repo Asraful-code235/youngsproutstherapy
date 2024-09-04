@@ -29,6 +29,9 @@ const TherapySupport = dynamic(
 const InsuranceCoverage = dynamic(
   () => import("./components/InsuranceCoverage")
 );
+const PersonalizedTherapy = dynamic(
+  () => import("./components/PersonalizedTherapy")
+);
 
 export const metadata = {
   title: "Young Sprouts | Child, Teen &amp; Family Therapy | Vaughan",
@@ -47,6 +50,7 @@ export default async function Home() {
       />
       <HomeComponent />
       <FamilyTherapySection />
+      <PersonalizedTherapy />
       <TeamSection teams={teams} />
       <PsychoTherapyHelp />
       <TherapeuticModalities />
