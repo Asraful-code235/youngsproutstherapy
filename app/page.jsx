@@ -23,6 +23,12 @@ const TeamSection = dynamic(() => import("./components/TeamSection"));
 const TherapeuticModalities = dynamic(
   () => import("./components/TherapeuticModalities")
 );
+const TherapySupport = dynamic(
+  () => import("../components/Modules/public/TherapySupport")
+);
+const InsuranceCoverage = dynamic(
+  () => import("./components/InsuranceCoverage")
+);
 
 export const metadata = {
   title: "Young Sprouts | Child, Teen &amp; Family Therapy | Vaughan",
@@ -44,6 +50,8 @@ export default async function Home() {
       <TeamSection teams={teams} />
       <PsychoTherapyHelp />
       <TherapeuticModalities />
+      <InsuranceCoverage />
+      <TherapySupport />
       <ConsultationBooking />
       <FeedSection data={posts} />
       <ShopLocationMap />
