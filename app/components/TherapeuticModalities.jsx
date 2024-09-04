@@ -92,7 +92,7 @@ const items = [
 ];
 export default function TherapeuticModalities() {
   return (
-    <div className="px-3 py-16 mx-auto max-w-screen-2xl md:px-0">
+    <div className="px-3 py-16 mx-auto max-w-screen-2xl md:px-6">
       <h2 className="text-center text-2xl md:text-5xl md:leading-snug font-bold text-[#cca4a4]">
         Therapeutic Modalities Used in Counselling
       </h2>
