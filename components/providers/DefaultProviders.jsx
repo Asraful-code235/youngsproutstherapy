@@ -7,7 +7,6 @@ import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 import { AnimatePresence, motion } from "framer-motion";
 import SearchTermContext from "../hooks/useSearchTerm";
 import TopBar from "../shared/TopBar";
-import { GoogleAnalytics } from "nextjs-google-analytics";
 
 export default function DefaultProviders({ children, serviceCategories }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,11 +34,6 @@ export default function DefaultProviders({ children, serviceCategories }) {
           <Footer />
         </Theme>
       </SearchTermContext.Provider>
-      <GoogleAnalytics
-        trackPageViews
-        gaMeasurementId="G-400HX81HQC"
-        strategy="lazyOnload"
-      />
     </AnimatePresence>
   );
 }

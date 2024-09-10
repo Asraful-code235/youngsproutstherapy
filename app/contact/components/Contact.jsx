@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import ShopLocationMap from "@/components/shared/ShopLocationMap";
 import emailjs from "@emailjs/browser";
 import { event } from "nextjs-google-analytics";
+import { sendGTMEvent } from "@next/third-parties/google";
 export default function Contact() {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,14 +56,14 @@ export default function Contact() {
 
   return (
     <div>
-      <script id="google-gtag">
+      {/* <script id="google-gtag">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'AW-10834730946');
         `}
-      </script>
+      </script> */}
       <div className="md:h-56 h-48 bg-[#ebb1b1] flex items-center text-white font-serif">
         <div className="mx-auto">
           <h3 className="text-xl">Young Sprouts Therapy</h3>
@@ -153,6 +154,13 @@ export default function Contact() {
               <p className="mt-4 text-green-500">{successMessage}</p>
             )}
           </form>
+          <button
+            onClick={() =>
+              sendGTMEvent("event", "buttonClicked", { value: "xyz" })
+            }
+          >
+            Send Event
+          </button>
           <div className="md:p-3">
             <ShopLocationMap />
           </div>
