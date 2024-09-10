@@ -3,7 +3,7 @@ import { cn } from "../lib/utils";
 import DefaultProviders from "../components/providers/DefaultProviders";
 import "@radix-ui/themes/styles.css";
 import { getServiceCategoryList } from "@/lib/sanity/client";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 export async function generateMetadata({ params }) {
   return processMetadata(params);
@@ -54,6 +54,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <GoogleAnalytics gaId="G-TGE4VPB9T2" />
+      <GoogleTagManager gtmId="GTM-5BKB2GKK" />
 
       <body className={"bg-[#F8F8F8]"}>
         <DefaultProviders serviceCategories={serviceCategories}>
