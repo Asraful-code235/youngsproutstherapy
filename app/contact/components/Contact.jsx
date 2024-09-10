@@ -2,8 +2,8 @@
 import { useState, useRef } from "react";
 import ShopLocationMap from "@/components/shared/ShopLocationMap";
 import emailjs from "@emailjs/browser";
-import { event } from "nextjs-google-analytics";
-import { sendGTMEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@next/third-parties/google";
+import { trackGAEvent } from "../../../components/providers/GoogleAnalytics";
 export default function Contact() {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,10 +35,11 @@ export default function Contact() {
     //     );
     // }
     // triggerGoogleAdsConversion();
-    event("submit_form", {
-      category: "Contact",
-      label: "something",
-    });
+    // event("submit_form", {
+    //   category: "Contact",
+    //   label: "something",
+    // });
+    trackGAEvent("Contact", "Form Submit", "clicked");
     setIsSubmitting(false);
     e.target.reset();
   };
@@ -156,7 +157,7 @@ export default function Contact() {
           </form>
           <button
             onClick={() =>
-              sendGTMEvent("event", "buttonClicked", { value: "xyz" })
+              sendGAEvent({ event: "buttonClicked", value: "xyz" })
             }
           >
             Send Event

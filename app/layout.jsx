@@ -53,14 +53,13 @@ export default async function RootLayout({ children }) {
   const serviceCategories = await getServiceCategoryList();
   return (
     <html lang="en" suppressHydrationWarning>
-      <GoogleAnalytics gaId="G-TGE4VPB9T2" />
-      <GoogleTagManager gtmId="GTM-5BKB2GKK" />
-
       <body className={"bg-[#F8F8F8]"}>
         <DefaultProviders serviceCategories={serviceCategories}>
           <div className={cn("min-h-[40vh]")}>{children}</div>
         </DefaultProviders>
       </body>
+      <GoogleAnalytics gaId="G-TGE4VPB9T2" />
+      <GoogleTagManager gtmId="GTM-5BKB2GKK" />
     </html>
   );
 }

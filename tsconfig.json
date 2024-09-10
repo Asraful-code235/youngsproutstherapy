@@ -26,7 +26,8 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/providers/GoogleAdsButton.jsx"
-, "app/components/InsuranceCoverage.jsx"  ],
+    "components/providers/GoogleAdsButton.jsx",
+    "app/components/InsuranceCoverage.jsx"
+  ],
   "exclude": ["node_modules"]
 }
