@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import ShopLocationMap from "@/components/shared/ShopLocationMap";
 import emailjs from "@emailjs/browser";
-
+import { event } from "nextjs-google-analytics";
 export default function Contact() {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,39 +15,43 @@ export default function Contact() {
     setErrorMessage("");
     setSuccessMessage("");
 
-    if (form.current) {
-      await emailjs
-        .sendForm(
-          "service_cwiihbb",
-          "template_0s2nneh",
-          form.current,
-          "_O-IBWyLZwt2kHPs5"
-        )
-        .then(
-          (result) => {
-            setSuccessMessage("Email sent successfully!");
-            triggerGoogleAdsConversion();
-          },
-          (error) => {
-            setErrorMessage("Failed to send email. Please try again.");
-          }
-        );
-    }
-    triggerGoogleAdsConversion();
+    // if (form.current) {
+    //   await emailjs
+    //     .sendForm(
+    //       "service_cwiihbb",
+    //       "template_0s2nneh",
+    //       form.current,
+    //       "_O-IBWyLZwt2kHPs5"
+    //     )
+    //     .then(
+    //       (result) => {
+    //         setSuccessMessage("Email sent successfully!");
+    //         triggerGoogleAdsConversion();
+    //       },
+    //       (error) => {
+    //         setErrorMessage("Failed to send email. Please try again.");
+    //       }
+    //     );
+    // }
+    // triggerGoogleAdsConversion();
+    event("submit_form", {
+      category: "Contact",
+      label: "something",
+    });
     setIsSubmitting(false);
     e.target.reset();
   };
 
-  const triggerGoogleAdsConversion = () => {
-    window.dataLayer = window.dataLayer || [];
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "conversion", {
-        send_to: "AW-10834730946/4Je8CMG_maUDEMK_s64o",
-      });
-    } else {
-      console.error("Google Analytics gtag function is not defined.");
-    }
-  };
+  // const triggerGoogleAdsConversion = () => {
+  //   window.dataLayer = window.dataLayer || [];
+  //   if (typeof window.gtag === "function") {
+  //     window.gtag("event", "conversion", {
+  //       send_to: "AW-10834730946/4Je8CMG_maUDEMK_s64o",
+  //     });
+  //   } else {
+  //     console.error("Google Analytics gtag function is not defined.");
+  //   }
+  // };
 
   return (
     <div>

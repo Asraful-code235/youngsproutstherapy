@@ -4,7 +4,6 @@ import DefaultProviders from "../components/providers/DefaultProviders";
 import "@radix-ui/themes/styles.css";
 import { getServiceCategoryList } from "@/lib/sanity/client";
 import Script from "next/script";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 export async function generateMetadata({ params }) {
   return processMetadata(params);
@@ -54,10 +53,10 @@ export default async function RootLayout({ children }) {
   const serviceCategories = await getServiceCategoryList();
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      {/* <head>
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-TGE4VPB9T2"
+          src="https://www.googletagmanager.com/gtag/js?id=G-WMG65Q3BT9"
         ></Script>
         <Script id="gaId">
           {`
@@ -65,17 +64,16 @@ export default async function RootLayout({ children }) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-TGE4VPB9T2');
+  gtag('config', 'G-WMG65Q3BT9');
 `}
         </Script>
-      </head>
+      </head> */}
       <body className={"bg-[#F8F8F8]"}>
         <DefaultProviders serviceCategories={serviceCategories}>
           <div className={cn("min-h-[40vh]")}>{children}</div>
         </DefaultProviders>
       </body>
 
-      {/* <GoogleAnalytics gaId="G-K5MG1PFSLE" /> */}
       {/* <GoogleTagManager gtmId="GTM-5BKB2GKK" /> */}
     </html>
   );
