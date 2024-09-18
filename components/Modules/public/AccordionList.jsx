@@ -54,29 +54,17 @@ export default function AccordionList({ module, isLast }) {
   if (!module) return null;
 
   return (
-    <section className="w-full my-6 px-4">
-      <section className="max-w-5xl mx-auto tracking-wide flex flex-col gap-8 lg:gap-[64px]">
-        <h3 className="text-2xl lg:text-[48px] font-medium leading-[36px] lg:leading-[56px] mb-4 text-center">
+    <section className="max-w-5xl mx-auto w-full px-6">
+      <section className=" mx-auto tracking-wide flex flex-col gap-8 ">
+        <h3 className="text-2xl text-[#ab6969] lg:text-[32px] font-medium leading-[36px] lg:leading-[56px] text-left">
           {module.title}
         </h3>
-        <div>
+        <div className="-mt-4">
           {module.items.map((item) => (
             <AccordionItem key={item._key} item={item} />
           ))}
         </div>
       </section>
-      {isLast && (
-        <div className="w-full flex flex-wrap gap-4 items-center justify-center mt-8 transition-all duration-300 ease-in-out">
-          <Button className="bg-[#ab6969] hover:bg-[#ab6969] hover:bg-opacity-80 !min-w-[340px]">
-            <Link href="https://www.youngsproutstherapy.com/" target="_blank">
-              Book A Free 15-minute Consultation
-            </Link>
-          </Button>
-          <Button className="!min-w-[350px] text-[#ab6969] hover:!text-white hover:!bg-[#ab6969] border !border-[#ab6969] bg-white">
-            <Link href="/fees">Fees</Link>
-          </Button>
-        </div>
-      )}
     </section>
   );
 }

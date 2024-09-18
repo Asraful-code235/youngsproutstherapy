@@ -12,26 +12,20 @@ export default function RichList({ module }) {
         backgroundColor: module?.color ? `${module?.color}` : "",
         paddingBottom: module?.color ? "4rem" : "",
       }}
-      className={`w-screen pt-4 lg:pt-6`}
+      className={`w-screen `}
     >
-      <section className="max-w-4xl mx-auto p-4 flex flex-col gap-4 lg:gap-5 tracking-wide">
-        <h2 className="text-2xl text-center text-[#ab6969] lg:text-[48px] leading-[36px] lg:leading-[56px] font-medium ">
+      <section className="max-w-5xl px-4 mx-auto flex flex-col gap-4 lg:gap-8 tracking-wide">
+        <h2 className="text-2xl text-left text-[#ab6969] lg:text-[32px] leading-[36px] lg:leading-[56px] font-medium">
           {module?.title}
         </h2>
-        <h2 className="text-lg lg:text-xl font-light ">
-          {module?.description}
-        </h2>
-        <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <h2 className="text-lg lg:text-xl font-light">{module?.description}</h2>
+        <ul className="flex flex-col gap-4">
           {module?.items?.map((list) => (
-            <li
-              className=" font-medium p-4 hover:scale-[1.02] transition-all duration-500 ease-in-out border-2 border-[#f0e4e4] rounded-md bg-white shadow flex items-center  flex-col gap-3"
-              key={list._key}
-            >
-              <strong className=" text-sm lg:text-lg text-center text-[#78a9b6]">
-                {" "}
+            <li className="flex flex-col items-start gap-2" key={list._key}>
+              <strong className="text-sm lg:text-lg text-gray-900 font-medium ">
                 {list.strongText}
               </strong>
-              <p className="text-sm text-center"> {list.regularText}</p>
+              <p className="text-sm text-left">{list.regularText}</p>
             </li>
           ))}
         </ul>
