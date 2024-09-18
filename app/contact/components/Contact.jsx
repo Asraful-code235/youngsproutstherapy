@@ -48,18 +48,18 @@ export default function Contact() {
     <div>
       <div className="md:h-56 h-48 bg-[#ebb1b1] flex items-center text-white font-serif">
         <div className="mx-auto">
-          <h3 className="text-xl">Young Sprouts Therapy</h3>
-          <h1 className="mt-3 font-medium text-7xl">Contact</h1>
+          <h3 className="text-xl text-center">Young Sprouts Therapy</h3>
+          <h1 className="mt-3 font-medium text-7xl text-center">Contact</h1>
         </div>
       </div>
       <div className="grid max-w-6xl grid-cols-1 max-sm:divide-y max-sm:divide-gray-100 gap-4 px-6 py-4 mx-auto my-10 md:grid-cols-3 lg:px-4">
-        <div className="space-y-2 :text-base">
-          <h3 className="font-serif text-3xl font-medium">Address</h3>
+        <div className="space-y-2 lg:text-lg">
+          <h3 className="font-serif text-4xl font-medium">Address</h3>
           <p>1137 Centre Street Suite #204</p>
           <p>Thornhill, ON, L4J 3M6</p>
         </div>
-        <div className="space-y-2 text-base">
-          <h3 className="font-serif text-3xl font-medium">Contact</h3>
+        <div className="space-y-2 lg:text-lg">
+          <h3 className="font-serif text-4xl font-medium">Contact</h3>
           <p>
             <a
               href="mailto:info@youngsproutstherapy.com"
@@ -70,8 +70,8 @@ export default function Contact() {
           </p>
           <p>289-579-4769 (GROW)</p>
         </div>
-        <div className="space-y-2 text-base">
-          <h3 className="font-serif text-3xl font-medium">Opening Hours</h3>
+        <div className="space-y-2 lg:text-lg">
+          <h3 className="font-serif text-4xl font-medium">Opening Hours</h3>
           <p>Mon-Thurs: 9:00 am - 9:00 pm</p>
           <p>Friday: 9:00 am - 3:00 pm</p>
           <p>Saturday: Closed</p>
@@ -81,7 +81,7 @@ export default function Contact() {
       <section className="py-10 dark:bg-gray-100 dark:text-gray-900">
         <div className="grid max-w-6xl grid-cols-1 gap-3 px-4 mx-auto lg:px-2 md:grid-cols-2">
           <form
-            className="flex flex-col py-6 md:py-0 md:px-6 text-base"
+            className="flex flex-col py-6 md:py-0 md:px-6 lg:text-lg"
             onSubmit={handleSubmit}
             ref={form}
           >
@@ -136,13 +136,7 @@ export default function Contact() {
               <p className="mt-4 text-green-500">{successMessage}</p>
             )}
           </form>
-          <button
-            onClick={() =>
-              sendGAEvent({ event: "buttonClicked", value: "xyz" })
-            }
-          >
-            Send Event
-          </button>
+
           <div className="md:p-3">
             <ShopLocationMap />
           </div>
