@@ -15,7 +15,7 @@ export default function RichList({ module }) {
       className={`w-screen pt-4 lg:pt-6`}
     >
       <section className="max-w-4xl mx-auto p-4 flex flex-col gap-4 lg:gap-5 tracking-wide">
-        <h2 className="text-2xl lg:text-[48px] leading-[36px] lg:leading-[56px] font-medium ">
+        <h2 className="text-2xl text-center text-[#ab6969] lg:text-[48px] leading-[36px] lg:leading-[56px] font-medium ">
           {module?.title}
         </h2>
         <h2 className="text-lg lg:text-xl font-light ">
@@ -27,7 +27,7 @@ export default function RichList({ module }) {
               className=" font-medium p-4 hover:scale-[1.02] transition-all duration-500 ease-in-out border-2 border-[#f0e4e4] rounded-md bg-white shadow flex items-center  flex-col gap-3"
               key={list._key}
             >
-              <strong className=" text-sm lg:text-lg text-center">
+              <strong className=" text-sm lg:text-lg text-center text-[#78a9b6]">
                 {" "}
                 {list.strongText}
               </strong>

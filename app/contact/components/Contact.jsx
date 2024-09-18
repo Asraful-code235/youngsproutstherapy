@@ -16,55 +16,36 @@ export default function Contact() {
     setErrorMessage("");
     setSuccessMessage("");
 
-    // if (form.current) {
-    //   await emailjs
-    //     .sendForm(
-    //       "service_cwiihbb",
-    //       "template_0s2nneh",
-    //       form.current,
-    //       "_O-IBWyLZwt2kHPs5"
-    //     )
-    //     .then(
-    //       (result) => {
-    //         setSuccessMessage("Email sent successfully!");
-    //         triggerGoogleAdsConversion();
-    //       },
-    //       (error) => {
-    //         setErrorMessage("Failed to send email. Please try again.");
-    //       }
-    //     );
-    // }
-    // triggerGoogleAdsConversion();
-    // event("submit_form", {
-    //   category: "Contact",
-    //   label: "something",
-    // });
+    if (form.current) {
+      await emailjs
+        .sendForm(
+          "service_cwiihbb",
+          "template_0s2nneh",
+          form.current,
+          "_O-IBWyLZwt2kHPs5"
+        )
+        .then(
+          (result) => {
+            setSuccessMessage("Email sent successfully!");
+            triggerGoogleAdsConversion();
+          },
+          (error) => {
+            setErrorMessage("Failed to send email. Please try again.");
+          }
+        );
+    }
+    triggerGoogleAdsConversion();
+    event("submit_form", {
+      category: "Contact",
+      label: "something",
+    });
     trackGAEvent("Contact", "Form Submit", "clicked");
     setIsSubmitting(false);
     e.target.reset();
   };
 
-  // const triggerGoogleAdsConversion = () => {
-  //   window.dataLayer = window.dataLayer || [];
-  //   if (typeof window.gtag === "function") {
-  //     window.gtag("event", "conversion", {
-  //       send_to: "AW-10834730946/4Je8CMG_maUDEMK_s64o",
-  //     });
-  //   } else {
-  //     console.error("Google Analytics gtag function is not defined.");
-  //   }
-  // };
-
   return (
     <div>
-      {/* <script id="google-gtag">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-10834730946');
-        `}
-      </script> */}
       <div className="md:h-56 h-48 bg-[#ebb1b1] flex items-center text-white font-serif">
         <div className="mx-auto">
           <h3 className="text-xl">Young Sprouts Therapy</h3>

@@ -15,7 +15,7 @@ export default function HeroCover({ module, utils }) {
         <p className="text-lg max-lg:text-center font-medium text-left lg:text-xl text-[#85a7b1]">
           Young Sprouts
         </p>
-        <h2 className="text-4xl lg:text-[48px] font-medium text-center text-gray-900 lg:mb-6 leading-[36px] lg:leading-[56px] lg:text-left">
+        <h2 className="text-4xl lg:text-[48px] font-medium text-center text-[#ab6969] lg:mb-6 leading-[36px] lg:leading-[56px] lg:text-left">
           {utils?.title}
         </h2>
         <p className="text-lg max-lg:text-center font-normal tracking-tight text-left lg:text-xl lg:max-w-[495px]">

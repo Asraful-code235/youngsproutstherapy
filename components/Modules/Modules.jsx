@@ -9,6 +9,7 @@ import AccordionList from "./public/AccordionList";
 import List from "./public/List";
 import RichList from "./public/RichList";
 import Subscription from "./public/Subscription";
+import RegularSection from "./public/RegularSection";
 
 export default function Modules({ modules, utils }) {
   let lastAccordionIndex = -1;
@@ -17,6 +18,8 @@ export default function Modules({ modules, utils }) {
       lastAccordionIndex = index;
     }
   });
+
+  console.log("Modules", modules);
 
   return (
     <section className="flex flex-col gap-8 lg:gap-[42px]">
@@ -32,10 +35,9 @@ export default function Modules({ modules, utils }) {
           case "therapy.features":
             return <TherapyInfo module={module} key={module._key} />;
 
-            {
-              /* case "hero.cover":
-            return <TherapySupport />; */
-            }
+          case "regular.section":
+            return <RegularSection module={module} key={module._key} />;
+
           case "group.box":
             return <GroupBox module={module} key={module._key} />;
           case "accordion":
