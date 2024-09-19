@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import ShopLocationMap from "@/components/shared/ShopLocationMap";
 import emailjs from "@emailjs/browser";
 import { sendGAEvent } from "@next/third-parties/google";
-import { trackGAEvent } from "../../../components/providers/GoogleAnalytics";
+import { trackGAEvent } from "@/utils/google-analytics.js";
 export default function Contact() {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
