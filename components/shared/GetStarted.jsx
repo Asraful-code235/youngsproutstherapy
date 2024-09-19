@@ -16,6 +16,16 @@ export default function GetStarted({ open, setOpen }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  const triggerGoogleAdsConversion = () => {
+    const gtagScript = document.createElement("script");
+    gtagScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('event', 'conversion', {'send_to': 'AW-10834730946/4Je8CMG_maUDEMK_s64o'});
+    `;
+    document.head.appendChild(gtagScript);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -42,10 +52,7 @@ export default function GetStarted({ open, setOpen }) {
         );
     }
     triggerGoogleAdsConversion();
-    event("submit_form", {
-      category: "Contact",
-      label: "something",
-    });
+
     trackGAEvent("Contact", "Form Submit", "clicked");
     setIsSubmitting(false);
     e.target.reset();

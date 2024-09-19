@@ -10,6 +10,7 @@ import { useState } from "react";
 
 export default function HeroSection() {
   const [open, setOpen] = useState(false);
+
   return (
     <div className="relative bg-[url('/images/youngsproutstherapy-image-08.webp')] bg-no-repeat bg-cover bg-center py-10 md:py-24 md:pb-56 px-4 ">
       <GoogleAnalytics />

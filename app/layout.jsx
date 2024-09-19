@@ -58,8 +58,8 @@ export default async function RootLayout({ children }) {
           <div className={cn("min-h-[40vh]")}>{children}</div>
         </DefaultProviders>
       </body>
-      <GoogleAnalytics gaId="G-TGE4VPB9T2" />
-      <GoogleTagManager gtmId="GTM-5BKB2GKK" />
+      <GoogleAnalytics gaId="G-7SPHMHP3YC" />
+      <GoogleTagManager gtmId="GTM-KZHGKVZ" />
     </html>
   );
 }

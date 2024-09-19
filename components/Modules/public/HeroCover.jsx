@@ -33,7 +33,7 @@ export default function HeroCover({ module, utils }) {
           </Link>
 
           <Link href={`tel:${module.cta2}`}>
-            <GoogleAdsButton CONVERSION_LABEL={"BnbgCPymmaUDEMK_s64o"}>
+            <GoogleAdsButton conversionLabel="BnbgCPymmaUDEMK_s64o">
               <Button
                 variant="outline"
                 className="rounded-full lg:w-auto md:text-base max-lg:min-w-[270px]"

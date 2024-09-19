@@ -10,6 +10,16 @@ export default function Contact() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  const triggerGoogleAdsConversion = () => {
+    const gtagScript = document.createElement("script");
+    gtagScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('event', 'conversion', {'send_to': 'AW-10834730946/4Je8CMG_maUDEMK_s64o'});
+    `;
+    document.head.appendChild(gtagScript);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
