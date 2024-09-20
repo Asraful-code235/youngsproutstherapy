@@ -29,7 +29,7 @@ const TeamSection = ({ teams }) => {
         </div>
         <div className="relative w-full max-w-5xl mx-auto md:mt-0">
           <Swiper
-            modules={[Navigation, Pagination, Autoplay, A11y]}
+            modules={[Navigation, Pagination, A11y]}
             spaceBetween={20}
             slidesPerView={1}
             breakpoints={{
@@ -50,7 +50,6 @@ const TeamSection = ({ teams }) => {
                 spaceBetween: 20,
               },
             }}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
             pagination={{ clickable: true }}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
           >
