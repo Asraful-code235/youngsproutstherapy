@@ -429,7 +429,7 @@ const CategoryItem = ({ category }) => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            className="absolute left-full top-0 mt-2 bg-white border rounded-lg shadow-lg z-50 w-full max-w-[340px]"
+            className="absolute left-full top-0 mt-2 bg-white border rounded-lg shadow-lg z-50 w-fit max-w-[560px] whitespace-nowrap"
           >
             {category?.services &&
               category?.services?.map((service) => (
