@@ -11,8 +11,8 @@ export default function HeroCover({ module, utils }) {
   if (!module) return null;
   return (
     <section className="grid grid-cols-1 gap-8 lg:grid-cols-2 h-auto lg:min-h-[70vh]">
-      <div className="flex flex-col gap-4 justify-center w-full px-6 lg:px-12 order-2 lg:order-2">
-        <p className="text-lg max-lg:text-center font-medium text-left lg:text-xl text-[#85a7b1]">
+      <div className="flex flex-col gap-4 justify-center w-full px-6 lg:px-12 order-2 lg:order-2 lg:py-12">
+        <p className="text-lg max-lg:text-center font-medium text-left lg:text-xl text-[#85a7b1] ">
           Young Sprouts
         </p>
         <h2 className="text-4xl lg:text-[48px] font-medium text-center text-[#ab6969] lg:mb-6 leading-[36px] lg:leading-[56px] lg:text-left">
