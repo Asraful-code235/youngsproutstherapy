@@ -62,8 +62,11 @@ export default function GetStarted({ open, setOpen }) {
     <>
       <Dialog open={open} onOpenChange={() => setOpen(!open)}>
         <DialogContent>
-          <DialogHeader>
-            <DialogTitle className="text-2xl mb-4">Contact Us</DialogTitle>
+          <DialogHeader className={"mb-4"}>
+            <DialogTitle className="text-2xl ">Get Started With Us</DialogTitle>
+            <DialogDescription>
+              Send us a message, and we’ll be in touch shortly.
+            </DialogDescription>
           </DialogHeader>
           <form
             onSubmit={handleSubmit}
